@@ -11,6 +11,8 @@ onready var state_machine: StateMachine = $StateMachine
 onready var joystick: Joystick = $UI/TouchControls/Joystick
 onready var camera_stick: Joystick = $UI/TouchControls/Joystick2
 
+onready var muzzle: Position3D = $Muzzle
+
 
 func _get_configuration_warning() -> String:
 	return "Missing camera node" if not camera else ""

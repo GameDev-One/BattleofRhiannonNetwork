@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/player/player.gd" type="Script" id=1]
 [ext_resource path="res://src/player/mannequiny.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://src/player/states/air.gd" type="Script" id=6]
 [ext_resource path="res://src/player/states/run.gd" type="Script" id=7]
 [ext_resource path="res://src/player/camera/camerarig.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/player/states/shoot.gd" type="Script" id=9]
+[ext_resource path="res://src/player/states/charge.gd" type="Script" id=10]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -22,6 +24,9 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 
 [node name="AnimationTree" parent="Mannequiny" index="2"]
 parameters/playback = SubResource( 1 )
+
+[node name="Muzzle" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.875, 0 )
@@ -43,6 +48,15 @@ script = ExtResource( 6 )
 
 [node name="Run" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 7 )
+
+[node name="Shoot" type="Node" parent="StateMachine/Move"]
+script = ExtResource( 9 )
+
+[node name="Cooldown" type="Timer" parent="StateMachine/Move/Shoot"]
+one_shot = true
+
+[node name="Charge" type="Node" parent="StateMachine/Move"]
+script = ExtResource( 10 )
 
 [node name="CameraRig" parent="." instance=ExtResource( 8 )]
 

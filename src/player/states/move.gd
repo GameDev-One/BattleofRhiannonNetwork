@@ -17,6 +17,9 @@ var velocity: = Vector3.ZERO
 func unhandled_input(event: InputEvent) -> void:
 	pass
 
+func process(delta: float) -> void:
+	if Input.is_action_pressed("ui_action3"):
+		_state_machine.transition_to("Move/Charge")
 
 func physics_process(delta: float) -> void:
 	var input_direction = get_joystick_direction()
