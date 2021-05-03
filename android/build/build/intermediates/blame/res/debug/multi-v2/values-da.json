@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml",
+            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml",
             "map": [
-                {
-                    "source": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/res/values-da/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "66",
-                        "endOffsets": "177"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "291",
-                        "endColumns": "69",
-                        "endOffsets": "356"
-                    }
-                },
                 {
                     "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/61f903db516e52d8783db3337e87ee1a/core-1.0.0/res/values-da/values-da.xml",
                     "from": {
@@ -32,9 +15,26 @@
                     "to": {
                         "startLines": "11",
                         "startColumns": "4",
-                        "startOffsets": "966",
+                        "startOffsets": "977",
                         "endColumns": "100",
-                        "endOffsets": "1062"
+                        "endOffsets": "1073"
+                    }
+                },
+                {
+                    "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/values-da/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "77",
+                        "endOffsets": "188"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "291",
+                        "endColumns": "80",
+                        "endOffsets": "367"
                     }
                 },
                 {
@@ -49,9 +49,9 @@
                     "to": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "361,433,549,619,686,772,893",
+                        "startOffsets": "372,444,560,630,697,783,904",
                         "endColumns": "71,115,69,66,85,120,72",
-                        "endOffsets": "428,544,614,681,767,888,961"
+                        "endOffsets": "439,555,625,692,778,899,972"
                     }
                 },
                 {

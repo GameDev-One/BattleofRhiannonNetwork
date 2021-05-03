@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
+            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
             "map": [
                 {
                     "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/61f903db516e52d8783db3337e87ee1a/core-1.0.0/res/values-fi/values-fi.xml",
@@ -15,9 +15,26 @@
                     "to": {
                         "startLines": "11",
                         "startColumns": "4",
-                        "startOffsets": "991",
+                        "startOffsets": "1002",
                         "endColumns": "100",
-                        "endOffsets": "1087"
+                        "endOffsets": "1098"
+                    }
+                },
+                {
+                    "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/values-fi/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "77",
+                        "endOffsets": "188"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "314",
+                        "endColumns": "80",
+                        "endOffsets": "390"
                     }
                 },
                 {
@@ -49,26 +66,9 @@
                     "to": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "384,458,578,647,715,799,918",
+                        "startOffsets": "395,469,589,658,726,810,929",
                         "endColumns": "73,119,68,67,83,118,72",
-                        "endOffsets": "453,573,642,710,794,913,986"
-                    }
-                },
-                {
-                    "source": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/res/values-fi/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "66",
-                        "endOffsets": "177"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "314",
-                        "endColumns": "69",
-                        "endOffsets": "379"
+                        "endOffsets": "464,584,653,721,805,924,997"
                     }
                 }
             ]

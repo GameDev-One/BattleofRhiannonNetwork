@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.godotengine.twinstickmobile"
+    package="org.godotengine.battleofrhiannonnetwork"
     android:installLocation="auto"
     android:targetSandboxVersion="2"
     android:versionCode="1"
@@ -77,7 +77,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="org.godotengine.twinstickmobile.mobileadsinitprovider"
+            android:authorities="org.godotengine.battleofrhiannonnetwork.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

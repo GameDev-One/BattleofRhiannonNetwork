@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
+            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
             "map": [
-                {
-                    "source": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/res/values-hu/godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "66",
-                        "endOffsets": "177"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "341",
-                        "endColumns": "69",
-                        "endOffsets": "406"
-                    }
-                },
                 {
                     "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/a7ad5a81b07168db60b339a3a943336d/jetified-play-services-ads-19.3.0/res/values-hu/values.xml",
                     "from": {
@@ -32,9 +15,9 @@
                     "to": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "411,483,608,679,751,838,958",
+                        "startOffsets": "422,494,619,690,762,849,969",
                         "endColumns": "71,124,70,71,86,119,74",
-                        "endOffsets": "478,603,674,746,833,953,1028"
+                        "endOffsets": "489,614,685,757,844,964,1039"
                     }
                 },
                 {
@@ -49,9 +32,9 @@
                     "to": {
                         "startLines": "11",
                         "startColumns": "4",
-                        "startOffsets": "1033",
+                        "startOffsets": "1044",
                         "endColumns": "100",
-                        "endOffsets": "1129"
+                        "endOffsets": "1140"
                     }
                 },
                 {
@@ -69,6 +52,23 @@
                         "startOffsets": "105",
                         "endColumns": "235",
                         "endOffsets": "336"
+                    }
+                },
+                {
+                    "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/values-hu/godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "77",
+                        "endOffsets": "188"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "341",
+                        "endColumns": "80",
+                        "endOffsets": "417"
                     }
                 }
             ]

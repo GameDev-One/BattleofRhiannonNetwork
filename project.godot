@@ -68,8 +68,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="TwinStickMobile"
-run/main_scene="res://main.tscn"
+config/name="Battle of Rhiannon Network"
+run/main_scene="res://AdmobDemo.tscn"
 config/icon="res://icon.png"
 
 [debug]

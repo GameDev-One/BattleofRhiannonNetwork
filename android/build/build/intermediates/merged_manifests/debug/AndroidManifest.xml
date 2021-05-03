@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.godotengine.twinstickmobile"
+    package="org.godotengine.battleofrhiannonnetwork"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
@@ -76,7 +76,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="org.godotengine.twinstickmobile.mobileadsinitprovider"
+            android:authorities="org.godotengine.battleofrhiannonnetwork.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

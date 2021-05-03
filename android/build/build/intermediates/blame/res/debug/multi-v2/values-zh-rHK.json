@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/e5df49c1c3f6c08e72304aa03642d0bd/jetified-play-services-basement-17.0.0/res/values-zh-rHK/values.xml",
@@ -32,9 +32,9 @@
                     "to": {
                         "startLines": "11",
                         "startColumns": "4",
-                        "startOffsets": "820",
+                        "startOffsets": "831",
                         "endColumns": "100",
-                        "endOffsets": "916"
+                        "endOffsets": "927"
                     }
                 },
                 {
@@ -49,26 +49,26 @@
                     "to": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "342,407,484,548,612,680,754",
+                        "startOffsets": "353,418,495,559,623,691,765",
                         "endColumns": "64,76,63,63,67,73,65",
-                        "endOffsets": "402,479,543,607,675,749,815"
+                        "endOffsets": "413,490,554,618,686,760,826"
                     }
                 },
                 {
-                    "source": "/home/devone/Documents/Godot Projects/GDScript/TwinStickMobile/android/build/res/values-zh-rHK/godot_project_name_string.xml",
+                    "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/values-zh-rHK/godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",
                         "startOffsets": "112",
-                        "endColumns": "66",
-                        "endOffsets": "177"
+                        "endColumns": "77",
+                        "endOffsets": "188"
                     },
                     "to": {
                         "startLines": "3",
                         "startColumns": "4",
                         "startOffsets": "272",
-                        "endColumns": "69",
-                        "endOffsets": "337"
+                        "endColumns": "80",
+                        "endOffsets": "348"
                     }
                 }
             ]

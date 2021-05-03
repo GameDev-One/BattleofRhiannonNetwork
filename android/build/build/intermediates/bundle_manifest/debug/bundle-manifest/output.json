@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "org.godotengine.twinstickmobile",
+  "applicationId": "org.godotengine.battleofrhiannonnetwork",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "AndroidManifest.xml",
       "properties": {
-        "packageId": "org.godotengine.twinstickmobile",
+        "packageId": "org.godotengine.battleofrhiannonnetwork",
         "split": "",
         "minSdkVersion": "18"
       }
