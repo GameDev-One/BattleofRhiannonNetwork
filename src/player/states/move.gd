@@ -15,8 +15,7 @@ var velocity: = Vector3.ZERO
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump"):
-		_state_machine.transition_to("Move/Air", { velocity = velocity, jump_impulse = jump_impulse })
+	pass
 
 
 func physics_process(delta: float) -> void:
@@ -43,18 +42,11 @@ func physics_process(delta: float) -> void:
 
 
 func enter(msg: Dictionary = {}) -> void:
-	player.camera.connect("aim_fired", self, "_on_Camera_aim_fired")
+	pass
 
 
 func exit() -> void:
-	player.camera.disconnect("aim_fired", self, "_on_Camera_aim_fired")
-
-
-# Callback to transition to the optional Zip state
-# It only works if the Zip state node exists.
-# It is intended to work via signals
-func _on_Camera_aim_fired(target_vector: Vector3) -> void:
-	_state_machine.transition_to("Move/Zip", { target = target_vector })
+	pass
 
 
 static func get_input_direction() -> Vector3:

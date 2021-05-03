@@ -45,7 +45,6 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 
 [node name="CameraRig" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="ClippedCamera" parent="CameraRig" index="0"]
 transform = Transform( 1, 0, 0, 0, 0.987688, 0.156434, 0, -0.156434, 0.987688, 0, 2.75, 3.75 )

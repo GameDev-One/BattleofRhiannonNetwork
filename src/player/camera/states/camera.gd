@@ -42,14 +42,6 @@ func process(delta: float) -> void:
 
 	camera_rig.rotation.y = wrapf(camera_rig.rotation.y, -PI, PI)
 
-	#Looking Left/Right
-#	if look_direction.x < 0:
-#		var rot: float = 90.0 * sensitivity_gamepad.x * delta
-#		camera_rig_rotate(camera_rig.player.translation, deg2rad(rot))
-#	elif look_direction.x > 0:
-#		var rot: float = -90.0 * sensitivity_gamepad.x * delta
-#		camera_rig_rotate(camera_rig.player.translation, deg2rad(rot))
-
 
 func auto_rotate(move_direction: Vector3) -> void:
 	var offset: float = camera_rig.player.rotation.y - camera_rig.rotation.y
@@ -74,11 +66,7 @@ func camera_rig_rotate(lookAtPoint: Vector3, angle: float):
 
 
 func unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("zoom_in"):
-		camera_rig.zoom += ZOOM_STEP
-	elif event.is_action_pressed("zoom_out"):
-		camera_rig.zoom -= ZOOM_STEP
-	elif event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		_input_relative += event.get_relative()
 
 
