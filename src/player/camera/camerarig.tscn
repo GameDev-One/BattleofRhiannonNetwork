@@ -46,6 +46,7 @@ initial_state = NodePath("../../CameraRig/StateMachine/Camera/Default")
 
 [node name="Camera" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
+sensitivity_gamepad = Vector2( 5, 2.5 )
 
 [node name="Default" type="Node" parent="StateMachine/Camera"]
 script = ExtResource( 3 )

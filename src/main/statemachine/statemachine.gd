@@ -36,10 +36,10 @@ func transition_to(target_state_path: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_path):
 		return
 
-	print(owner.name + ": " + state.name + " [->] " + target_state_path)
+	
 	
 	var target_state := get_node(target_state_path)
-
+	print(owner.name + ": " + state.name + " [->] " + target_state.name)
 	state.exit()
 	self.state = target_state
 	state.enter(msg)
