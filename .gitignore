@@ -9,6 +9,7 @@ export_presets.cfg
 
 # Build artifacts
 build/
+admob-lib/
 
 # OSX
 .DS_Store
