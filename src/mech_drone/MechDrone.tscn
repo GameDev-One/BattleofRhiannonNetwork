@@ -214,9 +214,10 @@ transform = Transform( 0.005, 0, 0, 0, -2.18557e-10, 0.005, 0, -0.005, -2.18557e
 autoplay = "idle"
 anims/idle = SubResource( 1 )
 
-[node name="StaticBody" type="StaticBody" parent="." index="2"]
+[node name="RigidBody" type="RigidBody" parent="." index="2"]
+mode = 1
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.770107, 0 )
 shape = SubResource( 2 )
 

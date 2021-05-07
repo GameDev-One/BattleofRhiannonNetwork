@@ -4,6 +4,7 @@ class_name MechDroneState
 var mech_drone: MechDrone
 var player: Player
 var navigation: Navigation
+var collision: RigidBody
 
 func _ready() -> void:
 	yield(owner, "ready")
