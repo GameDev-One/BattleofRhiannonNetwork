@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.s3tc.stex"
 path.etc2="res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.etc2.stex"
+path.etc="res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/bullet/effect/FlarePolar.png"
-dest_files=[ "res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.s3tc.stex", "res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.etc2.stex" ]
+dest_files=[ "res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.s3tc.stex", "res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.etc2.stex", "res://.import/FlarePolar.png-7f502c49b1c0d7b7a2059955de14ce0a.etc.stex" ]
 
 [params]
 

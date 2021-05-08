@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/player/camera/springarm.gd" type="Script" id=1]
 [ext_resource path="res://src/player/camera/aimtarget.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/player/camera/camerarig.gd" type="Script" id=6]
 [ext_resource path="res://src/player/camera/states/camera.gd" type="Script" id=7]
 [ext_resource path="res://src/player/camera/states/aim.gd" type="Script" id=8]
+[ext_resource path="res://src/player/camera/states/lockon.gd" type="Script" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 0.5
@@ -56,3 +57,8 @@ script = ExtResource( 8 )
 offset_camera = Vector3( 0.75, -1, 0 )
 
 [node name="Tween" type="Tween" parent="StateMachine/Camera/Aim"]
+
+[node name="LockOn" type="Node" parent="StateMachine/Camera"]
+script = ExtResource( 9 )
+
+[node name="Tween" type="Tween" parent="StateMachine/Camera/LockOn"]

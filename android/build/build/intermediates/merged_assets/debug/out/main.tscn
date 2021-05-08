@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
@@ -6,9 +6,14 @@
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/mech_drone/MechDrone.tscn" type="PackedScene" id=5]
 
-[node name="Main" type="Node"]
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -9.2, 0.9, -18.2, -18.2, 0.9, -18.2, -18.2, 0.9, -8.6, 18.4, 0.9, -8.6, 18.4, 0.9, -18.2, 9.1, 0.9, -18.2, -18.2, 0.9, -8.6, -18.2, 0.9, 1.3, -4.1, 0.9, 1.3, 4, 0.9, 1.3, 18.4, 0.9, 1.3, 18.4, 0.9, -8.6, -18.2, 0.9, -8.6, -4.1, 0.9, 1.3, -2, 0.9, 1.3, 1.9, 0.9, 1.3, 4, 0.9, 1.3, 18.4, 0.9, -8.6, 9.1, 0.9, -18.2, 0.1, 0.9, -18.2, 0.1, 0.9, -18.2, -9.2, 0.9, -18.2, -18.2, 0.9, -8.6, -2, 0.9, 1.3, 1.9, 0.9, 1.3, -18.2, 0.9, 4.6, -4.1, 0.9, 4.6, -4.7, 0.9, 4, -4.7, 0.9, 1.9, -4.1, 0.9, 1.3, -18.2, 0.9, 1.3, -18.2, 0.9, 4.6, -4.7, 0.9, 4, -4.7, 0.9, 1.9, -18.2, 0.9, 1.3, 1.3, 0.9, 1.9, 1.9, 0.9, 1.3, -2, 0.9, 1.3, -1.4, 0.9, 1.9, 9.1, 0.9, 18.4, 18.4, 0.9, 11.5, 18.4, 0.9, 4.6, 4.3, 0.9, 4.6, 0.1, 0.9, 18.4, 1.3, 0.9, 4, 1.3, 0.9, 1.9, -1.4, 0.9, 1.9, -1.4, 0.9, 4.3, 4.3, 0.9, 4.6, 1.9, 0.9, 4.6, 0.1, 0.9, 18.4, 1.9, 0.9, 4.6, 1.3, 0.9, 4, -1.4, 0.9, 4.3, 1.9, 0.9, 4.6, -1.4, 0.9, 4.3, -4.1, 0.9, 4.6, 0.1, 0.9, 18.4, -18.2, 0.9, 11.5, -18.2, 0.9, 18.4, -9.2, 0.9, 18.4, 9.1, 0.9, 18.4, 18.4, 0.9, 18.4, 18.4, 0.9, 11.5, -4.1, 0.9, 4.6, -18.2, 0.9, 4.6, -18.2, 0.9, 11.5, -9.2, 0.9, 18.4, 0.1, 0.9, 18.4, 18.4, 0.9, 1.3, 4, 0.9, 1.3, 4.6, 0.9, 1.9, 18.4, 0.9, 4.6, 18.4, 0.9, 1.3, 4.6, 0.9, 1.9, 4.3, 0.9, 4.6 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 4, 3, 5 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 12, 14, 13 ), PoolIntArray( 16, 15, 17 ), PoolIntArray( 17, 15, 18 ), PoolIntArray( 18, 15, 19 ), PoolIntArray( 24, 23, 20 ), PoolIntArray( 20, 23, 21 ), PoolIntArray( 21, 23, 22 ), PoolIntArray( 25, 27, 26 ), PoolIntArray( 30, 29, 28 ), PoolIntArray( 32, 31, 33 ), PoolIntArray( 33, 31, 34 ), PoolIntArray( 38, 37, 35 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 42, 39, 43 ), PoolIntArray( 45, 44, 46 ), PoolIntArray( 46, 44, 47 ), PoolIntArray( 50, 49, 48 ), PoolIntArray( 53, 52, 51 ), PoolIntArray( 55, 54, 56 ), PoolIntArray( 56, 54, 57 ), PoolIntArray( 60, 59, 58 ), PoolIntArray( 62, 61, 63 ), PoolIntArray( 66, 65, 67 ), PoolIntArray( 67, 65, 64 ), PoolIntArray( 67, 64, 68 ), PoolIntArray( 69, 71, 70 ), PoolIntArray( 75, 74, 72 ), PoolIntArray( 72, 74, 73 ) ]
+sample_partition_type/sample_partition_type = 2
 
-[node name="BasicLevel" parent="." instance=ExtResource( 3 )]
+[sub_resource type="SphereShape" id=2]
+
+[node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93185, 4.36489, -0.869682 )
@@ -84,7 +89,64 @@ position = Vector2( -120, 0 )
 action = "ui_action4"
 pressed_color = Color( 0.74902, 0.74902, 1, 1 )
 
-[node name="MechDrone" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62193, 1.51134, -7.84741 )
+[node name="MechDrone" parent="." groups=[
+"Enemy",
+] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.622, 1, -15.7921 )
+player = NodePath("../Player")
+navigation = NodePath("../Navigation")
+
+[node name="MechDrone2" parent="." groups=[
+"Enemy",
+] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76594, 1, -15.6637 )
+player = NodePath("../Player")
+navigation = NodePath("../Navigation")
+
+[node name="MechDrone3" parent="." groups=[
+"Enemy",
+] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28805, 1, -15.6637 )
+player = NodePath("../Player")
+navigation = NodePath("../Navigation")
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="BasicLevel" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 3 )]
+
+[node name="PointOfInterest1" type="Area" parent="." groups=[
+"MechDronePOI",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.274, 1, -16.712 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PointOfInterest1"]
+shape = SubResource( 2 )
+
+[node name="PointOfInterest2" type="Area" parent="." groups=[
+"MechDronePOI",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.82, 1, 16.8894 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PointOfInterest2"]
+shape = SubResource( 2 )
+
+[node name="PointOfInterest3" type="Area" parent="." groups=[
+"MechDronePOI",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.484, 1, 17.0307 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PointOfInterest3"]
+shape = SubResource( 2 )
+
+[node name="PointOfInterest4" type="Area" parent="." groups=[
+"MechDronePOI",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8685, 1, -16.712 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PointOfInterest4"]
+shape = SubResource( 2 )
 
 [editable path="Player/UI/TouchControls/Joystick2"]

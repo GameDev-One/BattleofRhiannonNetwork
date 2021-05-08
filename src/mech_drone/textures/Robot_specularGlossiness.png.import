@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.s3tc.stex"
 path.etc2="res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.etc2.stex"
+path.etc="res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/mech_drone/textures/Robot_specularGlossiness.png"
-dest_files=[ "res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.s3tc.stex", "res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.etc2.stex" ]
+dest_files=[ "res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.s3tc.stex", "res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.etc2.stex", "res://.import/Robot_specularGlossiness.png-39f85ebe143486e19d78b3d5bdbdfb8c.etc.stex" ]
 
 [params]
 

@@ -6,7 +6,7 @@ extends CameraState
 const ZOOM_STEP := 0.1
 
 const ANGLE_X_MIN := -PI / 4
-const ANGLE_X_MAX := PI / 3
+const ANGLE_X_MAX := PI / 6
 
 export var is_y_inverted := false
 export var fov_default := 70.0

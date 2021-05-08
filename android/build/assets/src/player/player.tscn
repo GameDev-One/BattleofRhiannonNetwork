@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/player/player.gd" type="Script" id=1]
 [ext_resource path="res://src/player/mannequiny.tscn" type="PackedScene" id=2]
@@ -15,6 +15,10 @@
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.45
+
+[sub_resource type="CylinderShape" id=3]
+radius = 10.0
+height = 1.0
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -62,6 +66,13 @@ script = ExtResource( 10 )
 
 [node name="ClippedCamera" parent="CameraRig" index="0"]
 transform = Transform( 1, 0, 0, 0, 0.987688, 0.156434, 0, -0.156434, 0.987688, 0, 2.75, 3.75 )
+
+[node name="LockOnArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.875, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="LockOnArea"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 3 )
 
 [editable path="Mannequiny"]
 [editable path="CameraRig"]

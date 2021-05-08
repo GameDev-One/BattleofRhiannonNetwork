@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.s3tc.stex"
 path.etc2="res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.etc2.stex"
+path.etc="res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/mech_drone/textures/Robot_occlusion.png"
-dest_files=[ "res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.s3tc.stex", "res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.etc2.stex" ]
+dest_files=[ "res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.s3tc.stex", "res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.etc2.stex", "res://.import/Robot_occlusion.png-2f21e93ddee17eab1ddf7e851ea67632.etc.stex" ]
 
 [params]
 

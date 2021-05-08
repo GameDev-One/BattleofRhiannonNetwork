@@ -34,7 +34,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/player/mannequiny.gd"
 }, {
-"base": "Spatial",
+"base": "RigidBody",
 "class": "MechDrone",
 "language": "GDScript",
 "path": "res://src/mech_drone/mech_drone.gd"
@@ -128,4 +128,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

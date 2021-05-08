@@ -12,6 +12,7 @@ onready var joystick: Joystick = $UI/TouchControls/Joystick
 onready var camera_stick: Joystick = $UI/TouchControls/Joystick2
 
 onready var muzzle: Position3D = $Muzzle
+onready var lock_on_area: Area = $LockOnArea
 
 
 func _get_configuration_warning() -> String:
