@@ -41,8 +41,9 @@ func connect_POI():
 			print("Failed to connect.")
 		
 func _point_of_interest_reached(body: Node):
-	path = []
-	_state_machine.transition_to("Idle")
+	if body == mech_drone:
+		path = []
+		_state_machine.transition_to("Idle")
 	
 func search_for_new_POI():
 	while indexPOI == _random_index:
