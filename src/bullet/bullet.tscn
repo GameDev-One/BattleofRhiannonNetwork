@@ -444,7 +444,9 @@ height = 0.3
 radial_segments = 4
 rings = 4
 
-[node name="Bullet" type="KinematicBody"]
+[node name="Bullet" type="KinematicBody" groups=[
+"Projectile",
+]]
 collision_layer = 0
 script = ExtResource( 1 )
 

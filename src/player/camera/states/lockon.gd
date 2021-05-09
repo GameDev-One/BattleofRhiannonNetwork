@@ -28,7 +28,8 @@ func physics_process(delta) -> void:
 func _rotate_to_target():
 	var player_rot = camera_rig.player.global_transform.looking_at(_targets[0].global_transform.origin, Vector3.UP)
 	var camera_rot = camera_rig.global_transform.looking_at(_targets[0].global_transform.origin, Vector3.UP)
-		
+#	var muzzle_rot = camera_rig.player.muzzle.global_transform.looking_at(_targets[0].global_transform.origin, Vector3.UP)
+	
 	tween.interpolate_property(camera_rig.player,
 	"transform",
 	camera_rig.player.global_transform,
@@ -36,6 +37,14 @@ func _rotate_to_target():
 	lock_on_time,
 	Tween.TRANS_QUAD,
 	Tween.EASE_OUT)
+	
+#	tween.interpolate_property(camera_rig.player.muzzle,
+#	"transform",
+#	camera_rig.player.muzzle.global_transform,
+#	muzzle_rot, 
+#	lock_on_time,
+#	Tween.TRANS_QUAD,
+#	Tween.EASE_OUT)
 	
 	tween.interpolate_property(
 		camera_rig,
