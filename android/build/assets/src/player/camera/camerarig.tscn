@@ -9,7 +9,7 @@
 [ext_resource path="res://src/player/camera/states/camera.gd" type="Script" id=7]
 [ext_resource path="res://src/player/camera/states/lockon.gd" type="Script" id=9]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 height = 0.5
 
 [node name="CameraRig" type="Spatial"]
@@ -20,13 +20,14 @@ current = true
 
 [node name="AimRay" type="RayCast" parent="ClippedCamera"]
 transform = Transform( 1, 0, 0, 0, 0.999847, 0.0174524, 0, -0.0174524, 0.999847, 0, -0.194905, -0.679715 )
+enabled = true
 cast_to = Vector3( 0, 0, -20 )
-collision_mask = 2
+collision_mask = 3
 
 [node name="SpringArm" type="SpringArm" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.87462, 0.48481, 0, -0.48481, 0.87462, 0, 0.5, 0.5 )
 collision_mask = 2
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 spring_length = 4.5
 margin = 0.5
 script = ExtResource( 1 )

@@ -17,6 +17,12 @@ export var sensitivity_mouse := Vector2(0.1, 0.1)
 var _input_relative := Vector2.ZERO
 var _is_aiming := false
 
+func physics_process(delta: float) -> void:
+	# Check if player is looking at an enemy
+	if camera_rig.aim_ray.is_colliding():
+		var object = camera_rig.aim_ray.get_collider()
+		if object.is_in_group("Enemy"):
+			camera_rig.emit_signal("enemy_found",camera_rig.aim_ray.get_collider())
 
 func process(delta: float) -> void:
 	camera_rig.global_transform.origin = (

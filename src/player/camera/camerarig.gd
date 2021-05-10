@@ -5,6 +5,7 @@ class_name CameraRig
 # frequently used nodes in the scene itself.
 
 signal aim_fired(target_position)
+signal enemy_found(enemy)
 
 onready var camera: ClippedCamera = $ClippedCamera
 onready var spring_arm: SpringArm = $SpringArm
