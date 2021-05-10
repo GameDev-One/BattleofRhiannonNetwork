@@ -155,8 +155,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8685, 1, -16.712 )
 shape = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 22.7983, 0 )
-light_energy = 5.0
+transform = Transform( 0.89061, 0.304116, 0.338123, 0, -0.743507, 0.668728, 0.454768, -0.595576, -0.662175, 17.7595, 15, -14.4162 )
+light_color = Color( 1, 1, 0.784314, 1 )
 shadow_enabled = true
 
 [editable path="Player/UI/TouchControls/Joystick"]

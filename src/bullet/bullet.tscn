@@ -446,7 +446,7 @@ material/0 = null
 
 [node name="OmniLight" type="OmniLight" parent="."]
 light_color = Color( 0, 1, 0.952941, 1 )
-light_energy = 0.778846
+light_energy = 1.5
 light_bake_mode = 0
 shadow_enabled = true
 omni_range = 3.0
@@ -529,6 +529,7 @@ material/0 = null
 
 [node name="MainBody" type="Particles" parent="BulletBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00988865, 0, 0 )
+emitting = false
 amount = 100
 lifetime = 0.1
 local_coords = false
@@ -537,6 +538,7 @@ draw_pass_1 = SubResource( 49 )
 
 [node name="Trail" type="Particles" parent="BulletBody"]
 material_override = ExtResource( 9 )
+emitting = false
 amount = 10
 local_coords = false
 process_material = SubResource( 54 )

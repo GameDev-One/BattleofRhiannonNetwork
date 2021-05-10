@@ -1,5 +1,5 @@
 tool
-extends RigidBody
+extends Enemy
 class_name MechDrone
 
 export var player: NodePath

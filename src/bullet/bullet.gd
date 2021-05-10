@@ -10,6 +10,9 @@ var hit = false
 onready var animation_player = $AnimationPlayer
 onready var collision_shape = $CollisionShape
 
+func _ready():
+	set_as_toplevel(true)
+
 func _physics_process(delta):
 	if hit:
 		return

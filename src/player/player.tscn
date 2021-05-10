@@ -57,7 +57,7 @@ script = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="Cooldown" type="Timer" parent="StateMachine/Move/Shoot"]
-wait_time = 0.25
+wait_time = 0.1
 one_shot = true
 
 [node name="Charge" type="Node" parent="StateMachine/Move"]
