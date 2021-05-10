@@ -30,7 +30,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 parameters/playback = SubResource( 1 )
 
 [node name="Muzzle" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.875, 0 )
@@ -57,6 +57,7 @@ script = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="Cooldown" type="Timer" parent="StateMachine/Move/Shoot"]
+wait_time = 0.25
 one_shot = true
 
 [node name="Charge" type="Node" parent="StateMachine/Move"]

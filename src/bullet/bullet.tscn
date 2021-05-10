@@ -1,8 +1,7 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://src/bullet/bullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/effects/BlastMesh.mesh" type="ArrayMesh" id=2]
-[ext_resource path="res://src/bullet/bullet_explode.wav" type="AudioStream" id=3]
 [ext_resource path="res://src/bullet/effect/BlastMaterial.tres" type="Material" id=4]
 [ext_resource path="res://src/bullet/effect/light_rays_material.tres" type="Material" id=5]
 [ext_resource path="res://src/bullet/blue_myst.png" type="Texture" id=8]
@@ -70,19 +69,19 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ExplosionAudio:playing")
+tracks/4/path = NodePath("Blast/BlastParticle:emitting")
 tracks/4/interp = 1
-tracks/4/loop_wrap = true
+tracks/4/loop_wrap = false
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Blast/BlastParticle:emitting")
+tracks/5/path = NodePath("Blast/LightBlast:emitting")
 tracks/5/interp = 1
 tracks/5/loop_wrap = false
 tracks/5/imported = false
@@ -94,9 +93,9 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Blast/LightBlast:emitting")
+tracks/6/path = NodePath("Blast/BlastSparks:emitting")
 tracks/6/interp = 1
-tracks/6/loop_wrap = false
+tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
@@ -106,60 +105,48 @@ tracks/6/keys = {
 "values": [ true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Blast/BlastSparks:emitting")
+tracks/7/path = NodePath("Blast/Smoke:emitting")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Blast/Smoke:emitting")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Blast/LightParticle:emitting")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blast/LightParticle:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
 "times": PoolRealArray( 0.05 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("Blast/InnerBlastLight:emitting")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blast/InnerBlastLight:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("BulletBody/Trail:emitting")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/path = NodePath("BulletBody/Trail:emitting")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -472,10 +459,6 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/explode = SubResource( 3 )
-
-[node name="ExplosionAudio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 3 )
-unit_size = 20.0
 
 [node name="Blast" type="Spatial" parent="."]
 
