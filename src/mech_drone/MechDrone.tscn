@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/mech_drone/AnimationPlayer.scn" type="PackedScene" id=1]
 [ext_resource path="res://src/main/statemachine/statemachine.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/mech_drone/states/idle.gd" type="Script" id=5]
 [ext_resource path="res://src/mech_drone/RootNode (gltf orientation matrix).scn" type="PackedScene" id=6]
 [ext_resource path="res://src/mech_drone/states/run.gd" type="Script" id=7]
+[ext_resource path="res://src/main/enemy/info_display.gd" type="Script" id=8]
+[ext_resource path="res://src/main/enemy/health_bar.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Take 001"
@@ -435,3 +437,16 @@ script = ExtResource( 5 )
 [node name="Timer" type="Timer" parent="StateMachine/Move/Idle"]
 wait_time = 5.0
 one_shot = true
+
+[node name="InfoDisplay" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39239, 0 )
+billboard = 1
+script = ExtResource( 8 )
+
+[node name="Viewport" type="Viewport" parent="InfoDisplay"]
+size = Vector2( 200, 40 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="HealthBar" parent="InfoDisplay/Viewport" instance=ExtResource( 9 )]

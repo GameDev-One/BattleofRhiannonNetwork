@@ -22,7 +22,7 @@ func physics_process(delta: float) -> void:
 	if camera_rig.aim_ray.is_colliding():
 		var object = camera_rig.aim_ray.get_collider()
 		if object.is_in_group("Enemy"):
-			camera_rig.emit_signal("enemy_found",camera_rig.aim_ray.get_collider())
+			camera_rig.emit_signal("enemy_found")
 
 func process(delta: float) -> void:
 	camera_rig.global_transform.origin = (
