@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/mech_drone/AnimationPlayer.scn" type="PackedScene" id=1]
 [ext_resource path="res://src/main/statemachine/statemachine.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/mech_drone/states/run.gd" type="Script" id=7]
 [ext_resource path="res://src/main/enemy/info_display.gd" type="Script" id=8]
 [ext_resource path="res://src/main/enemy/health_bar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/vfx/damage_indicator/DamageIndParticles.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Take 001"
@@ -429,7 +430,7 @@ script = ExtResource( 4 )
 
 [node name="Run" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 7 )
-speed = 200.0
+speed = 20.0
 
 [node name="Idle" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 5 )
@@ -450,3 +451,6 @@ usage = 0
 render_target_v_flip = true
 
 [node name="HealthBar" parent="InfoDisplay/Viewport" instance=ExtResource( 9 )]
+
+[node name="DamageIndParticles" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888168, 0 )

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/vfx/damage_indicator/DamageIndParticles.gd" type="Script" id=1]
+[ext_resource path="res://src/vfx/damage_indicator/damage_indicator.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[node name="DamageIndParticles" type="CPUParticles"]
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+mesh = SubResource( 2 )
+direction = Vector3( 1, 1, 0 )
+flatness = 0.5
+initial_velocity = 5.0
+script = ExtResource( 1 )
+
+[node name="DamageInd" parent="." instance=ExtResource( 2 )]
+visible = false
