@@ -20,6 +20,8 @@ func unhandled_input(event: InputEvent) -> void:
 func process(delta: float) -> void:
 	if Input.is_action_pressed("ui_action3"):
 		_state_machine.transition_to("Move/Charge")
+	if Input.is_action_just_pressed("ui_action2"):
+		_state_machine.transition_to("Battle")
 
 func physics_process(delta: float) -> void:
 	var input_direction = get_joystick_direction()

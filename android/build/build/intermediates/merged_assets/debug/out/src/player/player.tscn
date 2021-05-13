@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/player/player.gd" type="Script" id=1]
 [ext_resource path="res://src/player/mannequiny.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/player/camera/camerarig.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/player/states/shoot.gd" type="Script" id=9]
 [ext_resource path="res://src/player/states/charge.gd" type="Script" id=10]
+[ext_resource path="res://src/player/battle/battle.gd" type="Script" id=11]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -33,7 +34,7 @@ parameters/playback = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.96, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.97, 0 )
 shape = SubResource( 2 )
 
 [node name="StateMachine" type="Node" parent="."]
@@ -57,16 +58,20 @@ script = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="Cooldown" type="Timer" parent="StateMachine/Move/Shoot"]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 
 [node name="Charge" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 10 )
+max_charge_time = 4.0
+
+[node name="Battle" type="Node" parent="StateMachine"]
+script = ExtResource( 11 )
 
 [node name="CameraRig" parent="." instance=ExtResource( 8 )]
 
 [node name="ClippedCamera" parent="CameraRig" index="0"]
-transform = Transform( 1, 0, 0, 0, 0.987688, 0.156434, 0, -0.156434, 0.987688, 0, 2.75, 3.75 )
+transform = Transform( 1, 0, 0, 0, 0.999848, 0.0174524, 0, -0.0174524, 0.999848, 0, 2.25, 3.75 )
 
 [node name="LockOnArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.875, 0 )

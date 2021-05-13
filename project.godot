@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://admob-lib/admob.gd"
 }, {
+"base": "Resource",
+"class": "BattleChip",
+"language": "GDScript",
+"path": "res://src/player/battle/MMBNBattleChips/Completed/BattleChips/battlechip_resource.gd"
+}, {
+"base": "Resource",
+"class": "BattlechipFolder",
+"language": "GDScript",
+"path": "res://src/player/battle/MMBNBattleChips/Completed/BattlechipFolder/battlechip_folder_resource.gd"
+}, {
 "base": "Spatial",
 "class": "CameraRig",
 "language": "GDScript",
@@ -71,6 +81,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AdMob": "res://admob-lib/icon.png",
+"BattleChip": "",
+"BattlechipFolder": "",
 "CameraRig": "",
 "CameraState": "",
 "Enemy": "",
