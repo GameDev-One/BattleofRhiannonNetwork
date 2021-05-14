@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://src/player/battle/MMBNBattleChips/Completed/BattleChips/battlechip_resource.gd" type="Script" id=1]
-[ext_resource path="res://src/player/battle/MMBNBattleChips/Assets/Icons/bamboo_sword.png" type="Texture" id=2]
+[ext_resource path="res://assets/prototype-textures/default-battlechip-icon.png" type="Texture" id=2]
 [ext_resource path="res://src/player/battle/MMBNBattleChips/Assets/MMBN_Chip_BambSwrd.png" type="Texture" id=3]
 
 [resource]

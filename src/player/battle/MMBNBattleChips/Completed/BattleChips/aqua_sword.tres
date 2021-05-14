@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/player/battle/MMBNBattleChips/Completed/BattleChips/battlechip_resource.gd" type="Script" id=1]
 [ext_resource path="res://src/player/battle/MMBNBattleChips/Assets/MMBN_Chip_AquaSwrd.png" type="Texture" id=2]
-[ext_resource path="res://src/player/battle/MMBNBattleChips/Assets/Icons/aqua-sword.png" type="Texture" id=3]
+[ext_resource path="res://assets/prototype-textures/default-battlechip-icon.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 1 )

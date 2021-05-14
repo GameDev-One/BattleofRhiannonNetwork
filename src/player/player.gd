@@ -14,6 +14,8 @@ onready var camera_stick: Joystick = $UI/TouchControls/Joystick2
 onready var muzzle: Position3D = $Muzzle
 onready var lock_on_area: Area = $LockOnArea
 
+onready var battle_setup_ui: Control = $UI/TouchControls/BattleSetupScreen
+
 
 func _get_configuration_warning() -> String:
 	return "Missing camera node" if not camera else ""
