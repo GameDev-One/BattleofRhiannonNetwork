@@ -7,6 +7,8 @@ func unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("ui_action3"):
 		_state_machine.transition_to("Camera/LockOn")
+	if event.is_action_pressed("ui_action2"):
+		_state_machine.transition_to("Camera/LockOn")
 
 func physics_process(delta: float) -> void:
 	_parent.physics_process(delta)
