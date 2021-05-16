@@ -4,7 +4,7 @@ extends KinematicBody
 # Helper class for the Player scene's scripts to be able to have access to the
 # camera and its orientation.
 
-signal health_changed()
+signal health_changed(health)
 
 onready var camera: CameraRig = $CameraRig
 onready var skin: Mannequiny = $Mannequiny
@@ -20,11 +20,14 @@ onready var battle_setup_ui: Control = $UI/TouchControls/BattleSetupScreen
 
 export(int, 1, 9999) var max_health: int = 1
 
-var health: int = max_health setget set_health
+var health: int = 1 setget set_health
+
+func _ready():
+	set_health(max_health)
 
 func _get_configuration_warning() -> String:
 	return "Missing camera node" if not camera else ""
 
 func set_health(value: int):
 	health = value
-	emit_signal("health_changed")
+	emit_signal("health_changed", health)
