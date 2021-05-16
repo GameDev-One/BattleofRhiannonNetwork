@@ -15,6 +15,7 @@ onready var camera_stick: Joystick = $UI/TouchControls/Joystick2
 
 onready var muzzle: Position3D = $Muzzle
 onready var lock_on_area: Area = $LockOnArea
+onready var damage_ind: CPUParticles = $DamageIndParticles
 
 onready var battle_setup_ui: Control = $UI/TouchControls/BattleSetupScreen
 
