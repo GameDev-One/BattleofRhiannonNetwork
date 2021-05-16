@@ -5,6 +5,7 @@ extends RigidBody
 signal health_changed()
 
 export(int, 1, 9999) var max_health: int = 1
+export(int, 1, 9999) var contact_damage: int = 10
 
 var health: int = max_health setget set_health
 
