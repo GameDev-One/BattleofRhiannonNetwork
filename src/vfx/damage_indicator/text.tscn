@@ -12,7 +12,11 @@ margin_right = 40.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 40, 40 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.0666667, 0.0666667, 1 )
 text = "9999"
 align = 1
 valign = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
