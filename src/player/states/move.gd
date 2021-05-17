@@ -18,6 +18,9 @@ func unhandled_input(event: InputEvent) -> void:
 	pass
 
 func process(delta: float) -> void:
+	if player.health <= 0:
+		_state_machine.transition_to("Death")
+	
 	if Input.is_action_pressed("ui_action3"):
 		_state_machine.transition_to("Move/Charge")
 	if Input.is_action_just_pressed("ui_action2"):

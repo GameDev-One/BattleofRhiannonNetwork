@@ -9,6 +9,7 @@ enum States { IDLE, RUN, AIR, LAND }
 
 onready var animation_tree: AnimationTree = $AnimationTree
 onready var _playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+onready var mesh: MeshInstance = $root/Skeleton/body001
 
 var move_direction := Vector3.ZERO setget set_move_direction
 var is_moving := false setget set_is_moving
