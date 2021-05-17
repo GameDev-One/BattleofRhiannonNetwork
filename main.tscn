@@ -23,7 +23,7 @@ sample_partition_type/sample_partition_type = 2
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93185, 4.36489, -0.869682 )
-max_health = 10
+max_health = 50
 
 [node name="UI" type="CanvasLayer" parent="Player"]
 

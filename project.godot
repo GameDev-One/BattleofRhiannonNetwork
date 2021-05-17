@@ -116,6 +116,10 @@ window/size/height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[editor]
+
+script_templates_search_path="res://src/main/script_templates"
+
 [input]
 
 ui_action1={
