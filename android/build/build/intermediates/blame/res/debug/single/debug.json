@@ -20,10 +20,6 @@
         "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-xxxhdpi-v4/icon_foreground.png"
     },
     {
-        "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-hdpi-v4_icon_foreground.png.flat",
-        "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-hdpi-v4/icon_foreground.png"
-    },
-    {
         "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_icon.png.flat",
         "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-xhdpi-v4/icon.png"
     },
@@ -32,16 +28,20 @@
         "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/drawable-nodpi/splash.png"
     },
     {
+        "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-hdpi-v4_icon_foreground.png.flat",
+        "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-hdpi-v4/icon_foreground.png"
+    },
+    {
         "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-mdpi-v4_icon_foreground.png.flat",
         "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-mdpi-v4/icon_foreground.png"
     },
     {
-        "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_icon_foreground.png.flat",
-        "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-xhdpi-v4/icon_foreground.png"
-    },
-    {
         "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap_icon.png.flat",
         "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap/icon.png"
+    },
+    {
+        "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_icon_foreground.png.flat",
+        "source": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/res/mipmap-xhdpi-v4/icon_foreground.png"
     },
     {
         "merged": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_icon.png.flat",

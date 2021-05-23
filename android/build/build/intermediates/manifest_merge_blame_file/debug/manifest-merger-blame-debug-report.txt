@@ -44,107 +44,60 @@
 28        android:targetPackage="org.godotengine.$genname" />
 28-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/src/debug/AndroidManifest.xml:18:9-57
 29
-30    <uses-permission android:name="android.permission.WAKE_LOCK" />
-30-->[com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/devone/.gradle/caches/transforms-2/files-2.1/e405518e8fae93608c51520df1133990/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:5-68
-30-->[com.google.android.gms:play-services-measurement-sdk-api:17.1.0] /home/devone/.gradle/caches/transforms-2/files-2.1/e405518e8fae93608c51520df1133990/jetified-play-services-measurement-sdk-api-17.1.0/AndroidManifest.xml:25:22-65
-31
-32    <application
-32-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:5-71:19
-33        android:allowBackup="false"
-33-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:68-95
-34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-34-->[androidx.core:core:1.0.0] /home/devone/.gradle/caches/transforms-2/files-2.1/61f903db516e52d8783db3337e87ee1a/core-1.0.0/AndroidManifest.xml:22:18-86
-35        android:debuggable="true"
-36        android:icon="@mipmap/icon"
-36-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:181-208
-37        android:label="@string/godot_project_name_string"
-37-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:18-67
-38        android:requestLegacyExternalStorage="false" >
-38-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:136-180
-39        <activity
-39-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:46:9-63:20
-40            android:name="com.godot.game.GodotApp"
-40-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:47:13-37
-41            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-41-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:52:13-141
-42            android:label="@string/godot_project_name_string"
-42-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:48:13-62
-43            android:launchMode="singleTask"
-43-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:50:13-44
-44            android:resizeableActivity="false"
-44-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:53:13-47
-45            android:screenOrientation="landscape"
-45-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:51:13-50
-46            android:theme="@style/GodotAppSplashTheme" >
-46-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:49:13-55
-47            <intent-filter>
-47-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:59:13-62:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:60:17-69
-48-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:60:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:61:17-77
-50-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:61:27-74
-51            </intent-filter>
-52        </activity>
-53        <!-- Records the version of the Godot editor used for building -->
-54        <meta-data
-55            android:name="org.godotengine.editor.version"
-56            android:value="3.3.stable" /> <!-- Custom application XML added by add-ons. -->
-57        <!-- CHUNK_APPLICATION_BEGIN -->
-58        <!-- CHUNK_APPLICATION_END -->
-59        <meta-data
-59-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:68:1-70:69
-60            android:name="com.google.android.gms.ads.APPLICATION_ID"
-60-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:69:13-69
-61            android:value="ca-app-pub-1712747660566158~3676315461" /> <!-- Records the version of the Godot library -->
-61-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:70:13-67
-62        <meta-data
-62-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:20:9-22:44
-63            android:name="org.godotengine.library.version"
-63-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:21:13-59
-64            android:value="3.3.0.stable" />
-64-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:22:13-41
-65
-66        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-66-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:24:9-80
-66-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:24:18-77
-67
-68        <meta-data
-68-->[GodotAdMob.5.0.0.release.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/f02de1a9a18959f6abfa62e64a8710fc/jetified-GodotAdMob.5.0.0.release/AndroidManifest.xml:14:9-16:82
-69            android:name="org.godotengine.plugin.v1.GodotAdMob"
-69-->[GodotAdMob.5.0.0.release.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/f02de1a9a18959f6abfa62e64a8710fc/jetified-GodotAdMob.5.0.0.release/AndroidManifest.xml:15:13-64
-70            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-70-->[GodotAdMob.5.0.0.release.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/f02de1a9a18959f6abfa62e64a8710fc/jetified-GodotAdMob.5.0.0.release/AndroidManifest.xml:16:13-79
-71        <activity
-71-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:29:9-33:64
-72            android:name="com.google.android.gms.ads.AdActivity"
-72-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:30:13-65
-73            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-73-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:31:13-122
-74            android:exported="false"
-74-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:32:13-37
-75            android:theme="@android:style/Theme.Translucent" />
-75-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:33:13-61
-76
-77        <provider
-77-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:35:9-39:39
-78            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-78-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:36:13-76
-79            android:authorities="org.godotengine.battleofrhiannonnetwork.mobileadsinitprovider"
-79-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:37:13-73
-80            android:exported="false"
-80-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:38:13-37
-81            android:initOrder="100" />
-81-->[com.google.android.gms:play-services-ads-lite:19.3.0] /home/devone/.gradle/caches/transforms-2/files-2.1/fa6cfc23dc860f4dc0df470ff0f1ef13/jetified-play-services-ads-lite-19.3.0/AndroidManifest.xml:39:13-36
-82
-83        <meta-data
-83-->[com.google.android.gms:play-services-basement:17.0.0] /home/devone/.gradle/caches/transforms-2/files-2.1/e5df49c1c3f6c08e72304aa03642d0bd/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-84            android:name="com.google.android.gms.version"
-84-->[com.google.android.gms:play-services-basement:17.0.0] /home/devone/.gradle/caches/transforms-2/files-2.1/e5df49c1c3f6c08e72304aa03642d0bd/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-85            android:value="@integer/google_play_services_version" />
-85-->[com.google.android.gms:play-services-basement:17.0.0] /home/devone/.gradle/caches/transforms-2/files-2.1/e5df49c1c3f6c08e72304aa03642d0bd/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-86    </application>
-87
-88</manifest>
+30    <application
+30-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:5-69:19
+31        android:allowBackup="false"
+31-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:68-95
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.0.0] /home/devone/.gradle/caches/transforms-2/files-2.1/61f903db516e52d8783db3337e87ee1a/core-1.0.0/AndroidManifest.xml:22:18-86
+33        android:debuggable="true"
+34        android:icon="@mipmap/icon"
+34-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:181-208
+35        android:label="@string/godot_project_name_string"
+35-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:18-67
+36        android:requestLegacyExternalStorage="false" >
+36-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:31:136-180
+37        <activity
+37-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:46:9-63:20
+38            android:name="com.godot.game.GodotApp"
+38-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:47:13-37
+39            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+39-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:52:13-141
+40            android:label="@string/godot_project_name_string"
+40-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:48:13-62
+41            android:launchMode="singleTask"
+41-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:50:13-44
+42            android:resizeableActivity="false"
+42-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:53:13-47
+43            android:screenOrientation="landscape"
+43-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:51:13-50
+44            android:theme="@style/GodotAppSplashTheme" >
+44-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:49:13-55
+45            <intent-filter>
+45-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:59:13-62:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:60:17-69
+46-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:60:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:61:17-77
+48-->/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/AndroidManifest.xml:61:27-74
+49            </intent-filter>
+50        </activity>
+51        <!-- Records the version of the Godot editor used for building -->
+52        <meta-data
+53            android:name="org.godotengine.editor.version"
+54            android:value="3.3.stable" /> <!-- Records the version of the Godot library -->
+55        <meta-data
+55-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:20:9-22:44
+56            android:name="org.godotengine.library.version"
+56-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:21:13-59
+57            android:value="3.3.0.stable" />
+57-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:22:13-41
+58
+59        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+59-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:24:9-80
+59-->[godot-lib.debug.aar] /home/devone/.gradle/caches/transforms-2/files-2.1/1bb5bb552ba3c7d30912cd84abcb171c/jetified-godot-lib.debug/AndroidManifest.xml:24:18-77
+60    </application>
+61
+62</manifest>

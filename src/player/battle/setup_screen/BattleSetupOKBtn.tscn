@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/chip/Fonts/battlechip_normal_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/player/battle/setup_screen/battle_setup_ok_btn.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "flash"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.352941 ) ]
+}
+
+[node name="OKBtn" type="Button"]
+margin_left = 299.0
+margin_top = 459.0
+margin_right = 346.0
+margin_bottom = 526.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 1, 0.0235294, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.505882, 1, 1 )
+text = "OK"
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selector" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.111837 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Selector"]
+anims/flash = SubResource( 1 )

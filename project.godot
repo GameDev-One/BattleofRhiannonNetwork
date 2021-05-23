@@ -17,22 +17,22 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "BattleChip",
 "language": "GDScript",
-"path": "res://src/player/battle/MMBNBattleChips/Completed/BattleChips/battlechip_resource.gd"
+"path": "res://src/player/battle/chip/battlechip_resource.gd"
 }, {
 "base": "Resource",
 "class": "BattlechipFolder",
 "language": "GDScript",
-"path": "res://src/player/battle/MMBNBattleChips/Completed/BattlechipFolder/battlechip_folder_resource.gd"
+"path": "res://src/player/battle/chip_fldr/battlechip_folder_resource.gd"
 }, {
 "base": "Spatial",
 "class": "CameraRig",
 "language": "GDScript",
-"path": "res://src/player/camera/camerarig.gd"
+"path": "res://src/player/camera/camera_rig.gd"
 }, {
 "base": "State",
 "class": "CameraState",
 "language": "GDScript",
-"path": "res://src/player/camera/camerastate.gd"
+"path": "res://src/player/camera/camera_state.gd"
 }, {
 "base": "RigidBody",
 "class": "Enemy",
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Joystick",
 "language": "GDScript",
-"path": "res://src/controller/joystick/Joystick.gd"
+"path": "res://src/controller/joystick/joystick.gd"
 }, {
 "base": "Spatial",
 "class": "Mannequiny",
@@ -67,17 +67,17 @@ _global_script_classes=[ {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://src/player/states/playerstate.gd"
+"path": "res://src/player/states/player_state.gd"
 }, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://src/main/statemachine/state.gd"
+"path": "res://src/main/state_machine/state.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://src/main/statemachine/statemachine.gd"
+"path": "res://src/main/state_machine/state_machine.gd"
 } ]
 _global_script_class_icons={
 "AdMob": "res://admob-lib/icon.png",
@@ -100,6 +100,8 @@ _global_script_class_icons={
 
 config/name="Battle of Rhiannon Network"
 run/main_scene="res://main.tscn"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 
 [debug]

@@ -20,10 +20,10 @@ operator = 2
 [sub_resource type="VisualShaderNodeColorConstant" id=5]
 constant = Color( 1, 0.369141, 0, 1 )
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=15]
+[sub_resource type="VisualShaderNodeScalarUniform" id=6]
 uniform_name = "ScalarUniform"
 
-[sub_resource type="VisualShaderNodeInput" id=6]
+[sub_resource type="VisualShaderNodeInput" id=7]
 output_port_for_preview = 0
 input_name = "uv"
 
@@ -123,7 +123,7 @@ graph_offset = Vector2( 21.7349, -195.909 )
 modes/cull = 2
 modes/depth_draw = 3
 nodes/fragment/0/position = Vector2( 1400, 120 )
-nodes/fragment/2/node = SubResource( 6 )
+nodes/fragment/2/node = SubResource( 7 )
 nodes/fragment/2/position = Vector2( -280, 100 )
 nodes/fragment/4/node = SubResource( 8 )
 nodes/fragment/4/position = Vector2( -480, 360 )
@@ -147,7 +147,7 @@ nodes/fragment/13/node = SubResource( 4 )
 nodes/fragment/13/position = Vector2( 1140, 360 )
 nodes/fragment/14/node = SubResource( 5 )
 nodes/fragment/14/position = Vector2( 900, 460 )
-nodes/fragment/15/node = SubResource( 15 )
+nodes/fragment/15/node = SubResource( 6 )
 nodes/fragment/15/position = Vector2( -660, 360 )
 nodes/fragment/connections = PoolIntArray( 4, 0, 5, 0, 5, 0, 6, 0, 2, 0, 7, 0, 7, 0, 8, 0, 6, 0, 8, 1, 8, 0, 9, 0, 8, 0, 10, 0, 10, 0, 11, 1, 11, 0, 12, 0, 12, 0, 13, 0, 14, 0, 13, 1, 13, 0, 0, 5, 15, 0, 4, 0, 9, 0, 0, 1 )
 

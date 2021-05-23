@@ -4,23 +4,6 @@
             "outputFile": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/a7ad5a81b07168db60b339a3a943336d/jetified-play-services-ads-19.3.0/res/values-zh-rTW/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "203,264,339,399,459,523,594",
-                        "endColumns": "60,74,59,59,63,70,61",
-                        "endOffsets": "263,338,398,458,522,593,655"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "348,413,492,556,620,688,763",
-                        "endColumns": "64,78,63,63,67,74,65",
-                        "endOffsets": "408,487,551,615,683,758,824"
-                    }
-                },
-                {
                     "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/61f903db516e52d8783db3337e87ee1a/core-1.0.0/res/values-zh-rTW/values-zh-rTW.xml",
                     "from": {
                         "startLines": "2",
@@ -30,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "11",
+                        "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "829",
+                        "startOffsets": "136",
                         "endColumns": "100",
-                        "endOffsets": "925"
+                        "endOffsets": "232"
                     }
                 },
                 {
@@ -47,28 +30,11 @@
                         "endOffsets": "188"
                     },
                     "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "267",
-                        "endColumns": "80",
-                        "endOffsets": "343"
-                    }
-                },
-                {
-                    "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/e5df49c1c3f6c08e72304aa03642d0bd/jetified-play-services-basement-17.0.0/res/values-zh-rTW/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "161",
-                        "endOffsets": "412"
-                    },
-                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "105",
-                        "endColumns": "161",
-                        "endOffsets": "262"
+                        "startOffsets": "55",
+                        "endColumns": "80",
+                        "endOffsets": "131"
                     }
                 }
             ]

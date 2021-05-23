@@ -1,7 +1,4 @@
 org.godotengine.battleofrhiannonnetwork
-attr adSize
-attr adSizes
-attr adUnitId
 attr alpha
 attr coordinatorLayoutStyle
 attr font
@@ -23,10 +20,6 @@ attr layout_insetEdge
 attr layout_keyline
 attr statusBarBackground
 attr ttcIndex
-color browser_actions_bg_grey
-color browser_actions_divider_color
-color browser_actions_text_color
-color browser_actions_title_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
@@ -34,8 +27,6 @@ color primary_text_default_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
-dimen browser_actions_context_menu_max_width
-dimen browser_actions_context_menu_min_padding
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -90,11 +81,6 @@ id approveCellular
 id async
 id blocking
 id bottom
-id browser_actions_header_text
-id browser_actions_menu_item_icon
-id browser_actions_menu_item_text
-id browser_actions_menu_items
-id browser_actions_menu_view
 id buttonRow
 id cancelButton
 id cancel_action
@@ -157,10 +143,7 @@ id title
 id top
 id wifiSettingsButton
 integer cancel_button_image_alpha
-integer google_play_services_version
 integer status_bar_notification_info_maxnum
-layout browser_actions_context_menu_page
-layout browser_actions_context_menu_row
 layout downloading_expansion
 layout godot_app_layout
 layout notification_action
@@ -182,18 +165,10 @@ layout status_bar_ongoing_event_progress_bar
 mipmap icon
 mipmap icon_background
 mipmap icon_foreground
-string common_google_play_services_unknown_issue
 string godot_project_name_string
 string kilobytes_per_second
 string notification_download_complete
 string notification_download_failed
-string s1
-string s2
-string s3
-string s4
-string s5
-string s6
-string s7
 string state_completed
 string state_connecting
 string state_downloading
@@ -242,11 +217,9 @@ style TextAppearance_Compat_Notification_Time
 style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
 style TextAppearance_Compat_Notification_Title_Media
-style Theme_IAPTheme
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
-styleable AdsAttrs adSize adSizes adUnitId
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline

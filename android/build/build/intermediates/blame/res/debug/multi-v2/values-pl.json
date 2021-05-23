@@ -4,40 +4,6 @@
             "outputFile": "/home/devone/Documents/Godot Projects/GDScript/BattleofRhiannonNetwork/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
             "map": [
                 {
-                    "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/a7ad5a81b07168db60b339a3a943336d/jetified-play-services-ads-19.3.0/res/values-pl/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "199,268,380,448,512,600,714",
-                        "endColumns": "68,111,67,63,87,113,72",
-                        "endOffsets": "267,379,447,511,599,713,786"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "385,458,574,646,714,806,924",
-                        "endColumns": "72,115,71,67,91,117,76",
-                        "endOffsets": "453,569,641,709,801,919,996"
-                    }
-                },
-                {
-                    "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/e5df49c1c3f6c08e72304aa03642d0bd/jetified-play-services-basement-17.0.0/res/values-pl/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "198",
-                        "endOffsets": "445"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "105",
-                        "endColumns": "198",
-                        "endOffsets": "299"
-                    }
-                },
-                {
                     "source": "/home/devone/.gradle/caches/transforms-2/files-2.1/61f903db516e52d8783db3337e87ee1a/core-1.0.0/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "2",
@@ -47,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "11",
+                        "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "1001",
+                        "startOffsets": "136",
                         "endColumns": "100",
-                        "endOffsets": "1097"
+                        "endOffsets": "232"
                     }
                 },
                 {
@@ -64,11 +30,11 @@
                         "endOffsets": "188"
                     },
                     "to": {
-                        "startLines": "3",
+                        "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "304",
+                        "startOffsets": "55",
                         "endColumns": "80",
-                        "endOffsets": "380"
+                        "endOffsets": "131"
                     }
                 }
             ]
