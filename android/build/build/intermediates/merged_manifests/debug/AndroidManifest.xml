@@ -27,8 +27,6 @@
         android:label="@string/godot_project_name_string"
         android:targetPackage="org.godotengine.$genname" />
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <application
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -53,36 +51,12 @@
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="3.3.stable" /> <!-- Custom application XML added by add-ons. -->
-        <!-- CHUNK_APPLICATION_BEGIN -->
-        <!-- CHUNK_APPLICATION_END -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1712747660566158~3676315461" /> <!-- Records the version of the Godot library -->
+            android:value="3.3.stable" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
             android:value="3.3.0.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
-
-        <meta-data
-            android:name="org.godotengine.plugin.v1.GodotAdMob"
-            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent" />
-
-        <provider
-            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="org.godotengine.battleofrhiannonnetwork.mobileadsinitprovider"
-            android:exported="false"
-            android:initOrder="100" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
