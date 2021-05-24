@@ -68,6 +68,6 @@ script = ExtResource( 8 )
 
 [node name="LockOn" type="Node" parent="StateMachine/Camera"]
 script = ExtResource( 7 )
-lock_on_time = 3.0
+lock_on_time = 1.0
 
 [node name="Tween" type="Tween" parent="StateMachine/Camera/LockOn"]

@@ -13,7 +13,4 @@ func _process(delta):
 	
 	if Input.is_action_just_released("ui_action3"):
 		_charge_time = 0.0
-		_state_machine.transition_to("Move/Shoot", {percent_charged = percent_charged})
-
-func physics_process(delta: float) -> void:
-	_parent.physics_process(delta)
+		_state_machine.transition_to("Shoot", {percent_charged = percent_charged})
