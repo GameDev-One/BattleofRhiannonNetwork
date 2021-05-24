@@ -6,7 +6,10 @@ onready var cooldown_timer: Timer = $Cooldown
 
 
 func enter(msg := {}) -> void:
+	skin.transition_to(skin.States.IDLE)
+	
 	if cooldown_timer.is_stopped():
+		
 		if msg.percent_charged > .98:
 			_spawn_bullet(9)
 		elif msg.percent_charged > .3:
@@ -14,7 +17,7 @@ func enter(msg := {}) -> void:
 		else:
 			_spawn_bullet()
 		
-	_state_machine.transition_to("Move/Idle")
+	_state_machine.transition_to("Move/Run")
 	
 func _spawn_bullet(addtl_damage: int = 0) -> void:
 	var instance = bead.instance()

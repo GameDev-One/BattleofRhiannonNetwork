@@ -17,7 +17,6 @@ func physics_process(delta: float) -> void:
 		_state_machine.transition_to("Move/Air")
 
 
-
 func enter(msg: = {}) -> void:
 	skin.transition_to(skin.States.RUN)
 	skin.is_moving = true

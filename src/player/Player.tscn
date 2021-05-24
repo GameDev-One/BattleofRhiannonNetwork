@@ -58,16 +58,16 @@ script = ExtResource( 6 )
 [node name="Run" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 7 )
 
-[node name="Shoot" type="Node" parent="StateMachine/Move"]
-script = ExtResource( 9 )
-
-[node name="Cooldown" type="Timer" parent="StateMachine/Move/Shoot"]
-wait_time = 0.2
-one_shot = true
-
 [node name="Charge" type="Node" parent="StateMachine/Move"]
 script = ExtResource( 10 )
 max_charge_time = 4.0
+
+[node name="Shoot" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Cooldown" type="Timer" parent="StateMachine/Shoot"]
+wait_time = 0.15
+one_shot = true
 
 [node name="Battle" type="Node" parent="StateMachine"]
 script = ExtResource( 11 )
