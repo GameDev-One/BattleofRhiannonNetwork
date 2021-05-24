@@ -14,7 +14,7 @@ func enter(msg := {}) -> void:
 		else:
 			_spawn_bullet()
 		
-	_state_machine.transition_to("Move/Idle")
+	_state_machine.transition_to("Move/Run")
 	
 func _spawn_bullet(addtl_damage: int = 0) -> void:
 	var instance = bead.instance()
