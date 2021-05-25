@@ -117,7 +117,9 @@ pressed_color = Color( 0.74902, 0.74902, 1, 1 )
 
 [node name="BattleSetupScreen" parent="Player/UI/TouchControls" instance=ExtResource( 9 )]
 margin_left = -450.0
+margin_top = -500.0
 margin_right = 290.0
+margin_bottom = -60.0
 
 [node name="HealthBar" type="ProgressBar" parent="Player/UI"]
 anchor_left = 0.5
