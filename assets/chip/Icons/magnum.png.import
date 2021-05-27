@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree_log.png-e132c084d500b0b2ec2d6237a89cc6f0.stex"
+path="res://.import/magnum.png-b967e09fa7d00e57f7a0ac44341fa89d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chip/Icons/tree_log.png"
-dest_files=[ "res://.import/tree_log.png-e132c084d500b0b2ec2d6237a89cc6f0.stex" ]
+source_file="res://assets/chip/Icons/magnum.png"
+dest_files=[ "res://.import/magnum.png-b967e09fa7d00e57f7a0ac44341fa89d.stex" ]
 
 [params]
 

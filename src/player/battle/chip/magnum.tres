@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/player/battle/chip/battlechip_resource.gd" type="Script" id=1]
+[ext_resource path="res://assets/chip/Icons/magnum.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Magnum"
+element = 3
+damage = 40
+icon_image = ExtResource( 2 )
+rank = "M"
+description = ""

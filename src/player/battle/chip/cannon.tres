@@ -3,14 +3,17 @@
 [ext_resource path="res://src/bead/Bead.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/player/battle/chip/battlechip_resource.gd" type="Script" id=2]
 [ext_resource path="res://assets/prototype-textures/default_chip_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/chip/MMBN_Chip_Cannon.png" type="Texture" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/MMBN_Chip_Cannon.png-3aaab4de7c6eac300dc696d8ac25c742.stex"
 
 [resource]
 script = ExtResource( 2 )
 name = "Cannon"
 element = 3
 damage = 30
-full_image = ExtResource( 4 )
+full_image = SubResource( 1 )
 icon_image = ExtResource( 3 )
 rank = "N"
 projectile = ExtResource( 1 )
