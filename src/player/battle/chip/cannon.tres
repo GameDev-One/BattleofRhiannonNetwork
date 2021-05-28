@@ -6,7 +6,6 @@
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/MMBN_Chip_Cannon.png-3aaab4de7c6eac300dc696d8ac25c742.stex"
 
 [resource]
 script = ExtResource( 2 )
