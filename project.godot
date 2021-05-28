@@ -122,6 +122,10 @@ window/stretch/aspect="keep"
 
 script_templates_search_path="res://src/main/script_templates"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Trail/plugin.cfg" )
+
 [input]
 
 ui_action1={

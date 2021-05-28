@@ -3,6 +3,7 @@ extends Sprite3D
 onready var enemy: RigidBody = get_parent()
 onready var _viewport: Viewport = $Viewport
 onready var health_bar: ProgressBar = $Viewport/HealthBar
+onready var tween: Tween = $Tween
 
 func _ready():
 	texture = _viewport.get_texture()
@@ -14,4 +15,12 @@ func _ready():
 
 func _on_health_changed():
 	health_bar.show()
-	health_bar.value = enemy.health
+	tween.interpolate_property(
+		health_bar,
+		"value", 
+		health_bar.value, 
+		enemy.health, 
+		1.0,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN)
+	tween.start()

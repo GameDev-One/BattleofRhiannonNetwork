@@ -1,0 +1,280 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://assets/chip/vfx/circle_01.png" type="Texture" id=1]
+[ext_resource path="res://assets/chip/vfx/scorch_01.png" type="Texture" id=2]
+[ext_resource path="res://MotionTrail/MotionTrail.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/magnum.gd" type="Script" id=4]
+[ext_resource path="res://assets/chip/vfx/circle_03.png" type="Texture" id=5]
+[ext_resource path="res://assets/chip/vfx/star_09.png" type="Texture" id=6]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="Gradient" id=12]
+offsets = PoolRealArray( 0, 0.56701, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="Curve" id=14]
+max_value = 2.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 2 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+gravity = Vector3( 0, 0, 0 )
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=18]
+material = SubResource( 17 )
+size = Vector2( 0.3, 0.3 )
+
+[sub_resource type="Gradient" id=23]
+offsets = PoolRealArray( 0, 0.518041, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 23 )
+
+[sub_resource type="Curve" id=24]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.234091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
+
+[sub_resource type="ParticlesMaterial" id=19]
+direction = Vector3( 0, 3.5, -2 )
+initial_velocity = 4.0
+initial_velocity_random = 0.5
+scale_curve = SubResource( 25 )
+color_ramp = SubResource( 22 )
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_cull_mode = 2
+
+[sub_resource type="SphereMesh" id=21]
+material = SubResource( 20 )
+radius = 0.04
+height = 0.08
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.00515464, 0.512887, 1 )
+colors = PoolColorArray( 0.587402, 0.587402, 0.587402, 1, 1, 1, 1, 1, 0.587402, 0.587402, 0.587402, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.703409 ), 0.0, 0.0, 0, 0, Vector2( 0.501217, 0.985227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.703409 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 90.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
+size = Vector2( 1.5, 1.5 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=10]
+material = SubResource( 9 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0, 0.288462, 0.716346, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0.2, 1, 1, 1, 0 )
+
+[sub_resource type="Gradient" id=32]
+offsets = PoolRealArray( 0, 0.551546 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=33]
+gradient = SubResource( 32 )
+
+[sub_resource type="Curve" id=27]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0863637 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=28]
+curve = SubResource( 27 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+gravity = Vector3( 0, 0, 0 )
+scale_curve = SubResource( 28 )
+color_ramp = SubResource( 33 )
+
+[sub_resource type="SpatialMaterial" id=30]
+flags_transparent = true
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="QuadMesh" id=31]
+material = SubResource( 30 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="Curve" id=37]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=38]
+curve = SubResource( 37 )
+
+[sub_resource type="ParticlesMaterial" id=34]
+gravity = Vector3( 0, 0, 0 )
+scale_curve = SubResource( 38 )
+
+[sub_resource type="SpatialMaterial" id=35]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=36]
+material = SubResource( 35 )
+
+[node name="Magnum" type="RigidBody"]
+collision_layer = 0
+mass = 0.01
+gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+axis_lock_linear_y = true
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 1 )
+
+[node name="Anticipation" type="Particles" parent="."]
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+local_coords = false
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 18 )
+
+[node name="LevelOne" type="Particles" parent="Anticipation"]
+emitting = false
+amount = 6
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.9
+local_coords = false
+process_material = SubResource( 19 )
+draw_pass_1 = SubResource( 21 )
+
+[node name="Body" type="Particles" parent="."]
+amount = 1
+lifetime = 15.0
+process_material = SubResource( 6 )
+draw_passes = 2
+draw_pass_1 = SubResource( 8 )
+draw_pass_2 = SubResource( 10 )
+
+[node name="OmniLight" type="OmniLight" parent="Body"]
+light_color = Color( 0.87451, 1, 0, 1 )
+omni_range = 1.3
+
+[node name="MotionTrail" parent="Body" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+cast_shadow = 0
+toWidth = 0.01
+lifespan = 0.4
+scaleTexture = false
+startColor = Color( 1, 1, 1, 0.156863 )
+color_gradient = SubResource( 11 )
+
+[node name="Impact" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0 )
+emitting = false
+amount = 1
+lifetime = 0.3
+one_shot = true
+process_material = SubResource( 29 )
+draw_pass_1 = SubResource( 31 )
+
+[node name="LevelOne" type="Particles" parent="Impact"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+emitting = false
+amount = 24
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.9
+local_coords = false
+process_material = SubResource( 19 )
+draw_pass_1 = SubResource( 21 )
+
+[node name="LevelTwo" type="Particles" parent="Impact"]
+emitting = false
+amount = 1
+lifetime = 0.3
+one_shot = true
+process_material = SubResource( 34 )
+draw_pass_1 = SubResource( 36 )
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]
