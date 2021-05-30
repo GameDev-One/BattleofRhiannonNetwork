@@ -99,10 +99,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Battle of Rhiannon Network"
-run/main_scene="res://main.tscn"
+run/main_scene="res://src/ui/TitleScreen.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneChanger="*res://src/main/scene_changer.gd"
 
 [debug]
 
