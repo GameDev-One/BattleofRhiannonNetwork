@@ -5,7 +5,7 @@
 [ext_resource path="res://src/level/BasicLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/mech_drone/MechDrone.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/player/battle/chip/projectile/magnum/Magnum.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/ui/debug/debug_out.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/joystick/cannon_ball.png" type="Texture" id=7]
 [ext_resource path="res://assets/joystick/power-generator.png" type="Texture" id=8]
 [ext_resource path="res://src/player/battle/setup_screen/BattleSetupScreen.tscn" type="PackedScene" id=9]
@@ -155,6 +155,10 @@ text = "??? / ???"
 align = 1
 valign = 1
 
+[node name="DebugOut" parent="Player/UI" instance=ExtResource( 6 )]
+margin_right = 450.0
+margin_bottom = 850.0
+
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
@@ -219,11 +223,9 @@ max_health = 50
 player = NodePath("../Player")
 navigation = NodePath("../Navigation")
 
-[node name="Magnum" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68405, 2.04042, 0.554837 )
-
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.80447, 0 )
+visible = false
 extents = Vector3( 29.4554, 6.24803, 24.3274 )
 data = SubResource( 3 )
 

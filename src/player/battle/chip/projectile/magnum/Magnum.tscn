@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/chip/vfx/circle_01_alpha.png" type="Texture" id=1]
 [ext_resource path="res://assets/chip/vfx/scorch_01.png" type="Texture" id=2]
@@ -6,27 +6,13 @@
 [ext_resource path="res://src/player/battle/chip/projectile/magnum/magnum.gd" type="Script" id=4]
 [ext_resource path="res://assets/chip/vfx/circle_03.png" type="Texture" id=5]
 [ext_resource path="res://assets/chip/vfx/star_09.png" type="Texture" id=6]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/impact_level_two.tres" type="Material" id=7]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/anticipation_level_one.tres" type="Material" id=8]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/body.tres" type="Material" id=9]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/anticipation.tres" type="Material" id=10]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/impact.tres" type="Material" id=11]
 
 [sub_resource type="SphereShape" id=1]
-
-[sub_resource type="Gradient" id=12]
-offsets = PoolRealArray( 0, 0.56701, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
-
-[sub_resource type="Curve" id=14]
-max_value = 2.0
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 2 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
-
-[sub_resource type="ParticlesMaterial" id=16]
-gravity = Vector3( 0, 0, 0 )
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 13 )
 
 [sub_resource type="SpatialMaterial" id=17]
 flags_transparent = true
@@ -43,26 +29,6 @@ albedo_texture = ExtResource( 5 )
 material = SubResource( 17 )
 size = Vector2( 0.3, 0.3 )
 
-[sub_resource type="Gradient" id=23]
-offsets = PoolRealArray( 0, 0.518041, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=22]
-gradient = SubResource( 23 )
-
-[sub_resource type="Curve" id=24]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.234091 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=25]
-curve = SubResource( 24 )
-
-[sub_resource type="ParticlesMaterial" id=39]
-direction = Vector3( 0, 3.5, -2 )
-initial_velocity = 4.0
-initial_velocity_random = 0.5
-scale_curve = SubResource( 25 )
-color_ramp = SubResource( 22 )
-
 [sub_resource type="SpatialMaterial" id=40]
 flags_transparent = true
 flags_unshaded = true
@@ -73,25 +39,6 @@ params_cull_mode = 2
 material = SubResource( 40 )
 radius = 0.04
 height = 0.08
-
-[sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0.00515464, 0.512887, 1 )
-colors = PoolColorArray( 0.587402, 0.587402, 0.587402, 1, 1, 1, 1, 1, 0.587402, 0.587402, 0.587402, 1 )
-
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
-
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 0.703409 ), 0.0, 0.0, 0, 0, Vector2( 0.501217, 0.985227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.703409 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
-
-[sub_resource type="ParticlesMaterial" id=6]
-gravity = Vector3( 0, 0, 0 )
-angular_velocity = 90.0
-scale_curve = SubResource( 5 )
-color_ramp = SubResource( 3 )
 
 [sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
@@ -130,24 +77,6 @@ size = Vector2( 2, 2 )
 offsets = PoolRealArray( 0, 0.288462, 0.716346, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0.2, 1, 1, 1, 0 )
 
-[sub_resource type="Gradient" id=32]
-offsets = PoolRealArray( 0, 0.551546 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=33]
-gradient = SubResource( 32 )
-
-[sub_resource type="Curve" id=27]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0863637 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=28]
-curve = SubResource( 27 )
-
-[sub_resource type="ParticlesMaterial" id=29]
-gravity = Vector3( 0, 0, 0 )
-scale_curve = SubResource( 28 )
-color_ramp = SubResource( 33 )
-
 [sub_resource type="SpatialMaterial" id=30]
 flags_transparent = true
 flags_unshaded = true
@@ -162,16 +91,6 @@ albedo_texture = ExtResource( 6 )
 [sub_resource type="QuadMesh" id=31]
 material = SubResource( 30 )
 size = Vector2( 2, 2 )
-
-[sub_resource type="Curve" id=37]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=38]
-curve = SubResource( 37 )
-
-[sub_resource type="ParticlesMaterial" id=43]
-gravity = Vector3( 0, 0, 0 )
-scale_curve = SubResource( 38 )
 
 [sub_resource type="SpatialMaterial" id=44]
 flags_transparent = true
@@ -212,7 +131,7 @@ amount = 1
 lifetime = 0.5
 one_shot = true
 local_coords = false
-process_material = SubResource( 16 )
+process_material = ExtResource( 10 )
 draw_pass_1 = SubResource( 18 )
 
 [node name="LevelOne" type="Particles" parent="Anticipation"]
@@ -222,14 +141,14 @@ lifetime = 0.4
 one_shot = true
 explosiveness = 0.9
 local_coords = false
-process_material = SubResource( 39 )
+process_material = ExtResource( 8 )
 draw_pass_1 = SubResource( 41 )
 
 [node name="Body" type="Particles" parent="."]
 use_in_baked_light = true
 amount = 1
 lifetime = 15.0
-process_material = SubResource( 6 )
+process_material = ExtResource( 9 )
 draw_passes = 2
 draw_pass_1 = SubResource( 8 )
 draw_pass_2 = SubResource( 10 )
@@ -254,7 +173,7 @@ emitting = false
 amount = 1
 lifetime = 0.3
 one_shot = true
-process_material = SubResource( 29 )
+process_material = ExtResource( 11 )
 draw_pass_1 = SubResource( 31 )
 
 [node name="LevelOne" type="Particles" parent="Impact"]
@@ -265,7 +184,7 @@ lifetime = 0.4
 one_shot = true
 explosiveness = 0.9
 local_coords = false
-process_material = SubResource( 39 )
+process_material = ExtResource( 8 )
 draw_pass_1 = SubResource( 41 )
 
 [node name="LevelTwo" type="Particles" parent="Impact"]
@@ -273,7 +192,7 @@ emitting = false
 amount = 1
 lifetime = 0.3
 one_shot = true
-process_material = SubResource( 43 )
+process_material = ExtResource( 7 )
 draw_pass_1 = SubResource( 45 )
 
 [node name="Lifetime" type="Timer" parent="."]
