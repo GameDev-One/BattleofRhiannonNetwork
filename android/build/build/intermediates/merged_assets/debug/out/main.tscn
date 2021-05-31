@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/level/BasicLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/mech_drone/MechDrone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/ui/debug/debug_out.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/joystick/cannon_ball.png" type="Texture" id=7]
 [ext_resource path="res://assets/joystick/power-generator.png" type="Texture" id=8]
 [ext_resource path="res://src/player/battle/setup_screen/BattleSetupScreen.tscn" type="PackedScene" id=9]
@@ -153,6 +154,10 @@ custom_fonts/font = ExtResource( 10 )
 text = "??? / ???"
 align = 1
 valign = 1
+
+[node name="DebugOut" parent="Player/UI" instance=ExtResource( 6 )]
+margin_right = 450.0
+margin_bottom = 850.0
 
 [node name="Navigation" type="Navigation" parent="."]
 

@@ -106,6 +106,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+ParticleCache="*res://src/main/particle_cache.gd"
 SceneChanger="*res://src/main/scene_changer.gd"
 
 [debug]
@@ -152,7 +153,6 @@ ui_action4={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
 
 [physics]
 
