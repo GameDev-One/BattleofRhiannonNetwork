@@ -19,12 +19,6 @@ script = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[node name="Area" type="Area" parent="."]
-collision_layer = 0
-
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 1 )
-
 [node name="Anticipation" parent="." instance=ExtResource( 5 )]
 
 [node name="Body" parent="." instance=ExtResource( 3 )]

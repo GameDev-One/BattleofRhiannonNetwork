@@ -8,6 +8,7 @@ var magnum_body = preload("res://src/player/battle/chip/projectile/magnum/partic
 var magnum_impact = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/Impact.tscn")
 var magnum_impact_level_one = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/ImpactLevelOne.tscn")
 var magnum_impact_level_two = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/ImpactLevelTwo.tscn")
+var soapie_body = preload("res://src/player/battle/chip/projectile/soapie/particle_materials/Body.tscn")
 
 var particles: Array = [
 	magnum_anticipation,
@@ -16,6 +17,7 @@ var particles: Array = [
 	magnum_impact,
 	magnum_impact_level_one,
 	magnum_impact_level_two,
+	soapie_body
 ]
 
 var progress: float = 0.0
