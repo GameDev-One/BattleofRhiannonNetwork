@@ -4,9 +4,9 @@ extends RigidBody
 export var speed: float = 10.0
 export var damage: int = 1
 
-onready var _anticipation: Particles = $Anticipation
-onready var _body: Particles = $Body
-onready var _impact: Particles = $Impact
+onready var _anticipation: CPUParticles = $Anticipation
+onready var _body: CPUParticles = $Body
+onready var _impact: CPUParticles = $Impact
 
 onready var _lifetime: Timer = $Lifetime
 

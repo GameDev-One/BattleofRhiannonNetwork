@@ -1,20 +1,33 @@
-[gd_resource type="ParticlesMaterial" load_steps=5 format=2]
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.00515464, 0.512887, 1 )
-colors = PoolColorArray( 0.587402, 0.587402, 0.587402, 1, 1, 1, 1, 1, 0.587402, 0.587402, 0.587402, 1 )
+[ext_resource path="res://assets/chip/vfx/circle_01_alpha.png" type="Texture" id=1]
+[ext_resource path="res://assets/chip/vfx/scorch_01.png" type="Texture" id=2]
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-
-[sub_resource type="Curve" id=3]
-_data = [ Vector2( 0, 0.703409 ), 0.0, 0.0, 0, 0, Vector2( 0.501217, 0.985227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.703409 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
 
 [resource]
-gravity = Vector3( 0, 0, 0 )
-angular_velocity = 90.0
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
+next_pass = SubResource( 1 )
+flags_transparent = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false

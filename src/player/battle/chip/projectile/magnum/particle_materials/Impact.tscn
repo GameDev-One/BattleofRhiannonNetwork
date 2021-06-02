@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/chip/vfx/scorch_01.png" type="Texture" id=1]
+[ext_resource path="res://assets/chip/vfx/star_09.png" type="Texture" id=2]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/ImpactLevelOne.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/ImpactLevelTwo.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0863637 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.551546 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.518041, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Impact" type="CPUParticles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0 )
+emitting = false
+amount = 1
+lifetime = 0.3
+one_shot = true
+mesh = SubResource( 2 )
+gravity = Vector3( 0, 0, 0 )
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
+
+[node name="LevelOne" parent="." instance=ExtResource( 3 )]
+scale_amount_curve = null
+color_ramp = SubResource( 5 )
+
+[node name="LevelTwo" parent="." instance=ExtResource( 4 )]
+mesh = SubResource( 7 )
+scale_amount_curve = SubResource( 8 )

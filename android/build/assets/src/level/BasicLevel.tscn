@@ -40,6 +40,7 @@ uv1_triplanar = true
 [node name="BasicLevel" type="Spatial"]
 
 [node name="Floor" type="CSGBox" parent="."]
+use_in_baked_light = true
 use_collision = true
 width = 40.0
 height = 1.0
