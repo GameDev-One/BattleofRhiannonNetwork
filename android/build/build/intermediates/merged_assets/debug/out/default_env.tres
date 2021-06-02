@@ -5,10 +5,8 @@
 [resource]
 background_mode = 3
 background_sky = SubResource( 1 )
-background_color = Color( 0.470588, 0.470588, 0.470588, 1 )
-ambient_light_color = Color( 1, 1, 1, 1 )
+background_color = Color( 0.270588, 0.270588, 0.270588, 1 )
 tonemap_exposure = 0.5
-glow_intensity = 0.7
 glow_strength = 0.7
 glow_bloom = 0.25
 glow_blend_mode = 0

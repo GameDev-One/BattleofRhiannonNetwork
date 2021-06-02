@@ -208,9 +208,8 @@ navigation = NodePath("../Navigation")
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -1, 0, 0, 0, -0.746313, 0.665595, 0, -0.665595, -0.746313, 0, 18.8274, 0 )
-light_energy = 0.3
+light_energy = 0.5
 shadow_enabled = true
-directional_shadow_mode = 0
 
 [editable path="Player/UI/TouchControls/Joystick"]
 [editable path="Player/UI/TouchControls/Joystick2"]

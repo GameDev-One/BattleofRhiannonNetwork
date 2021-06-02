@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/player/battle/chip/projectile/soapie/particle_materials/bubble_mesh.tres" type="SphereMesh" id=1]
+[ext_resource path="res://src/player/battle/chip/projectile/soapie/particle_materials/bubble.material" type="Material" id=2]
+
+[sub_resource type="SphereMesh" id=1]
+material = ExtResource( 2 )
+
+[node name="Body" type="CPUParticles"]
+emitting = false
+amount = 1
+mesh = ExtResource( 1 )
+gravity = Vector3( 0, 0, 0 )
+
+[node name="Trail" type="CPUParticles" parent="."]
+emitting = false
+amount = 3
+one_shot = true
+local_coords = false
+mesh = SubResource( 1 )
+gravity = Vector3( 0, 2.7, 0 )
+scale_amount = 0.1

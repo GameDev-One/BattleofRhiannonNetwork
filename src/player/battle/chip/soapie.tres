@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://src/player/battle/chip/battlechip_resource.gd" type="Script" id=1]
+[ext_resource path="res://assets/chip/Icons/soapie.png" type="Texture" id=2]
+[ext_resource path="res://src/player/battle/chip/projectile/soapie/Soapie.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Soapie"
+element = 0
+damage = 30
+icon_image = ExtResource( 2 )
+rank = "S"
+projectile = ExtResource( 3 )
+description = ""

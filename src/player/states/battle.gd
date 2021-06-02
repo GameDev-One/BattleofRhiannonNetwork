@@ -21,7 +21,7 @@ func exit() -> void:
 
 func _spawn_projectile(chip: BattleChip) -> void:
 	var instance = chip.projectile.instance()
-	add_child(instance)
 	instance.global_transform = player.muzzle.global_transform
 	instance.damage = chip.damage
 	instance.is_shot = true
+	add_child(instance)

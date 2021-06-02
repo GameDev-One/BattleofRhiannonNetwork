@@ -2,14 +2,15 @@ extends RigidBody
 
 
 export var speed: float = 10.0
-export var damage: int = 1
 
 onready var _anticipation: CPUParticles = $Anticipation
 onready var _body: CPUParticles = $Body
 onready var _impact: CPUParticles = $Impact
 
 onready var _lifetime: Timer = $Lifetime
+onready var _collision_shape: CollisionShape = $CollisionShape
 
+var damage: int = 0
 var is_shot: bool = false
 
 
@@ -29,6 +30,7 @@ func _on_body_entered(body):
 		body.health -= damage
 		body.dmg_ind_particles.value = damage
 		_body.hide()
+		_collision_shape.disabled = true
 		_emit_impact()
 	else:
 		queue_free()
@@ -46,6 +48,5 @@ func _emit_anticipation() -> void:
 
 func _emit_impact() -> void:
 	_impact.emitting = true
-#	yield(get_tree().create_timer(_impact.lifetime), "timeout")
 	for p in _impact.get_children():
 		p.emitting = true
