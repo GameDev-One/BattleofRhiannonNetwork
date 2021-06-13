@@ -1,15 +1,8 @@
-extends RigidBody
+extends Projectile
 
-export var speed: float = 10.0
 
-onready var _body: CPUParticles = $Body
 onready var _trail: CPUParticles = $Body/Trail
-onready var _anticipation: CPUParticles = $Anticipation
-onready var _impact: CPUParticles =$Impact
-onready var _collison_shape: CollisionShape = $CollisionShape
 
-var damage: int = 0
-var is_shot: bool = false
 
 func _ready():
 	set_as_toplevel(true)
@@ -28,8 +21,9 @@ func _on_Soapie_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.health -= damage
 		body.dmg_ind_particles.value = damage
-		_collison_shape.disabled = true
+		_collision_shape.disabled = true
 		_body.hide()
+		_impact.global_transform.origin = _collision_pt
 		_emit_impact()
 	else:
 		queue_free()

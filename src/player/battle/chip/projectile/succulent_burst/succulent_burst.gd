@@ -26,7 +26,7 @@ func _on_SucculentBurst_body_entered(body):
 		body.dmg_ind_particles.value = damage
 		_collision_shape.disabled = true
 		_body.hide()
-		_impact.global_transform.origin = body.global_transform.origin + Vector3(0,1,0)
+		_impact.global_transform.origin = _collision_pt
 		_emit_impact()
 	else:
 		queue_free()

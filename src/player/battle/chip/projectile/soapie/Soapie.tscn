@@ -15,6 +15,10 @@ contacts_reported = 1
 contact_monitor = true
 axis_lock_linear_y = true
 script = ExtResource( 1 )
+collision_shape = NodePath("CollisionShape")
+anticipation_path = NodePath("Anticipation")
+body_path = NodePath("Body")
+impact_path = NodePath("Impact")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )

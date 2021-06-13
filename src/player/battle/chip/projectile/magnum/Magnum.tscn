@@ -6,6 +6,7 @@
 [ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/Anticipation.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SphereShape" id=1]
+radius = 0.25
 
 [node name="Magnum" type="RigidBody"]
 collision_layer = 0
@@ -15,6 +16,10 @@ contacts_reported = 1
 contact_monitor = true
 axis_lock_linear_y = true
 script = ExtResource( 4 )
+collision_shape = NodePath("CollisionShape")
+anticipation_path = NodePath("Anticipation")
+body_path = NodePath("Body")
+impact_path = NodePath("Impact")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
