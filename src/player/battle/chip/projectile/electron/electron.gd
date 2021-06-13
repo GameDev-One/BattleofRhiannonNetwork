@@ -19,6 +19,8 @@ func _physics_process(delta):
 
 func _emit_anticipation() -> void:
 	_anticipation.emitting = true
+	for p in _anticipation.get_children():
+		p.emitting = true
 	yield(get_tree().create_timer(_anticipation.lifetime), "timeout")
 	set_physics_process(true)
 
@@ -45,3 +47,7 @@ func _emit_impact() -> void:
 	yield(get_tree().create_timer(_anticipation.lifetime), "timeout")
 	for p in _impact.get_children():
 		p.emitting = true
+
+
+func _on_Timer_timeout():
+	queue_free()

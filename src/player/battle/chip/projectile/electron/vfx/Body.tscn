@@ -68,8 +68,9 @@ tracks/0/keys = {
 }
 
 [node name="Body" type="CPUParticles"]
+emitting = false
 amount = 1
-lifetime = 15.0
+lifetime = 3.0
 draw_order = 2
 mesh = ExtResource( 3 )
 gravity = Vector3( 0, 0, 0 )
