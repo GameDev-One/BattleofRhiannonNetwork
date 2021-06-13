@@ -1,17 +1,4 @@
-extends RigidBody
-
-
-export var speed: float = 10.0
-
-onready var _anticipation: CPUParticles = $Anticipation
-onready var _body: CPUParticles = $Body
-onready var _impact: CPUParticles = $Impact
-
-onready var _lifetime: Timer = $Lifetime
-onready var _collision_shape: CollisionShape = $CollisionShape
-
-var damage: int = 0
-var is_shot: bool = false
+extends Projectile
 
 
 func _ready():
@@ -29,6 +16,11 @@ func _on_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.health -= damage
 		body.dmg_ind_particles.value = damage
+		_body.hide()
+		_collision_shape.disabled = true
+		_impact.global_transform.origin = _collision_pt
+		_emit_impact()
+	elif body.is_in_group("Wall"):
 		_body.hide()
 		_collision_shape.disabled = true
 		_emit_impact()

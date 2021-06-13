@@ -22,7 +22,6 @@ script = ExtResource( 2 )
 
 [node name="ClippedCamera" type="ClippedCamera" parent="."]
 current = true
-far = 50.0
 
 [node name="AimRay" type="RayCast" parent="ClippedCamera"]
 transform = Transform( 1, 0, 0, 0, 0.999847, 0.0174524, 0, -0.0174524, 0.999847, 0, -0.194905, -0.679715 )

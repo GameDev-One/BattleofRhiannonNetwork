@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/player/battle/chip/projectile/electron/electron.gd" type="Script" id=1]
+[ext_resource path="res://src/player/battle/chip/projectile/electron/vfx/Anticipation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/player/battle/chip/projectile/electron/vfx/Body.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/player/battle/chip/projectile/electron/vfx/Impact.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.3
+
+[node name="Electron" type="RigidBody"]
+collision_layer = 0
+mass = 0.01
+gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource( 1 )
+speed = 15.0
+collision_shape = NodePath("CollisionShape")
+anticipation_path = NodePath("Anticipation")
+body_path = NodePath("Body")
+impact_path = NodePath("Impact")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Anticipation" parent="." instance=ExtResource( 2 )]
+
+[node name="Body" parent="." instance=ExtResource( 3 )]
+
+[node name="Impact" parent="." instance=ExtResource( 4 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_Electron_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -5,8 +5,10 @@
 [ext_resource path="res://assets/prototype-textures/purple.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
 params_grow = true
 params_grow_amount = 0.0
+albedo_color = Color( 1, 1, 1, 0.521569 )
 albedo_texture = ExtResource( 2 )
 emission_enabled = true
 emission = Color( 1, 1, 1, 1 )

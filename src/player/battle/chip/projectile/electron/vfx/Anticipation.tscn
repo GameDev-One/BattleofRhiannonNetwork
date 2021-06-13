@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/chip/vfx/circle_03.png" type="Texture" id=1]
+[ext_resource path="res://src/player/battle/chip/projectile/electron/electron_color_gradient.tres" type="Gradient" id=2]
+[ext_resource path="res://assets/chip/vfx/electric.png" type="Texture" id=3]
+[ext_resource path="res://assets/chip/vfx/flare_01.png" type="Texture" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+max_value = 2.0
+_data = [ Vector2( 0, 2 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.277273 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 0.25, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[node name="Anticipation" type="CPUParticles"]
+emitting = false
+amount = 1
+lifetime = 0.4
+one_shot = true
+mesh = SubResource( 2 )
+gravity = Vector3( 0, 0, 0 )
+scale_amount_curve = SubResource( 3 )
+color_ramp = ExtResource( 2 )
+
+[node name="LevelOne" type="CPUParticles" parent="."]
+emitting = false
+amount = 10
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.5
+mesh = SubResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 1.5
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+linear_accel = 100.0
+radial_accel = -30.0
+color_ramp = ExtResource( 2 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+emitting = false
+amount = 1
+lifetime = 0.4
+one_shot = true
+mesh = SubResource( 7 )
+gravity = Vector3( 0, 0, 0 )

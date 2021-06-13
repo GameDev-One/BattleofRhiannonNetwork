@@ -3,27 +3,35 @@ extends Node
 signal loaded
 
 var magnum_anticipation = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/Anticipation.tscn")
-var magnum_anticipation_level_one = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/AnticipationLevelOne.tscn")
 var magnum_body = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/Body.tscn")
 var magnum_impact = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/Impact.tscn")
-var magnum_impact_level_one = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/ImpactLevelOne.tscn")
-var magnum_impact_level_two = preload("res://src/player/battle/chip/projectile/magnum/particle_materials/ImpactLevelTwo.tscn")
 
 var soapie_anticipation = preload("res://src/player/battle/chip/projectile/soapie/particle_materials/Anticipation.tscn")
 var soapie_body = preload("res://src/player/battle/chip/projectile/soapie/particle_materials/Body.tscn")
 var soapie_impact = preload("res://src/player/battle/chip/projectile/soapie/particle_materials/Impact.tscn")
 
+var succulent_burst_anticipation = preload("res://src/player/battle/chip/projectile/succulent_burst/particle_materials/Anticipation.tscn")
+var succulent_burst_body = preload("res://src/player/battle/chip/projectile/succulent_burst/particle_materials/Body.tscn")
+var succulent_burst_impact = preload("res://src/player/battle/chip/projectile/succulent_burst/particle_materials/Impact.tscn")
+
+var electron_anticipation = preload("res://src/player/battle/chip/projectile/electron/vfx/Anticipation.tscn")
+var electron_body = preload("res://src/player/battle/chip/projectile/electron/vfx/Body.tscn")
+var electron_impact = preload("res://src/player/battle/chip/projectile/electron/vfx/Impact.tscn")
+
 
 var particles: Array = [
 	magnum_anticipation,
-	magnum_anticipation_level_one,
 	magnum_body,
 	magnum_impact,
-	magnum_impact_level_one,
-	magnum_impact_level_two,
 	soapie_anticipation,
 	soapie_body,
-	soapie_impact
+	soapie_impact,
+	succulent_burst_anticipation,
+	succulent_burst_body,
+	succulent_burst_impact,
+	electron_anticipation,
+	electron_body,
+	electron_impact,
 ]
 
 var progress: float = 0.0
