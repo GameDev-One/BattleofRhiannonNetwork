@@ -18,6 +18,10 @@ var electron_anticipation = preload("res://src/player/battle/chip/projectile/ele
 var electron_body = preload("res://src/player/battle/chip/projectile/electron/vfx/Body.tscn")
 var electron_impact = preload("res://src/player/battle/chip/projectile/electron/vfx/Impact.tscn")
 
+var incinerate_anticipation = preload("res://src/player/battle/chip/projectile/incinerate/vfx/Anticipation.tscn")
+var incinerate_body = preload("res://src/player/battle/chip/projectile/incinerate/vfx/Body.tscn")
+var incinerate_impact = preload("res://src/player/battle/chip/projectile/incinerate/vfx/Impact.tscn")
+
 
 var particles: Array = [
 	magnum_anticipation,
@@ -32,6 +36,9 @@ var particles: Array = [
 	electron_anticipation,
 	electron_body,
 	electron_impact,
+	incinerate_anticipation,
+	incinerate_body,
+	incinerate_impact,
 ]
 
 var progress: float = 0.0

@@ -34,4 +34,9 @@ shape = SubResource( 1 )
 
 [node name="Impact" parent="." instance=ExtResource( 4 )]
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_Incinerate_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
