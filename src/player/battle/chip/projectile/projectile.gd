@@ -27,6 +27,8 @@ func _ready():
 func _physics_process(delta):
 	if is_shot:
 		apply_impulse(transform.basis.z, -transform.basis.z * speed / 100)
+		is_shot = false
+		_emit_body()
 
 func _integrate_forces(state):
 	if state.get_contact_count():
@@ -34,12 +36,22 @@ func _integrate_forces(state):
 
 
 func _emit_anticipation() -> void:
-	_anticipation.emitting = true
-	for p in _anticipation.get_children():
-		p.emitting = true
+	if _anticipation:
+		_anticipation.emitting = true
+		for p in _anticipation.get_children():
+			p.emitting = true
+
+
+func _emit_body() -> void:
+	if _body:
+		_body.emitting = true
+		for p in _body.get_children():
+			if p is CPUParticles:
+				p.emitting = true
 
 
 func _emit_impact() -> void:
-	_impact.emitting = true
-	for p in _impact.get_children():
-		p.emitting = true
+	if _impact:
+		_impact.emitting = true
+		for p in _impact.get_children():
+			p.emitting = true

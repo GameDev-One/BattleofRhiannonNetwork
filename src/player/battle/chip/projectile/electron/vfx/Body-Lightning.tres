@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/chip/vfx/plasma_sprite_sheet.png" type="Texture" id=1]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -15,4 +15,4 @@ particles_anim_loop = true
 albedo_texture = ExtResource( 1 )
 
 [resource]
-material = SubResource( 4 )
+material = SubResource( 1 )

@@ -7,25 +7,25 @@
 [ext_resource path="res://assets/chip/vfx/plasma_sprite_sheet.png" type="Texture" id=5]
 [ext_resource path="res://src/player/battle/chip/projectile/electron/vfx/Body-Lightning.tres" type="QuadMesh" id=6]
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.494819, 0.829545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.473418, 1 )
 colors = PoolColorArray( 0, 0.859375, 1, 1, 1, 1, 1, 1, 0.96875, 0, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
 flags_unshaded = true
 params_blend_mode = 1
 params_cull_mode = 2
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=4]
 max_value = 8.0
 _data = [ Vector2( 0, 8 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.25455 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
 flags_unshaded = true
 params_blend_mode = 1
@@ -33,14 +33,14 @@ params_cull_mode = 2
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 1, -1, 1 )
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=6]
 flags_transparent = true
 flags_unshaded = true
 params_blend_mode = 1
 params_cull_mode = 2
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -49,7 +49,7 @@ params_cull_mode = 2
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 1, -1, 1 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=8]
 resource_name = "pulse"
 length = 0.75
 loop = true
@@ -75,7 +75,7 @@ draw_order = 2
 mesh = ExtResource( 3 )
 gravity = Vector3( 0, 0, 0 )
 angular_velocity = 200.0
-scale_amount_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 1 )
 color_ramp = ExtResource( 4 )
 
 [node name="LevelOne" type="CPUParticles" parent="."]
@@ -87,44 +87,44 @@ gravity = Vector3( 0, 0, 0 )
 angle = 360.0
 angle_random = 1.0
 scale_amount = 1.25
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 2 )
 anim_speed = 4.0
 
 [node name="LevelTwo" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 7 )
+material_override = SubResource( 3 )
 script = ExtResource( 1 )
 lifetime = 2.0
 tiling = 2
-width_profile = SubResource( 8 )
+width_profile = SubResource( 4 )
 color_gradient = ExtResource( 4 )
 wireframe_color = Color( 1, 0, 0, 0.717647 )
 
 [node name="LevelThree" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 9 )
+material_override = SubResource( 5 )
 script = ExtResource( 1 )
 lifetime = 2.0
 tiling = 2
-width_profile = SubResource( 8 )
+width_profile = SubResource( 4 )
 color_gradient = ExtResource( 4 )
 wireframe_color = Color( 1, 0, 0, 0.717647 )
 
 [node name="LevelFour" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 10 )
+material_override = SubResource( 6 )
 script = ExtResource( 1 )
 lifetime = 2.0
 tiling = 2
-width_profile = SubResource( 8 )
+width_profile = SubResource( 4 )
 color_gradient = ExtResource( 4 )
 alignment = "Normal"
 axe = "X"
 wireframe_color = Color( 1, 0, 0, 0.717647 )
 
 [node name="LevelFive" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 11 )
+material_override = SubResource( 7 )
 script = ExtResource( 1 )
 lifetime = 2.0
 tiling = 2
-width_profile = SubResource( 8 )
+width_profile = SubResource( 4 )
 color_gradient = ExtResource( 4 )
 alignment = "Normal"
 axe = "X"
@@ -140,4 +140,4 @@ frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
 autoplay = "pulse"
-anims/pulse = SubResource( 12 )
+anims/pulse = SubResource( 8 )

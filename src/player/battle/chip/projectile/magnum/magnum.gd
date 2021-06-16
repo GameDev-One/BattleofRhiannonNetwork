@@ -6,12 +6,6 @@ func _ready():
 	_emit_anticipation()
 
 
-func _physics_process(delta):
-	if is_shot:
-		apply_impulse(transform.basis.z, -transform.basis.z * speed / 100)
-		is_shot = false
-
-
 func _on_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.health -= damage
