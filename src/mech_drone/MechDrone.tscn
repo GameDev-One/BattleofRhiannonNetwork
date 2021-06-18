@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/mech_drone/AnimationPlayer.scn" type="PackedScene" id=1]
 [ext_resource path="res://src/main/state_machine/state_machine.gd" type="Script" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://src/mech_drone/states/idle.gd" type="Script" id=5]
 [ext_resource path="res://src/mech_drone/RootNode (gltf orientation matrix).scn" type="PackedScene" id=6]
 [ext_resource path="res://src/mech_drone/states/run.gd" type="Script" id=7]
-[ext_resource path="res://src/main/enemy/info_display.gd" type="Script" id=8]
-[ext_resource path="res://src/main/enemy/HealthBar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/main/enemy/InfoDisplay.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/vfx/damage_indicator/DamageIndParticles.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
@@ -410,6 +409,7 @@ contacts_reported = 2
 contact_monitor = true
 axis_lock_linear_y = true
 script = ExtResource( 3 )
+dmg_ind_particles_path = NodePath("DamageIndParticles")
 
 [node name="RootNode (gltf orientation matrix)" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.005, 0, 0, 0, -2.18557e-10, 0.005, 0, -0.005, -2.18557e-10, 0, 0, 0 )
@@ -441,20 +441,7 @@ script = ExtResource( 5 )
 wait_time = 5.0
 one_shot = true
 
-[node name="InfoDisplay" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39239, 0 )
-billboard = 1
-script = ExtResource( 8 )
-
-[node name="Viewport" type="Viewport" parent="InfoDisplay"]
-size = Vector2( 200, 40 )
-transparent_bg = true
-usage = 0
-render_target_v_flip = true
-
-[node name="HealthBar" parent="InfoDisplay/Viewport" instance=ExtResource( 9 )]
-
-[node name="Tween" type="Tween" parent="InfoDisplay"]
+[node name="InfoDisplay" parent="." instance=ExtResource( 8 )]
 
 [node name="DamageIndParticles" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888168, 0 )

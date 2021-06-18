@@ -15,6 +15,8 @@ func _physics_process(delta):
 		for level in _body.get_children():
 			if level is CPUParticles:
 				level.emitting = true
+			else:
+				level.emit = true
 
 
 func _emit_anticipation() -> void:

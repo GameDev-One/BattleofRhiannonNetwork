@@ -13,7 +13,8 @@ func sort_closest(a, b):
 		return false
 		
 func enter(msg := {}) -> void:
-	for body in camera_rig.player.lock_on_area.get_overlapping_bodies():
+	var bodies = camera_rig.player.lock_on_area.get_overlapping_areas()
+	for body in bodies:
 		if body.is_in_group("Enemy"):
 			_targets.push_back(body)
 	if not _targets.empty():
