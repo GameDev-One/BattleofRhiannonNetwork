@@ -321,7 +321,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Battle of Rhiannon Network"
-run/main_scene="res://src/ui/TitleScreen.tscn"
+run/main_scene="res://FontTesterScene.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
