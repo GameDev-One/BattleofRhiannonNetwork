@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/level/BasicLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/joystick/joystick_background.png" type="Texture" id=5]
 [ext_resource path="res://src/ui/debug/debug_out.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/joystick/cannon_ball.png" type="Texture" id=7]
 [ext_resource path="res://assets/joystick/power-generator.png" type="Texture" id=8]
@@ -29,7 +30,8 @@ max_health = 50
 [node name="UI" type="CanvasLayer" parent="Player"]
 
 [node name="TouchControls" type="Control" parent="Player/UI"]
-anchor_right = 1.0
+anchor_left = 0.000736554
+anchor_right = 1.00074
 anchor_bottom = 1.0
 margin_left = 25.0
 margin_top = 25.0
@@ -84,37 +86,46 @@ expand = false
 position = Vector2( 1600, 820 )
 
 [node name="TouchAction" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
-position = Vector2( 100, -200 )
+position = Vector2( 119, -232 )
 action = "ui_action1"
-pressed_color = Color( 1, 1, 0.74902, 1 )
 
 [node name="TouchAction2" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
+position = Vector2( -58, -300 )
+action = "ui_action4"
+
+[node name="TouchAction3" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
+position = Vector2( -233, -237.784 )
+action = "ui_action1"
+
+[node name="TouchAction4" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
+position = Vector2( -308, -60 )
+action = "ui_action4"
+
+[node name="TouchAction5" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
 self_modulate = Color( 1, 1, 1, 0.392157 )
-position = Vector2( -100, -100 )
+position = Vector2( -96, -96 )
 scale = Vector2( 1.5, 1.5 )
 action = "ui_action2"
-pressed_color = Color( 1, 0.196078, 0.196078, 1 )
 
-[node name="icon" type="Sprite" parent="Player/UI/TouchControls/TouchActions/TouchAction2"]
-position = Vector2( 64, 64 )
+[node name="icon" type="Sprite" parent="Player/UI/TouchControls/TouchActions/TouchAction5"]
+position = Vector2( 64, 60 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 8 )
 
-[node name="TouchAction3" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
+[node name="TouchAction6" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
 self_modulate = Color( 1, 1, 1, 0.392157 )
-position = Vector2( 100, 50 )
+position = Vector2( 123, 70 )
 action = "ui_action3"
-pressed_color = Color( 0, 0, 0, 1 )
 
-[node name="icon" type="Sprite" parent="Player/UI/TouchControls/TouchActions/TouchAction3"]
+[node name="icon" type="Sprite" parent="Player/UI/TouchControls/TouchActions/TouchAction6"]
 position = Vector2( 64, 64 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 7 )
 
-[node name="TouchAction4" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
-position = Vector2( -250, 50 )
-action = "ui_action4"
-pressed_color = Color( 0.74902, 0.74902, 1, 1 )
+[node name="joystick_background" type="Sprite" parent="Player/UI/TouchControls/TouchActions"]
+visible = false
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
 
 [node name="BattleSetupScreen" parent="Player/UI/TouchControls" instance=ExtResource( 9 )]
 margin_left = -450.0
