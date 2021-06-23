@@ -195,10 +195,25 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="penny" parent="." instance=ExtResource( 12 )]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 13.4585, 0.628705, 6.91432 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 15.8274, 0.628705, 14.1295 )
 
 [node name="NanoExtrapolator" parent="." instance=ExtResource( 13 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.337, 0.5, 13.663 )
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Navigation")
+
+[node name="NanoExtrapolator2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.836124, 0, -0.548541, 0, 1, 0, 0.548541, 0, 0.836124, -6.00456, 0.5, 2.27709 )
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Navigation")
+
+[node name="NanoExtrapolator3" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.323604, 0, 0.946193, 0, 1, 0, -0.946193, 0, 0.323604, 6.58592, 0.5, -17.5266 )
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Navigation")
+
+[node name="NanoExtrapolator4" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.703953, 0, 0.710247, 0, 1, 0, -0.710247, 0, 0.703953, -17.2469, 0.5, -17.5266 )
 player_path = NodePath("../Player")
 navigation_path = NodePath("../Navigation")
 

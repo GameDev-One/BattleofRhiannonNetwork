@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/nano_extrapolator/nano_extrapolator.gd" type="Script" id=1]
 [ext_resource path="res://src/main/state_machine/state_machine.gd" type="Script" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://src/main/enemy/InfoDisplay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/vfx/damage_indicator/DamageIndParticles.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/nano_extrapolator/states/follow.gd" type="Script" id=8]
+[ext_resource path="res://src/nano_extrapolator/states/return.gd" type="Script" id=9]
+[ext_resource path="res://src/nano_extrapolator/states/attack.gd" type="Script" id=10]
+[ext_resource path="res://src/vfx/Shockwave.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/nano_extrapolator/shockwave.gd" type="Script" id=12]
+[ext_resource path="res://assets/chip/vfx/circle_05.png" type="Texture" id=13]
+[ext_resource path="res://assets/chip/vfx/circle_02.png" type="Texture" id=14]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -18,22 +24,80 @@ radius = 0.5
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.5, 0.25 )
 
-[sub_resource type="CapsuleShape" id=6]
+[sub_resource type="CapsuleShape" id=4]
 radius = 0.5
 
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( 0, 0, 0, 0, 1, 0, 10, 1, 18, -10, 1, 18, 10, 0, 18, -10, 0, 18 )
 
-[sub_resource type="CylinderShape" id=5]
+[sub_resource type="CylinderShape" id=6]
 radius = 6.0
 height = 1.0
+
+[sub_resource type="CylinderShape" id=8]
+radius = 5.0
+height = 0.25
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=9]
+next_pass = SubResource( 11 )
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_texture = ExtResource( 13 )
+
+[sub_resource type="QuadMesh" id=10]
+material = SubResource( 9 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.489914, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=13]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Slam"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshShape:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1, 0 ), Vector3( 0, 3, 0 ), Vector3( 0, 2.5, 0 ), Vector3( 0, 3, 0 ), Vector3( 0, 2.5, 0 ), Vector3( 0, 3, 0 ), Vector3( 0, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shockwave/RangeInd:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="NanoExtrapolator" type="KinematicBody" groups=[
 "Enemy",
 ]]
+collision_mask = 0
 script = ExtResource( 1 )
 max_health = 60
-linear_acceleration_max = 10.0
+attack_damage = 30
+linear_speed_max = 20.0
+linear_acceleration_max = 30.0
 arrival_tolerance = 4.0
 deceleration_radius = 10.8
 angular_speed_max = 550
@@ -45,7 +109,6 @@ state_display_path = NodePath("StateDisplay")
 [node name="MeshShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
 shape = SubResource( 1 )
-disabled = true
 
 [node name="BodyMesh" type="MeshInstance" parent="MeshShape"]
 mesh = SubResource( 2 )
@@ -58,19 +121,21 @@ material/0 = null
 
 [node name="BodyCollision" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="BodyCollision"]
+[node name="CollisionShape" type="CollisionShape" parent="BodyCollision" groups=[
+"Enemy",
+]]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="DetectionArea" type="Area" parent="."]
 monitorable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="DetectionArea"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="DetectionArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -89,6 +154,12 @@ one_shot = true
 [node name="Follow" type="Node" parent="StateMachine"]
 script = ExtResource( 8 )
 
+[node name="Return" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 10 )
+
 [node name="InfoDisplay" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39313, 0 )
 
@@ -96,6 +167,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39313, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25544, 0 )
 
 [node name="StateDisplay" parent="." instance=ExtResource( 5 )]
+
+[node name="Shockwave" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18518, 0 )
+script = ExtResource( 12 )
+
+[node name="AttackRange" type="StaticBody" parent="Shockwave" groups=[
+"EnemyAttack",
+]]
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Shockwave/AttackRange"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="RangeInd" type="CPUParticles" parent="Shockwave"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1, 0 )
+emitting = false
+amount = 1
+one_shot = true
+explosiveness = 0.01
+mesh = SubResource( 10 )
+gravity = Vector3( 0, 0, 0 )
+scale_amount = 18.0
+scale_amount_curve = SubResource( 12 )
+color_ramp = SubResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Slam = SubResource( 7 )
 
 [connection signal="body_entered" from="DetectionArea" to="StateMachine/Idle" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="StateMachine/Alert" method="_on_Area_body_exited"]

@@ -2,6 +2,7 @@ extends State
 class_name NanoExtrapolatorState
 
 var nano_extplr: NanoExtrapolator
+var anim: AnimationPlayer
 var _player: Player
 var _navigation: Navigation
 var _origin_pt: Vector3 = Vector3()
@@ -17,8 +18,10 @@ var target_node: Spatial
 func _ready():
 	yield(owner, "ready")
 	nano_extplr = owner
+	anim = nano_extplr.anim
 	_player = nano_extplr.player
 	_navigation = nano_extplr.navigation
+	_origin_pt = nano_extplr.global_transform.origin
 	agent = GSAIKinematicBody3DAgent.new(nano_extplr)
 	target = GSAIAgentLocation.new()
 	accel = GSAITargetAcceleration.new()

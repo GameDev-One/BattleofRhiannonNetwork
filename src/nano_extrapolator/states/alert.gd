@@ -11,8 +11,6 @@ extends NanoExtrapolatorState
 			templates option.
 """
 
-export(float) var turn_speed: float = 15
-
 onready var Cooldown: Timer = $Timer
 
 

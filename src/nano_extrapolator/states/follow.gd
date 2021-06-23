@@ -12,6 +12,9 @@ extends NanoExtrapolatorState
 """
 
 
+export(float) var max_distance: float = 20
+
+
 """
 # brief		Called when the node is 'ready', i.e. when both the node and its 
 			children have entered the scene tree.
@@ -45,10 +48,16 @@ func exit() -> void:
 				_physics_process.
 """
 func physics_process(delta: float) -> void:
-	target.position = target_node.global_transform.origin
-	target.position.y = nano_extplr.transform.origin.y
-	blend.calculate_steering(accel)
-	agent._apply_steering(accel, delta)
+	if nano_extplr.global_transform.origin.distance_to(_player.global_transform.origin) < nano_extplr.arrival_tolerance:
+		_state_machine.transition_to("Attack")
+		
+	if _origin_pt.distance_to(nano_extplr.global_transform.origin) < max_distance:
+		target.position = target_node.global_transform.origin
+		target.position.y = nano_extplr.transform.origin.y
+		blend.calculate_steering(accel)
+		agent._apply_steering(accel, delta)
+	else:
+		_state_machine.transition_to("Return")
 	pass
 
 

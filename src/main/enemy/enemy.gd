@@ -8,6 +8,7 @@ signal health_changed()
 export(String) var _c_combat
 export(int, 1, 9999) var max_health: int = 1
 export(int, 1, 9999) var contact_damage: int = 10
+export(int, 1, 9999) var attack_damage: int = 10
 
 # Movement
 export(String) var _c_movement
@@ -44,8 +45,6 @@ var health: int = max_health setget set_health
 
 func _ready():
 	health = max_health
-	
-	body_collison.connect("body_entered", self, "_on_body_entered")
 	
 	if not body_collison.is_in_group("Enemy"):
 		body_collison.add_to_group("Enemy")
