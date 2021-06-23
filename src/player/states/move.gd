@@ -50,6 +50,18 @@ func physics_process(delta: float) -> void:
 	# Movement
 	velocity = calculate_velocity(velocity, move_direction, delta)
 	velocity = player.move_and_slide(velocity, Vector3.UP)
+	
+	# Collision
+	for i in player.get_slide_count():
+		var collision: KinematicCollision = player.get_slide_collision(i)
+		if collision.collider.is_in_group("Enemy"):
+			_state_machine.transition_to("Collide/Enemy", {collision = collision,
+														velocity = velocity
+														})
+		elif collision.collider.is_in_group("EnemyAttack"):
+			_state_machine.transition_to("Collide/EnemyAttack", {collision = collision,
+														velocity = velocity
+														})
 
 
 func enter(msg: Dictionary = {}) -> void:

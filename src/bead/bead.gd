@@ -15,8 +15,10 @@ func _physics_process(delta):
 		apply_impulse(transform.basis.z, -transform.basis.z * speed)
 
 
-func _on_Area_body_entered(body):
-	if body.is_in_group("Enemy"):
+func _on_Area_area_entered(area):
+	if area.is_in_group("Enemy"):
+		var body = area.get_parent()
 		body.health -= damage
 		body.dmg_ind_particles.value = damage
 		queue_free()
+	pass # Replace with function body.

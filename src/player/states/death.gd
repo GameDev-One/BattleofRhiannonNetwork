@@ -9,9 +9,11 @@ func enter(msg: = {}) -> void:
 	skin.mesh.set("material/0", dissolve)
 	skin.mesh.set("material/1", dissolve)
 	skin.mesh.set("material/2", dissolve)
-	yield(get_tree().create_timer(2.0), "timeout")
-	get_tree().reload_current_scene()
+	
 	
 func physics_process(delta):
 	_time += delta
 	dissolve.set_shader_param("ScalarUniform", _time)
+	
+	if _time > 2.0:
+		SceneChanger.goto_scene("res://src/ui/TitleScreen.tscn", get_tree().get_root().get_child(get_tree().get_root().get_child_count() - 1))

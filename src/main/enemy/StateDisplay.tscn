@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/enemy/states/idle.material" type="Material" id=1]
+[ext_resource path="res://src/main/enemy/state_display.gd" type="Script" id=2]
+
+[sub_resource type="QuadMesh" id=1]
+material = ExtResource( 1 )
+size = Vector2( 0.5, 0.5 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.516456, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1 )
+
+[node name="StateDisplay" type="CPUParticles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
+emitting = false
+amount = 1
+one_shot = true
+mesh = SubResource( 1 )
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, -1, 0 )
+initial_velocity = 1.0
+color_ramp = SubResource( 2 )
+script = ExtResource( 2 )

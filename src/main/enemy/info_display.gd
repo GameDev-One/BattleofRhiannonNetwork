@@ -1,6 +1,6 @@
 extends Sprite3D
 
-onready var enemy: RigidBody = get_parent()
+onready var enemy: Enemy = get_parent()
 onready var _viewport: Viewport = $Viewport
 onready var health_bar: ProgressBar = $Viewport/HealthBar
 onready var tween: Tween = $Tween

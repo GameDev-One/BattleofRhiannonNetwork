@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/idle.png-2714797ab6bedae23bda3305b13429ff.s3tc.stex"
+path.etc2="res://.import/idle.png-2714797ab6bedae23bda3305b13429ff.etc2.stex"
+path.etc="res://.import/idle.png-2714797ab6bedae23bda3305b13429ff.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/enemy/states/idle.png"
+dest_files=[ "res://.import/idle.png-2714797ab6bedae23bda3305b13429ff.s3tc.stex", "res://.import/idle.png-2714797ab6bedae23bda3305b13429ff.etc2.stex", "res://.import/idle.png-2714797ab6bedae23bda3305b13429ff.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.25
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=true
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=true
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
