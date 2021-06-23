@@ -114,9 +114,3 @@ func set_linear_acceleration_max(value: float) -> void:
 	if not is_inside_tree():
 		return
 	arriver.agent.linear_acceleration_max = value
-
-
-func _on_body_entered(body: Node):
-	if body.is_in_group("Player"):
-		body.health -= contact_damage
-		body.damage_ind.value = contact_damage

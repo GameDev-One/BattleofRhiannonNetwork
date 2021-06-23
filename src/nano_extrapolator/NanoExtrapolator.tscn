@@ -34,18 +34,18 @@ points = PoolVector3Array( 0, 0, 0, 0, 1, 0, 10, 1, 18, -10, 1, 18, 10, 0, 18, -
 radius = 6.0
 height = 1.0
 
-[sub_resource type="CylinderShape" id=8]
+[sub_resource type="CylinderShape" id=7]
 radius = 5.0
 height = 0.25
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource( 14 )
 
 [sub_resource type="SpatialMaterial" id=9]
-next_pass = SubResource( 11 )
+next_pass = SubResource( 8 )
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -55,14 +55,13 @@ albedo_texture = ExtResource( 13 )
 [sub_resource type="QuadMesh" id=10]
 material = SubResource( 9 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=11]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.489914, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=13]
+[sub_resource type="Gradient" id=12]
 colors = PoolColorArray( 1, 0, 0, 1, 1, 1, 1, 0 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "Slam"
+[sub_resource type="Animation" id=13]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshShape:translation")
@@ -179,7 +178,7 @@ collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Shockwave/AttackRange"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 disabled = true
 
 [node name="RangeInd" type="CPUParticles" parent="Shockwave"]
@@ -191,11 +190,11 @@ explosiveness = 0.01
 mesh = SubResource( 10 )
 gravity = Vector3( 0, 0, 0 )
 scale_amount = 18.0
-scale_amount_curve = SubResource( 12 )
-color_ramp = SubResource( 13 )
+scale_amount_curve = SubResource( 11 )
+color_ramp = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Slam = SubResource( 7 )
+anims/Slam = SubResource( 13 )
 
 [connection signal="body_entered" from="DetectionArea" to="StateMachine/Idle" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="StateMachine/Alert" method="_on_Area_body_exited"]
