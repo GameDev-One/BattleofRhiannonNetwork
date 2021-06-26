@@ -91,6 +91,7 @@ color_ramp = SubResource( 2 )
 anim_speed = 4.0
 
 [node name="LevelTwo" type="ImmediateGeometry" parent="."]
+visible = false
 material_override = SubResource( 3 )
 script = ExtResource( 1 )
 emit = false
@@ -101,6 +102,7 @@ color_gradient = ExtResource( 4 )
 wireframe_color = Color( 1, 0, 0, 0.717647 )
 
 [node name="LevelThree" type="ImmediateGeometry" parent="."]
+visible = false
 material_override = SubResource( 5 )
 script = ExtResource( 1 )
 emit = false
@@ -111,6 +113,7 @@ color_gradient = ExtResource( 4 )
 wireframe_color = Color( 1, 0, 0, 0.717647 )
 
 [node name="LevelFour" type="ImmediateGeometry" parent="."]
+visible = false
 material_override = SubResource( 6 )
 script = ExtResource( 1 )
 emit = false
@@ -123,6 +126,7 @@ axe = "X"
 wireframe_color = Color( 1, 0, 0, 0.717647 )
 
 [node name="LevelFive" type="ImmediateGeometry" parent="."]
+visible = false
 material_override = SubResource( 7 )
 script = ExtResource( 1 )
 emit = false

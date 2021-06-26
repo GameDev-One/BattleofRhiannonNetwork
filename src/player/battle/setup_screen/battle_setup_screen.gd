@@ -6,7 +6,7 @@ const MAX_HAND_SIZE = 10
 
 export(float, 0.1, 999) var chip_refresh_time = 2.0
 
-onready var folder: BattlechipFolder = preload("res://src/player/battle/chip_fldr/chip_fldr.tres")
+onready var folder: BattlechipFolder = preload("res://src/player/battle/chip_fldr/default_chip_fldr.tres")
 
 onready var anim: AnimationPlayer = $AnimationPlayer
 onready var bg: Panel = $Bg

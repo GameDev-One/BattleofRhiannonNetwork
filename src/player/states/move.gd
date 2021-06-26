@@ -21,13 +21,20 @@ func process(delta: float) -> void:
 	if player.health <= 0:
 		_state_machine.transition_to("Death")
 	
-	if Input.is_action_pressed("ui_action3"):
+	if Input.is_action_pressed("ui_action6"):
 		_state_machine.transition_to("Move/Charge")
+		
+	if Input.is_action_just_pressed("ui_action1"):
+		_state_machine.transition_to("Battle", {action_index = 1})
 	if Input.is_action_just_pressed("ui_action2"):
-		if player.battle_setup_ui.is_queued_empty():
-			_state_machine.transition_to("Battle")
-		else:
-			_state_machine.transition_to("Battle", {chips = player.battle_setup_ui.get_queued()})
+		_state_machine.transition_to("Battle", {action_index = 2})
+	if Input.is_action_just_pressed("ui_action3"):
+		_state_machine.transition_to("Battle", {action_index = 3})
+	if Input.is_action_just_pressed("ui_action4"):
+		_state_machine.transition_to("Battle", {action_index = 4})
+	if Input.is_action_just_pressed("ui_action5"):
+		_state_machine.transition_to("Battle", {action_index = 5})
+		pass
 
 func physics_process(delta: float) -> void:
 	var input_direction = get_joystick_direction()

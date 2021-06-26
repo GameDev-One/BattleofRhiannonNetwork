@@ -5,7 +5,7 @@ class_name Mannequiny
 # # It has a signal connected to the player state machine, and uses the resulting
 # state names to translate them into the states for the animation tree.
 
-enum States { IDLE, RUN, AIR, LAND }
+enum States { IDLE, RUN, AIR, LAND, SHOOT }
 
 onready var animation_tree: AnimationTree = $AnimationTree
 onready var _playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
@@ -39,5 +39,15 @@ func transition_to(state_id: int) -> void:
 			_playback.travel("move_ground")
 		States.AIR:
 			_playback.travel("jump")
+		States.SHOOT:
+			_playback.travel("fight_punch")
 		_:
 			_playback.travel("idle")
+
+
+func current_animation_name() -> String:
+	return _playback.get_current_node()
+
+
+func get_animation_player() -> AnimationPlayer:
+	return get_node("AnimationPlayer") as AnimationPlayer

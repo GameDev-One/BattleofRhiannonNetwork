@@ -1,28 +1,41 @@
 extends PlayerState
 
+
+var action_index: int = -1
+
+
 func enter(msg := {}) -> void:
-	if msg.has("chips") and msg["chips"]:
-		_spawn_projectile(msg["chips"][0])
-		_state_machine.transition_to("Move/Run")
-	else:
-		player.battle_setup_ui.open()
-		yield(player.battle_setup_ui.anim, "animation_finished")
-		Engine.time_scale = 0.1
+	
+	action_index = msg["action_index"]
+	
+	if action_index < 5 and player.touch_action_ui[action_index - 1].enabled:
+		skin.transition_to(skin.States.SHOOT)
+		yield(get_tree().create_timer(0.2), "timeout")
+		_spawn_projectile(player.battle_deck.get_chip(player.battle_deck.MAX_HAND_SIZE - action_index))
+	
+	elif action_index == 5:
+		skin.transition_to(skin.States.SHOOT)
+		yield(get_tree().create_timer(0.2), "timeout")
+		_spawn_projectile(player.battle_deck.get_next_chip())
+	
+	yield(get_tree().create_timer(0.3), "timeout")
+	
+	_state_machine.transition_to("Move/Idle")
+
 
 func process(delta):
-	if Input.is_action_just_pressed("ui_action2"):
-		_state_machine.transition_to("Move/Run")
-	
+	pass
+
 
 func exit() -> void:
-	player.battle_setup_ui.close()
-	Engine.time_scale = 1.0
+	pass
 
 
 func _spawn_projectile(chip: BattleChip) -> void:
-	var instance = chip.projectile.instance()
-	instance.global_transform = player.muzzle.global_transform
-	instance.damage = chip.damage
-	instance.is_shot = true
-	add_child(instance)
-	instance.global_transform = player.muzzle.global_transform
+	if chip:
+		var instance = chip.projectile.instance()
+		instance.global_transform = player.muzzle.global_transform
+		instance.damage = chip.damage
+		instance.is_shot = true
+		add_child(instance)
+		instance.global_transform = player.muzzle.global_transform

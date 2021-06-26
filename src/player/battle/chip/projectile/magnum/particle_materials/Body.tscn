@@ -3,18 +3,18 @@
 [ext_resource path="res://src/player/battle/chip/projectile/magnum/particle_materials/body.tres" type="Material" id=1]
 [ext_resource path="res://MotionTrail/MotionTrail.tscn" type="PackedScene" id=4]
 
-[sub_resource type="QuadMesh" id=3]
+[sub_resource type="QuadMesh" id=1]
 material = ExtResource( 1 )
 size = Vector2( 1.5, 1.5 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.703409 ), 0.0, 0.0, 0, 0, Vector2( 0.501217, 0.985227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.703409 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.00515464, 0.512887, 1 )
 colors = PoolColorArray( 0.587402, 0.587402, 0.587402, 1, 1, 1, 1, 1, 0.587402, 0.587402, 0.587402, 1 )
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.288462, 0.716346, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.2, 1, 1, 1, 0.2, 1, 1, 1, 0 )
 
@@ -24,11 +24,11 @@ emitting = false
 amount = 1
 lifetime = 3.0
 one_shot = true
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 gravity = Vector3( 0, 0, 0 )
 angular_velocity = 90.0
-scale_amount_curve = SubResource( 4 )
-color_ramp = SubResource( 5 )
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
 
 [node name="MotionTrail" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -37,4 +37,4 @@ toWidth = 0.01
 lifespan = 0.4
 scaleTexture = false
 startColor = Color( 1, 1, 1, 0.156863 )
-color_gradient = SubResource( 6 )
+color_gradient = SubResource( 4 )
