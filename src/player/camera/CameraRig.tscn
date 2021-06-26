@@ -61,7 +61,7 @@ initial_state = NodePath("../../CameraRig/StateMachine/Camera/Default")
 [node name="Camera" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 is_y_inverted = true
-sensitivity_gamepad = Vector2( 15, 4 )
+sensitivity_gamepad = Vector2( 7, 4 )
 
 [node name="Default" type="Node" parent="StateMachine/Camera"]
 script = ExtResource( 8 )

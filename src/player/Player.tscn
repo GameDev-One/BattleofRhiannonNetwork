@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/player/player.gd" type="Script" id=1]
 [ext_resource path="res://src/player/Mannequiny.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://src/player/states/collide.gd" type="Script" id=14]
 [ext_resource path="res://src/player/states/collision/enemy.gd" type="Script" id=15]
 [ext_resource path="res://src/player/states/collision/enemy_attack.gd" type="Script" id=16]
+[ext_resource path="res://src/player/battle/chip_fldr/default_chip_fldr.tres" type="Resource" id=17]
+[ext_resource path="res://src/player/battle/setup_screen/battle_deck.gd" type="Script" id=18]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -23,7 +25,7 @@
 radius = 0.45
 
 [sub_resource type="CylinderShape" id=3]
-radius = 10.0
+radius = 12.0
 height = 1.0
 
 [node name="Player" type="KinematicBody" groups=[
@@ -107,7 +109,14 @@ shape = SubResource( 3 )
 [node name="DamageIndParticles" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18943, 0 )
 
+[node name="BattleDeck" type="Node" parent="."]
+script = ExtResource( 18 )
+chip_deck_resource = ExtResource( 17 )
+
+[node name="Reload" type="Timer" parent="BattleDeck"]
+
 [connection signal="timeout" from="StateMachine/Collide/Invulnerability" to="StateMachine/Collide" method="_on_Invulnerability_timeout"]
+[connection signal="timeout" from="BattleDeck/Reload" to="BattleDeck" method="_on_Reload_timeout"]
 
 [editable path="Mannequiny"]
 [editable path="CameraRig"]

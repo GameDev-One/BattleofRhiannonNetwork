@@ -1,7 +1,10 @@
 extends Resource
 class_name BattlechipFolder
 
+
 signal battlechips_changed(indexes)
+
+const MAX_SIZE = 40
 
 export(Array, Resource) var battlechips = [
 	null, null, null, null, null, 
@@ -13,7 +16,8 @@ export(Array, Resource) var battlechips = [
 	null, null, null, null, null,
 	null, null, null, null, null
 	]
-	
+
+
 class BattlechipSorter:
 	static func sort_name(a: BattleChip, b: BattleChip):
 		if a.name < b.name:
@@ -30,30 +34,53 @@ class BattlechipSorter:
 			return true
 		return false
 
+
 func set_battlechip(index: int, battlechip: BattleChip) -> BattleChip:
 	var previous_battlechip = battlechips[index]
 	battlechips[index] = battlechip
 	emit_signal("battlechips_changed", [index])
 	return previous_battlechip
 
+
 func remove_battlechip(index: int) -> BattleChip:
 	var previous_battlechip = battlechips[index]
 	battlechips[index] = null
 	emit_signal("battlechips_changed", [index])
 	return previous_battlechip
-	
+
+
 func swap_battlechips(index, target_index) -> void:
 	var target_battlechip = battlechips[target_index]
 	var battlechip = battlechips[index]
 	battlechips[target_index] = battlechip
 	battlechips[index] = target_battlechip
 	emit_signal("battlechips_changed",[index, target_index])
-	
+
+
+func pop() -> BattleChip:
+	return battlechips.pop_front()
+
+
+func push(b: BattleChip):
+	if battlechips.size() < MAX_SIZE:
+		battlechips.push_front(b)
+
+
+func is_empty() -> bool:
+	return battlechips.empty()
+
+
+func peek() -> BattleChip:
+	return battlechips.front()
+
+
 func sort_by_name():
 	battlechips.sort_custom(BattlechipSorter, "sort_name")
-	
+
+
 func sort_by_element():
 	battlechips.sort_custom(BattlechipSorter, "sort_element")
-	
+
+
 func sort_by_rank():
 	battlechips.sort_custom(BattlechipSorter, "sort_rank")

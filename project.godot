@@ -372,6 +372,14 @@ ui_action4={
 "deadzone": 0.5,
 "events": [  ]
 }
+ui_action5={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_action6={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 

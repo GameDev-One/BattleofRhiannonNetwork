@@ -1,31 +1,30 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/level/BasicLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/joystick/joystick_background.png" type="Texture" id=5]
 [ext_resource path="res://src/ui/debug/debug_out.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/joystick/cannon_ball.png" type="Texture" id=7]
-[ext_resource path="res://assets/joystick/power-generator.png" type="Texture" id=8]
-[ext_resource path="res://src/player/battle/setup_screen/BattleSetupScreen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/joystick/power-generator-176x.png" type="Texture" id=7]
+[ext_resource path="res://assets/joystick/cannon-ball-176x.png" type="Texture" id=8]
 [ext_resource path="res://assets/chip/Fonts/battlechip_sub_normal_font.tres" type="DynamicFont" id=10]
 [ext_resource path="res://src/player/health_bar.gd" type="Script" id=11]
 [ext_resource path="res://assets/succulent/scenes/PennySucculent.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/nano_extrapolator/NanoExtrapolator.tscn" type="PackedScene" id=13]
 
-[sub_resource type="NavigationMesh" id=1]
+[sub_resource type="NavigationMesh" id=3]
 vertices = PoolVector3Array( -9.2, 0.9, -18.2, -18.2, 0.9, -18.2, -18.2, 0.9, -8.6, 18.4, 0.9, -8.6, 18.4, 0.9, -18.2, 9.1, 0.9, -18.2, -18.2, 0.9, -8.6, -18.2, 0.9, 1.3, -4.1, 0.9, 1.3, 4, 0.9, 1.3, 18.4, 0.9, 1.3, 18.4, 0.9, -8.6, -18.2, 0.9, -8.6, -4.1, 0.9, 1.3, -2, 0.9, 1.3, 1.9, 0.9, 1.3, 4, 0.9, 1.3, 18.4, 0.9, -8.6, 9.1, 0.9, -18.2, 0.1, 0.9, -18.2, 0.1, 0.9, -18.2, -9.2, 0.9, -18.2, -18.2, 0.9, -8.6, -2, 0.9, 1.3, 1.9, 0.9, 1.3, -18.2, 0.9, 4.6, -4.1, 0.9, 4.6, -4.7, 0.9, 4, -4.7, 0.9, 1.9, -4.1, 0.9, 1.3, -18.2, 0.9, 1.3, -18.2, 0.9, 4.6, -4.7, 0.9, 4, -4.7, 0.9, 1.9, -18.2, 0.9, 1.3, 1.3, 0.9, 1.9, 1.9, 0.9, 1.3, -2, 0.9, 1.3, -1.4, 0.9, 1.9, 9.1, 0.9, 18.4, 18.4, 0.9, 11.5, 18.4, 0.9, 4.6, 4.3, 0.9, 4.6, 0.1, 0.9, 18.4, 1.3, 0.9, 4, 1.3, 0.9, 1.9, -1.4, 0.9, 1.9, -1.4, 0.9, 4.3, 4.3, 0.9, 4.6, 1.9, 0.9, 4.6, 0.1, 0.9, 18.4, 1.9, 0.9, 4.6, 1.3, 0.9, 4, -1.4, 0.9, 4.3, 1.9, 0.9, 4.6, -1.4, 0.9, 4.3, -4.1, 0.9, 4.6, 0.1, 0.9, 18.4, -18.2, 0.9, 11.5, -18.2, 0.9, 18.4, -9.2, 0.9, 18.4, 9.1, 0.9, 18.4, 18.4, 0.9, 18.4, 18.4, 0.9, 11.5, -4.1, 0.9, 4.6, -18.2, 0.9, 4.6, -18.2, 0.9, 11.5, -9.2, 0.9, 18.4, 0.1, 0.9, 18.4, 18.4, 0.9, 1.3, 4, 0.9, 1.3, 4.6, 0.9, 1.9, 18.4, 0.9, 4.6, 18.4, 0.9, 1.3, 4.6, 0.9, 1.9, 4.3, 0.9, 4.6 )
 polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 4, 3, 5 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 12, 14, 13 ), PoolIntArray( 16, 15, 17 ), PoolIntArray( 17, 15, 18 ), PoolIntArray( 18, 15, 19 ), PoolIntArray( 24, 23, 20 ), PoolIntArray( 20, 23, 21 ), PoolIntArray( 21, 23, 22 ), PoolIntArray( 25, 27, 26 ), PoolIntArray( 30, 29, 28 ), PoolIntArray( 32, 31, 33 ), PoolIntArray( 33, 31, 34 ), PoolIntArray( 38, 37, 35 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 42, 39, 43 ), PoolIntArray( 45, 44, 46 ), PoolIntArray( 46, 44, 47 ), PoolIntArray( 50, 49, 48 ), PoolIntArray( 53, 52, 51 ), PoolIntArray( 55, 54, 56 ), PoolIntArray( 56, 54, 57 ), PoolIntArray( 60, 59, 58 ), PoolIntArray( 62, 61, 63 ), PoolIntArray( 66, 65, 67 ), PoolIntArray( 67, 65, 64 ), PoolIntArray( 67, 64, 68 ), PoolIntArray( 69, 71, 70 ), PoolIntArray( 75, 74, 72 ), PoolIntArray( 72, 74, 73 ) ]
 sample_partition_type/sample_partition_type = 2
 
-[sub_resource type="SphereShape" id=2]
+[sub_resource type="SphereShape" id=4]
 
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93185, 4.36489, -0.869682 )
 max_health = 50
+touch_action_ui_path = NodePath("UI/TouchControls/TouchActions")
 
 [node name="UI" type="CanvasLayer" parent="Player"]
 
@@ -62,7 +61,7 @@ margin_bottom = 0.0
 [node name="Joystick2" parent="Player/UI/TouchControls" instance=ExtResource( 1 )]
 visible = false
 margin_left = 362.0
-margin_right = 1308.0
+margin_right = 1867.0
 margin_bottom = 1030.0
 joystick_mode = 2
 vector_mode = 1
@@ -91,47 +90,26 @@ action = "ui_action1"
 
 [node name="TouchAction2" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
 position = Vector2( -58, -300 )
-action = "ui_action4"
+action = "ui_action2"
 
 [node name="TouchAction3" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
 position = Vector2( -233, -237.784 )
-action = "ui_action1"
+action = "ui_action3"
 
 [node name="TouchAction4" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
 position = Vector2( -308, -60 )
 action = "ui_action4"
 
 [node name="TouchAction5" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
-self_modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( -96, -96 )
-scale = Vector2( 1.5, 1.5 )
-action = "ui_action2"
-
-[node name="icon" type="Sprite" parent="Player/UI/TouchControls/TouchActions/TouchAction5"]
-position = Vector2( 64, 60 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 8 )
+action = "ui_action5"
+static_texture = ExtResource( 7 )
 
 [node name="TouchAction6" parent="Player/UI/TouchControls/TouchActions" instance=ExtResource( 2 )]
-self_modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 123, 70 )
-action = "ui_action3"
-
-[node name="icon" type="Sprite" parent="Player/UI/TouchControls/TouchActions/TouchAction6"]
-position = Vector2( 64, 64 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 7 )
-
-[node name="joystick_background" type="Sprite" parent="Player/UI/TouchControls/TouchActions"]
-visible = false
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
-
-[node name="BattleSetupScreen" parent="Player/UI/TouchControls" instance=ExtResource( 9 )]
-margin_left = -450.0
-margin_top = -500.0
-margin_right = 290.0
-margin_bottom = -60.0
+action = "ui_action6"
+static_texture = ExtResource( 8 )
 
 [node name="HealthBar" type="ProgressBar" parent="Player/UI"]
 anchor_left = 0.5
@@ -140,7 +118,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -540.0
 margin_top = -70.0
-margin_right = 101.498
+margin_right = 320.0
 margin_bottom = -35.0
 rect_min_size = Vector2( 400, 0 )
 percent_visible = false
@@ -164,7 +142,7 @@ margin_bottom = 850.0
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
-navmesh = SubResource( 1 )
+navmesh = SubResource( 3 )
 
 [node name="BasicLevel" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 3 )]
 
@@ -174,7 +152,7 @@ navmesh = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.274, 1, -16.712 )
 
 [node name="CollisionShape" type="CollisionShape" parent="PointOfInterest1"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="PointOfInterest2" type="Area" parent="." groups=[
 "MechDronePOI",
@@ -182,7 +160,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.82, 1, 16.8894 )
 
 [node name="CollisionShape" type="CollisionShape" parent="PointOfInterest2"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="PointOfInterest3" type="Area" parent="." groups=[
 "MechDronePOI",
@@ -190,7 +168,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.484, 1, 17.0307 )
 
 [node name="CollisionShape" type="CollisionShape" parent="PointOfInterest3"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="PointOfInterest4" type="Area" parent="." groups=[
 "MechDronePOI",
@@ -198,7 +176,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8685, 1, -16.712 )
 
 [node name="CollisionShape" type="CollisionShape" parent="PointOfInterest4"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -1, 0, 0, 0, -0.746313, 0.665595, 0, -0.665595, -0.746313, 0, 18.8274, 0 )
