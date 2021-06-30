@@ -64,8 +64,10 @@ func update_ui() -> void:
 	for i in MAX_HAND_SIZE:
 		if hand[MAX_HAND_SIZE - i - 1]:
 			player.touch_action_ui[i].set_texture(hand[MAX_HAND_SIZE - i - 1].full_image)
+			player.touch_action_ui[i].set_rank(hand[MAX_HAND_SIZE - i - 1].rank)
 		else:
 			player.touch_action_ui[i].set_texture(null)
+			player.touch_action_ui[i].set_rank(" ")
 			
 
 

@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/joystick/joystick_background.png" type="Texture" id=1]
 [ext_resource path="res://src/controller/button/touch_action.gd" type="Script" id=2]
+[ext_resource path="res://assets/joystick/joystick_circle.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/resource/normal/montserrat_h3.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/chip/vfx/circle_01.png" type="Texture" id=5]
+[ext_resource path="res://assets/joystick/joystick_handle.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/resource/normal/montserrat_h4.tres" type="DynamicFont" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 120.0
@@ -18,8 +23,31 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.913725, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/TextureProgress/TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.836364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.730435, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.664062, 0.664062, 0.664062, 1, 0, 0, 0, 1 )
 
 [node name="TouchAction" type="TouchScreenButton"]
 scale = Vector2( 0.5, 0.5 )
@@ -27,6 +55,21 @@ normal = ExtResource( 1 )
 shape = SubResource( 1 )
 shape_visible = false
 script = ExtResource( 2 )
+pressed_color = Color( 0.74902, 0.74902, 0.74902, 1 )
+disabled_color = Color( 0, 0, 0, 0.235294 )
+
+[node name="Bg" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 0.001
+allow_greater = true
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.235294 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Control" type="Control" parent="."]
 margin_left = 42.0
@@ -48,8 +91,59 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="Control/TextureProgress"]
+margin_left = -12.0
+margin_top = -12.0
+margin_right = 76.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 88, 88 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/TextureProgress/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerLabel" type="Label" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 7 )
+text = "0.0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Control/TimerLabel"]
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/flash = SubResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource( 3 )
+position = Vector2( 128, 128 )
+scale = Vector2( 1.25, 1.25 )
+emitting = false
+amount = 1
+one_shot = true
+preprocess = 0.5
+texture = ExtResource( 5 )
+gravity = Vector2( 0, 0 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )
 
 [connection signal="pressed" from="." to="." method="_on_TouchAction_pressed"]
 [connection signal="released" from="." to="." method="_on_TouchAction_released"]
