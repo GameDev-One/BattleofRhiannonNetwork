@@ -22,7 +22,7 @@ sample_partition_type/sample_partition_type = 2
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93185, 4.36489, -0.869682 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93185, 0.724367, -0.869682 )
 max_health = 50
 touch_action_ui_path = NodePath("UI/TouchControls/TouchActions")
 

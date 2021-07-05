@@ -39,12 +39,8 @@ func transition_to(state_id: int) -> void:
 	match state_id:
 		States.IDLE:
 			_playback.travel("idle")
-		States.LAND:
-			_playback.travel("land")
 		States.RUN:
 			_playback.travel("move_ground")
-		States.AIR:
-			_playback.travel("jump")
 		States.SHOOT:
 			_playback.travel("fight")
 		_:
