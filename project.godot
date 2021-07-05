@@ -209,6 +209,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/com.gdquest.godot-steering-ai-framework/GSAIUtils.gd"
 }, {
+"base": "Spatial",
+"class": "Godette",
+"language": "GDScript",
+"path": "res://src/godotte/godette.gd"
+}, {
 "base": "Control",
 "class": "Joystick",
 "language": "GDScript",
@@ -305,6 +310,7 @@ _global_script_class_icons={
 "GSAISteeringBehavior": "",
 "GSAITargetAcceleration": "",
 "GSAIUtils": "",
+"Godette": "",
 "Joystick": "",
 "Mannequiny": "",
 "MechDrone": "",

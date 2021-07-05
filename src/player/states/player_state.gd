@@ -4,7 +4,7 @@ class_name PlayerState
 # autocompletion and type hints.
 
 var player: Player
-var skin: Mannequiny
+var skin: Godette
 
 
 func _ready() -> void:
