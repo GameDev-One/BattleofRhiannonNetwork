@@ -7,7 +7,7 @@ extends KinematicBody
 signal health_changed(health)
 
 onready var camera: CameraRig = $CameraRig
-onready var skin: Mannequiny = $Mannequiny
+onready var skin: Godette = $Godette
 onready var state_machine: StateMachine = $StateMachine
 
 onready var joystick: Joystick = $UI/TouchControls/Joystick
