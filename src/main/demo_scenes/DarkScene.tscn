@@ -1,0 +1,266 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/godette/Godette.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/enviornment/smoke.png" type="Texture" id=2]
+[ext_resource path="res://assets/chip/Elements/electric.png" type="Texture" id=3]
+
+[sub_resource type="ProceduralSky" id=1]
+radiance_size = 1
+sky_top_color = Color( 1, 1, 1, 1 )
+sky_energy = 64.0
+
+[sub_resource type="Environment" id=2]
+background_mode = 3
+background_sky = SubResource( 1 )
+background_energy = 1.25
+fog_depth_enabled = false
+fog_height_enabled = true
+fog_height_min = 0.0
+fog_height_max = -1.0
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = true
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=4]
+material = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+max_value = 4.0
+_data = [ Vector2( 0, 0.7 ), 0.0, 0.0, 0, 0, Vector2( 1, 4 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.821739, 0.991304, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.225465, 0.225465, 0.225465, 0.447178, 0.395431, 0.395431, 0.395431, 0.0304348, 0.407843, 0.407843, 0.407843, 0 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 2
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
+size = Vector2( 0.25, 0.25 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.304348, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[node name="Main" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Godette" parent="." instance=ExtResource( 1 )]
+
+[node name="Fog" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -5 )
+amount = 1024
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+spread = 180.0
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 75.79
+angular_velocity_random = 1.0
+angle = 180.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Charms" type="CPUParticles" parent="Fog"]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+speed_scale = 0.2
+lifetime_randomness = 0.25
+mesh = SubResource( 8 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+gravity = Vector3( 0, 1, 0 )
+color_ramp = SubResource( 9 )
+
+[node name="Fog2" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -5 )
+amount = 1024
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+spread = 180.0
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 75.79
+angular_velocity_random = 1.0
+angle = 180.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Charms" type="CPUParticles" parent="Fog2"]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+speed_scale = 0.2
+lifetime_randomness = 0.25
+mesh = SubResource( 8 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+gravity = Vector3( 0, 1, 0 )
+color_ramp = SubResource( 9 )
+
+[node name="Fog3" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, -5 )
+amount = 1024
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+spread = 180.0
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 75.79
+angular_velocity_random = 1.0
+angle = 180.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Charms" type="CPUParticles" parent="Fog3"]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+speed_scale = 0.2
+lifetime_randomness = 0.25
+mesh = SubResource( 8 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+gravity = Vector3( 0, 1, 0 )
+color_ramp = SubResource( 9 )
+
+[node name="Fog4" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -15 )
+amount = 1024
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+spread = 180.0
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 75.79
+angular_velocity_random = 1.0
+angle = 180.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Charms" type="CPUParticles" parent="Fog4"]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+speed_scale = 0.2
+lifetime_randomness = 0.25
+mesh = SubResource( 8 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+gravity = Vector3( 0, 1, 0 )
+color_ramp = SubResource( 9 )
+
+[node name="Fog5" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -15 )
+amount = 1024
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+spread = 180.0
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 75.79
+angular_velocity_random = 1.0
+angle = 180.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Charms" type="CPUParticles" parent="Fog5"]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+speed_scale = 0.2
+lifetime_randomness = 0.25
+mesh = SubResource( 8 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+gravity = Vector3( 0, 1, 0 )
+color_ramp = SubResource( 9 )
+
+[node name="Fog6" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, -15 )
+amount = 1024
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.1
+lifetime_randomness = 0.2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+spread = 180.0
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 75.79
+angular_velocity_random = 1.0
+angle = 180.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="Charms" type="CPUParticles" parent="Fog6"]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+speed_scale = 0.2
+lifetime_randomness = 0.25
+mesh = SubResource( 8 )
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 5 )
+gravity = Vector3( 0, 1, 0 )
+color_ramp = SubResource( 9 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.948832, 0.315782, 0, -0.315782, 0.948832, 0, 1.83906, 1.77913 )

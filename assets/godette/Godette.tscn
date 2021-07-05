@@ -1,0 +1,104 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/godette/Godette.glb" type="PackedScene" id=1]
+[ext_resource path="res://src/godotte/godette.gd" type="Script" id=2]
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "P2"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "P3"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "P4"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "P1"
+
+[sub_resource type="AnimationNodeTransition" id=26]
+input_count = 4
+xfade_time = 0.2
+input_0/name = "state 0"
+input_0/auto_advance = false
+input_1/name = "state 1"
+input_1/auto_advance = false
+input_2/name = "state 2"
+input_2/auto_advance = false
+input_3/name = "state 3"
+input_3/auto_advance = false
+
+[sub_resource type="AnimationNodeBlendTree" id=22]
+graph_offset = Vector2( -240.969, 131 )
+nodes/Animation/node = SubResource( 20 )
+nodes/Animation/position = Vector2( -200, 140 )
+"nodes/Animation 2/node" = SubResource( 23 )
+"nodes/Animation 2/position" = Vector2( -200, 260 )
+"nodes/Animation 3/node" = SubResource( 24 )
+"nodes/Animation 3/position" = Vector2( -200, 380 )
+"nodes/Animation 4/node" = SubResource( 25 )
+"nodes/Animation 4/position" = Vector2( -200, 500 )
+nodes/Transition/node = SubResource( 26 )
+nodes/Transition/position = Vector2( 160, 140 )
+nodes/output/position = Vector2( 500, 140 )
+node_connections = [ "output", 0, "Transition", "Transition", 0, "Animation", "Transition", 1, "Animation 2", "Transition", 2, "Animation 3", "Transition", 3, "Animation 4" ]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Fight Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Run"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=5]
+blend_point_0/node = SubResource( 3 )
+blend_point_0/pos = 0.1
+blend_point_1/node = SubResource( 4 )
+blend_point_1/pos = 0.3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/fight/node = SubResource( 22 )
+states/fight/position = Vector2( 451, 197.324 )
+states/fight_idle/node = SubResource( 1 )
+states/fight_idle/position = Vector2( 185, 197.324 )
+states/idle/node = SubResource( 2 )
+states/idle/position = Vector2( 185, 92 )
+states/move_ground/node = SubResource( 5 )
+states/move_ground/position = Vector2( 451, 92 )
+transitions = [ "idle", "move_ground", SubResource( 7 ), "move_ground", "idle", SubResource( 8 ), "idle", "fight_idle", SubResource( 9 ), "fight_idle", "idle", SubResource( 10 ), "fight_idle", "fight", SubResource( 27 ), "fight", "fight_idle", SubResource( 28 ) ]
+start_node = "idle"
+graph_offset = Vector2( -69.3698, 45.864 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+
+[node name="Godette" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Armature" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 13 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+process_mode = 0
+parameters/playback = SubResource( 14 )
+parameters/fight/Transition/current = 0
+parameters/move_ground/blend_position = 0.298522

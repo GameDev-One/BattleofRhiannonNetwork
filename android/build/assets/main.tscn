@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/level/BasicLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/godette/Godette.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/debug/debug_out.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/joystick/power-generator-176x.png" type="Texture" id=7]
 [ext_resource path="res://assets/joystick/cannon-ball-176x.png" type="Texture" id=8]
@@ -205,6 +206,9 @@ navigation_path = NodePath("../Navigation")
 transform = Transform( 0.703953, 0, 0.710247, 0, 1, 0, -0.710247, 0, 0.703953, -17.2469, 0.5, -17.5266 )
 player_path = NodePath("../Player")
 navigation_path = NodePath("../Navigation")
+
+[node name="Godette" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3543, 0.508267, 13.5803 )
 
 [editable path="Player/UI/TouchControls/Joystick"]
 [editable path="Player/UI/TouchControls/Joystick2"]
