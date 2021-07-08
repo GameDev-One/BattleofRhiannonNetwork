@@ -6,7 +6,6 @@
 
 [sub_resource type="ProceduralSky" id=1]
 radiance_size = 1
-sky_top_color = Color( 1, 1, 1, 1 )
 sky_energy = 64.0
 
 [sub_resource type="Environment" id=2]
@@ -65,7 +64,7 @@ environment = SubResource( 2 )
 [node name="Godette" parent="." instance=ExtResource( 1 )]
 
 [node name="Fog" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 15.9874 )
 amount = 1024
 lifetime = 3.0
 preprocess = 3.0
@@ -98,7 +97,7 @@ gravity = Vector3( 0, 1, 0 )
 color_ramp = SubResource( 9 )
 
 [node name="Fog2" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, 15.9874 )
 amount = 1024
 lifetime = 3.0
 preprocess = 3.0
@@ -131,7 +130,7 @@ gravity = Vector3( 0, 1, 0 )
 color_ramp = SubResource( 9 )
 
 [node name="Fog3" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 15.9874 )
 amount = 1024
 lifetime = 3.0
 preprocess = 3.0
@@ -164,7 +163,7 @@ gravity = Vector3( 0, 1, 0 )
 color_ramp = SubResource( 9 )
 
 [node name="Fog4" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 5.98745 )
 amount = 1024
 lifetime = 3.0
 preprocess = 3.0
@@ -197,7 +196,7 @@ gravity = Vector3( 0, 1, 0 )
 color_ramp = SubResource( 9 )
 
 [node name="Fog5" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, 5.98745 )
 amount = 1024
 lifetime = 3.0
 preprocess = 3.0
@@ -230,7 +229,7 @@ gravity = Vector3( 0, 1, 0 )
 color_ramp = SubResource( 9 )
 
 [node name="Fog6" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, -15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 5.98745 )
 amount = 1024
 lifetime = 3.0
 preprocess = 3.0
@@ -263,4 +262,4 @@ gravity = Vector3( 0, 1, 0 )
 color_ramp = SubResource( 9 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.948832, 0.315782, 0, -0.315782, 0.948832, 0, 1.83906, 1.77913 )
+transform = Transform( -1, 1.77636e-15, -8.74228e-08, -2.13241e-08, 0.969795, 0.24392, 8.47822e-08, 0.24392, -0.969795, 0, 2, -2.64885 )
