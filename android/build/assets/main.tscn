@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/ui/debug/debug_out.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/joystick/power-generator-176x.png" type="Texture" id=7]
 [ext_resource path="res://assets/joystick/cannon-ball-176x.png" type="Texture" id=8]
+[ext_resource path="res://src/ui/Menu/Menu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/chip/Fonts/battlechip_sub_normal_font.tres" type="DynamicFont" id=10]
 [ext_resource path="res://src/player/health_bar.gd" type="Script" id=11]
 [ext_resource path="res://src/nano_extrapolator/NanoExtrapolator.tscn" type="PackedScene" id=13]
@@ -31,7 +32,7 @@ albedo_texture = ExtResource( 5 )
 [sub_resource type="QuadMesh" id=3]
 material = SubResource( 2 )
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.503571, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.482143, 0.482143, 0.482143, 1, 0, 0, 0, 1 )
 
@@ -156,8 +157,12 @@ align = 1
 valign = 1
 
 [node name="DebugOut" parent="Player/UI" instance=ExtResource( 6 )]
+visible = false
 margin_right = 450.0
 margin_bottom = 850.0
+
+[node name="Menu" parent="Player/UI" instance=ExtResource( 9 )]
+player_path = NodePath("../..")
 
 [node name="Navigation" type="Navigation" parent="."]
 
@@ -204,7 +209,7 @@ spread = 180.0
 gravity = Vector3( 0, -0.05, 0 )
 initial_velocity = 0.25
 scale_amount = 0.1
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 4 )
 hue_variation_curve = SubResource( 5 )
 anim_offset = 1.0
 anim_offset_random = 1.0

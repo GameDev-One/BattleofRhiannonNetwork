@@ -1,0 +1,834 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://assets/menu/space_ui/metalPanel.png" type="Texture" id=1]
+[ext_resource path="res://assets/menu/return.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu/singleplayer.png" type="Texture" id=3]
+[ext_resource path="res://assets/menu/gear.png" type="Texture" id=4]
+[ext_resource path="res://assets/menu/menuList.png" type="Texture" id=5]
+[ext_resource path="res://assets/menu/star.png" type="Texture" id=6]
+[ext_resource path="res://assets/menu/cross.png" type="Texture" id=7]
+[ext_resource path="res://assets/menu/godot-outline-wht.png" type="Texture" id=8]
+[ext_resource path="res://src/ui/Menu/vertical_options.gd" type="Script" id=9]
+[ext_resource path="res://assets/menu/space_ui/metalPanel_blue.png" type="Texture" id=10]
+[ext_resource path="res://assets/menu/space_ui/glassPanel_cornerBR.png" type="Texture" id=11]
+[ext_resource path="res://assets/menu/space_ui/metalPanel_yellow.png" type="Texture" id=12]
+[ext_resource path="res://assets/menu/space_ui/metalPanel_green.png" type="Texture" id=13]
+[ext_resource path="res://assets/menu/space_ui/metalPanel_red.png" type="Texture" id=14]
+[ext_resource path="res://assets/fonts/resource/normal/montserrat_h2.tres" type="DynamicFont" id=15]
+[ext_resource path="res://assets/menu/space_ui/glassPanel_projection.png" type="Texture" id=16]
+[ext_resource path="res://assets/menu/space_ui/metalPanel_blueCorner.png" type="Texture" id=17]
+[ext_resource path="res://assets/menu/character/godette_expressions.png" type="Texture" id=18]
+[ext_resource path="res://assets/fonts/resource/normal/montserrat_h1.tres" type="DynamicFont" id=19]
+[ext_resource path="res://assets/fonts/resource/menu/panel_body_font.tres" type="DynamicFont" id=20]
+[ext_resource path="res://assets/menu/green_button08.png" type="Texture" id=21]
+[ext_resource path="res://assets/fonts/montserrat/montserrat_bold.ttf" type="DynamicFontData" id=22]
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+use_filter = true
+font_data = ExtResource( 22 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Btns:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, 1080 ), Vector2( 150, 150 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MenuToggleBtn:icon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1.18921, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Btns:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, 60 ), Vector2( 150, 1080 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MenuToggleBtn:icon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+
+[node name="VerticalOptions" type="Control"]
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_right = 200.0
+rect_min_size = Vector2( 150, 150 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_top = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuToggleBtn" type="Button" parent="."]
+self_modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource( 2 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btns" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 200.0
+margin_bottom = -20.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterBtn" type="Button" parent="Btns"]
+self_modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissionObjBtn" type="Button" parent="Btns"]
+self_modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+margin_top = 170.0
+margin_right = 150.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 150, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FolderBtn" type="Button" parent="Btns"]
+self_modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+margin_top = 340.0
+margin_right = 150.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 150, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsBtn" type="Button" parent="Btns"]
+self_modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+margin_top = 510.0
+margin_right = 150.0
+margin_bottom = 660.0
+rect_min_size = Vector2( 150, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitBtn" type="Button" parent="Btns"]
+self_modulate = Color( 0.466667, 0.466667, 0.466667, 1 )
+margin_top = 680.0
+margin_right = 150.0
+margin_bottom = 830.0
+rect_min_size = Vector2( 150, 150 )
+focus_mode = 0
+size_flags_horizontal = 3
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panels" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 150.0
+margin_top = -860.0
+margin_right = 1010.0
+rect_min_size = Vector2( 860, 860 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel" type="VBoxContainer" parent="Panels"]
+margin_right = 860.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="NinePatchRect" parent="Panels/CharacterPanel"]
+margin_right = 860.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+texture = ExtResource( 10 )
+patch_margin_left = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Header/VBoxContainer"]
+margin_right = 860.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 860, 80 )
+custom_fonts/font = ExtResource( 15 )
+text = "Character"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/CharacterPanel/Header/VBoxContainer"]
+margin_top = 84.0
+margin_right = 860.0
+margin_bottom = 248.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panels/CharacterPanel/Header/VBoxContainer/CenterContainer"]
+margin_left = 230.0
+margin_top = 2.0
+margin_right = 630.0
+margin_bottom = 162.0
+rect_min_size = Vector2( 400, 160 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="NinePatchRect" parent="Panels/CharacterPanel"]
+margin_top = 254.0
+margin_right = 860.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="NinePatchRect" parent="Panels/CharacterPanel/Body/VBoxContainer"]
+margin_right = 860.0
+margin_bottom = 113.0
+size_flags_vertical = 3
+texture = ExtResource( 17 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/Health"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/Health/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "Health"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/Health/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_vertical = 3
+custom_constants/separation = 40
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/Health/VBoxContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 64.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "9999"
+align = 1
+valign = 1
+
+[node name="TextureProgress" type="TextureProgress" parent="Panels/CharacterPanel/Body/VBoxContainer/Health/VBoxContainer/HBoxContainer"]
+margin_left = 120.0
+margin_right = 710.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 10.0
+texture_under = ExtResource( 1 )
+texture_over = ExtResource( 16 )
+texture_progress = ExtResource( 21 )
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/Health/VBoxContainer/HBoxContainer"]
+margin_left = 750.0
+margin_right = 830.0
+margin_bottom = 64.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "9999"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/Health/VBoxContainer/HBoxContainer/Label2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -14.0
+margin_right = 20.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Max"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackPower" type="NinePatchRect" parent="Panels/CharacterPanel/Body/VBoxContainer"]
+margin_top = 123.0
+margin_right = 860.0
+margin_bottom = 236.0
+size_flags_vertical = 3
+texture = ExtResource( 17 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackPower"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackPower/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "Attack Power"
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackPower/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 106.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackPower/VBoxContainer/CenterContainer"]
+margin_left = 385.0
+margin_top = 12.0
+margin_right = 445.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "999"
+
+[node name="AttackSpeed" type="NinePatchRect" parent="Panels/CharacterPanel/Body/VBoxContainer"]
+margin_top = 246.0
+margin_right = 860.0
+margin_bottom = 359.0
+size_flags_vertical = 3
+texture = ExtResource( 17 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackSpeed"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackSpeed/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "Attack Speed"
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackSpeed/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 106.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/AttackSpeed/VBoxContainer/CenterContainer"]
+margin_left = 385.0
+margin_top = 12.0
+margin_right = 445.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "999"
+
+[node name="ChargeSpeed" type="NinePatchRect" parent="Panels/CharacterPanel/Body/VBoxContainer"]
+margin_top = 369.0
+margin_right = 860.0
+margin_bottom = 482.0
+size_flags_vertical = 3
+texture = ExtResource( 17 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/ChargeSpeed"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/ChargeSpeed/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "Charge Speed"
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/ChargeSpeed/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 106.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/ChargeSpeed/VBoxContainer/CenterContainer"]
+margin_left = 385.0
+margin_top = 12.0
+margin_right = 445.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "999"
+
+[node name="ChipReloadSpeed" type="NinePatchRect" parent="Panels/CharacterPanel/Body/VBoxContainer"]
+margin_top = 492.0
+margin_right = 860.0
+margin_bottom = 606.0
+size_flags_vertical = 3
+texture = ExtResource( 17 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/ChipReloadSpeed"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/ChipReloadSpeed/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "Chip Reload Speed"
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/CharacterPanel/Body/VBoxContainer/ChipReloadSpeed/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 107.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panels/CharacterPanel/Body/VBoxContainer/ChipReloadSpeed/VBoxContainer/CenterContainer"]
+margin_left = 385.0
+margin_top = 12.0
+margin_right = 445.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "999"
+
+[node name="MissionPanel" type="VBoxContainer" parent="Panels"]
+visible = false
+margin_right = 860.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="NinePatchRect" parent="Panels/MissionPanel"]
+margin_right = 860.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+texture = ExtResource( 12 )
+patch_margin_left = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="NinePatchRect" parent="Panels/MissionPanel"]
+margin_top = 254.0
+margin_right = 860.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FolderPanel" type="VBoxContainer" parent="Panels"]
+visible = false
+margin_right = 860.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="NinePatchRect" parent="Panels/FolderPanel"]
+margin_right = 860.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+texture = ExtResource( 13 )
+patch_margin_left = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="NinePatchRect" parent="Panels/FolderPanel"]
+margin_top = 254.0
+margin_right = 860.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPanel" type="VBoxContainer" parent="Panels"]
+visible = false
+margin_right = 860.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="NinePatchRect" parent="Panels/OptionsPanel"]
+margin_right = 860.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+texture = ExtResource( 14 )
+patch_margin_left = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="NinePatchRect" parent="Panels/OptionsPanel"]
+margin_top = 254.0
+margin_right = 860.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitPanel" type="VBoxContainer" parent="Panels"]
+visible = false
+margin_right = 860.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="NinePatchRect" parent="Panels/QuitPanel"]
+margin_right = 860.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+texture = ExtResource( 1 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/QuitPanel/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 15 )
+text = "Do you want to quit?"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="NinePatchRect" parent="Panels/QuitPanel"]
+margin_top = 254.0
+margin_right = 860.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/QuitPanel/Body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/QuitPanel/Body/HBoxContainer"]
+margin_right = 428.0
+margin_bottom = 606.0
+size_flags_horizontal = 3
+
+[node name="YES" type="Button" parent="Panels/QuitPanel/Body/HBoxContainer/CenterContainer"]
+margin_left = 89.0
+margin_top = 203.0
+margin_right = 339.0
+margin_bottom = 403.0
+rect_min_size = Vector2( 250, 200 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 15 )
+text = "YES"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panels/QuitPanel/Body/HBoxContainer/CenterContainer/YES"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="Panels/QuitPanel/Body/HBoxContainer"]
+margin_left = 432.0
+margin_right = 860.0
+margin_bottom = 606.0
+size_flags_horizontal = 3
+
+[node name="NO" type="Button" parent="Panels/QuitPanel/Body/HBoxContainer/CenterContainer2"]
+margin_left = 89.0
+margin_top = 203.0
+margin_right = 339.0
+margin_bottom = 403.0
+rect_min_size = Vector2( 250, 200 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 15 )
+text = "NO"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panels/QuitPanel/Body/HBoxContainer/CenterContainer2/NO"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "close"
+anims/close = SubResource( 1 )
+anims/open = SubResource( 2 )
+
+[connection signal="toggled" from="MenuToggleBtn" to="." method="_on_MenuToggleBtn_toggled"]
+[connection signal="toggled" from="Btns/CharacterBtn" to="." method="_on_CharacterBtn_toggled"]
+[connection signal="toggled" from="Btns/MissionObjBtn" to="." method="_on_MissionObjBtn_toggled"]
+[connection signal="toggled" from="Btns/FolderBtn" to="." method="_on_FolderBtn_toggled"]
+[connection signal="toggled" from="Btns/OptionsBtn" to="." method="_on_OptionsBtn_toggled"]
+[connection signal="pressed" from="Btns/QuitBtn" to="." method="_on_QuitBtn_pressed"]
+[connection signal="pressed" from="Panels/QuitPanel/Body/HBoxContainer/CenterContainer/YES" to="." method="_on_QuitPanel_YES_pressed"]
+[connection signal="pressed" from="Panels/QuitPanel/Body/HBoxContainer/CenterContainer2/NO" to="." method="_on_QuitPanel_NO_pressed"]

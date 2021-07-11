@@ -22,3 +22,5 @@ func goto_scene(path: String, current_scene: Node) -> void:
 			loading_bar.value = progress * 100
 			
 		yield(get_tree(), "idle_frame")
+		
+	

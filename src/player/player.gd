@@ -22,7 +22,10 @@ onready var battle_deck: Node = $BattleDeck
 # Combat
 export(String) var _c_Combat
 export(int, 1, 9999) var max_health: int = 1
-export(float, 0, 10) var chip_reload_time: float = 3.0
+export(int, 1, 9999) var atk_power: int = 1
+export(float, 0, 10) var atk_speed: float = 9.99
+export(float, 0, 10) var charge_speed: float = 9.99
+export(float, 0, 100) var chip_reload_time: float = 99.99
 
 # Global
 export(String) var _c_global
