@@ -30,6 +30,8 @@ onready var CharacterPanelAtkSpeed: Label = $Panels/CharacterPanel/Body/VBoxCont
 onready var CharacterPanelChargeSpeed: Label = $Panels/CharacterPanel/Body/VBoxContainer/ChargeSpeed/VBoxContainer/CenterContainer/Label
 onready var CharacterPanelChipReloadSpeed: Label = $Panels/CharacterPanel/Body/VBoxContainer/ChipReloadSpeed/VBoxContainer/CenterContainer/Label
 
+onready var FolderPanelChipList: ScrollContainer = $Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer/ChipList
+onready var FolderPanelChipDisplay: TextureRect = $Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer/VBoxContainer/ChipDisplay
 
 var player: Player
 
@@ -38,13 +40,15 @@ func _ready():
 	yield(owner, "ready")
 	player = owner.player
 	
-	yield(player, "ready")
-	set_character_panel_max_health()
-	set_character_panel_health()
-	set_character_panel_atk_power()
-	set_character_panel_atk_speed()
-	set_character_panel_charge_speed()
-	set_character_panel_chip_reload_speed()
+	if player:
+		yield(player, "ready")
+		set_character_panel_max_health()
+		set_character_panel_health()
+		set_character_panel_atk_power()
+		set_character_panel_atk_speed()
+		set_character_panel_charge_speed()
+		set_character_panel_chip_reload_speed()
+		
 
 
 func _on_MenuToggleBtn_toggled(button_pressed):
@@ -75,6 +79,8 @@ func _on_MissionObjBtn_toggled(button_pressed):
 
 func _on_FolderBtn_toggled(button_pressed):
 	toggle_selected_menu(SELECTED_MENU_ID.FolderBtn, button_pressed)
+	FolderPanelChipList.update_ui(player.battle_deck.chip_deck_resource)
+	FolderPanelChipDisplay.update_ui(player.battle_deck.chip_deck_resource.battlechips[0])
 
 
 func _on_OptionsBtn_toggled(button_pressed):
@@ -137,3 +143,43 @@ func set_character_panel_charge_speed():
 
 func set_character_panel_chip_reload_speed():
 	CharacterPanelChipReloadSpeed.text = str(player.chip_reload_time).pad_decimals(2) + "s"
+
+
+func _on_ChipList_chip_item_selected(index):
+	FolderPanelChipDisplay.update_ui(player.battle_deck.chip_deck_resource.battlechips[index])
+
+
+func _on_Name_toggled(button_pressed):
+	if button_pressed:
+		player.battle_deck.chip_deck_resource.sort_by_name_asc()
+	else:
+		player.battle_deck.chip_deck_resource.sort_by_name_desc()
+		
+	FolderPanelChipList.update_ui(player.battle_deck.chip_deck_resource)
+
+
+func _on_Damage_toggled(button_pressed):
+	if button_pressed:
+		player.battle_deck.chip_deck_resource.sort_by_dmg_asc()
+	else:
+		player.battle_deck.chip_deck_resource.sort_by_dmg_desc()
+		
+	FolderPanelChipList.update_ui(player.battle_deck.chip_deck_resource)
+
+
+func _on_Element_toggled(button_pressed):
+	if button_pressed:
+		player.battle_deck.chip_deck_resource.sort_by_element_asc()
+	else:
+		player.battle_deck.chip_deck_resource.sort_by_element_desc()
+		
+	FolderPanelChipList.update_ui(player.battle_deck.chip_deck_resource)
+
+
+func _on_Rank_toggled(button_pressed):
+	if button_pressed:
+		player.battle_deck.chip_deck_resource.sort_by_rank_asc()
+	else:
+		player.battle_deck.chip_deck_resource.sort_by_rank_desc()
+		
+	FolderPanelChipList.update_ui(player.battle_deck.chip_deck_resource)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/menu/space_ui/metalPanel.png" type="Texture" id=1]
 [ext_resource path="res://assets/menu/return.png" type="Texture" id=2]
@@ -22,6 +22,13 @@
 [ext_resource path="res://assets/fonts/resource/menu/panel_body_font.tres" type="DynamicFont" id=20]
 [ext_resource path="res://assets/menu/green_button08.png" type="Texture" id=21]
 [ext_resource path="res://assets/fonts/montserrat/montserrat_bold.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://assets/menu/character/card-joker.png" type="Texture" id=23]
+[ext_resource path="res://assets/menu/space_ui/metalPanel_yellowCorner.png" type="Texture" id=24]
+[ext_resource path="res://assets/fonts/resource/menu/panel_subbody_font.tres" type="DynamicFont" id=25]
+[ext_resource path="res://assets/chip/Elements/normal.png" type="Texture" id=26]
+[ext_resource path="res://assets/menu/folder_panel_vertical_seperator_theme.tres" type="StyleBox" id=27]
+[ext_resource path="res://src/ui/Menu/ChipDisplay.tscn" type="PackedScene" id=28]
+[ext_resource path="res://src/ui/Menu/ChipList.tscn" type="PackedScene" id=29]
 
 [sub_resource type="DynamicFont" id=3]
 size = 14
@@ -243,9 +250,11 @@ __meta__ = {
 }
 
 [node name="CharacterPanel" type="VBoxContainer" parent="Panels"]
+visible = false
 margin_right = 860.0
 margin_bottom = 860.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 860, 860 )
+size_flags_horizontal = 2
 size_flags_vertical = 3
 
 [node name="Header" type="NinePatchRect" parent="Panels/CharacterPanel"]
@@ -605,7 +614,8 @@ text = "999"
 visible = false
 margin_right = 860.0
 margin_bottom = 860.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 860, 860 )
+size_flags_horizontal = 2
 size_flags_vertical = 3
 
 [node name="Header" type="NinePatchRect" parent="Panels/MissionPanel"]
@@ -616,6 +626,48 @@ texture = ExtResource( 12 )
 patch_margin_left = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MissionPanel/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/MissionPanel/Header/VBoxContainer"]
+margin_right = 860.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 860, 80 )
+custom_fonts/font = ExtResource( 15 )
+text = "mission"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/MissionPanel/Header/VBoxContainer"]
+margin_top = 84.0
+margin_right = 860.0
+margin_bottom = 248.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panels/MissionPanel/Header/VBoxContainer/CenterContainer"]
+margin_left = 230.0
+margin_top = 2.0
+margin_right = 630.0
+margin_bottom = 162.0
+rect_min_size = Vector2( 400, 160 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 23 )
+expand = true
+stretch_mode = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -635,17 +687,254 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FolderPanel" type="VBoxContainer" parent="Panels"]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MissionPanel/Body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="NinePatchRect" parent="Panels/MissionPanel/Body/VBoxContainer"]
 margin_right = 860.0
+margin_bottom = 234.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource( 24 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MissionPanel/Body/VBoxContainer/Title"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/MissionPanel/Body/VBoxContainer/Title/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "(WIP)    TIME TO DO SOME VIRUS BUSTING"
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/MissionPanel/Body/VBoxContainer/Title/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 227.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panels/MissionPanel/Body/VBoxContainer/Title/VBoxContainer/CenterContainer"]
+margin_top = 9.0
+margin_right = 830.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 830, 85 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus quam, mattis ut convallis ut, condimentum non mi. Vestibulum quis purus ac nisi consectetur ullamcorper a nec sapien. Praesent suscipit ac justo in posuere. Suspendisse ultrices eleifend laoreet. Duis scelerisque."
+valign = 1
+autowrap = true
+
+[node name="Reward" type="NinePatchRect" parent="Panels/MissionPanel/Body/VBoxContainer"]
+margin_top = 244.0
+margin_right = 860.0
+margin_bottom = 361.0
+size_flags_vertical = 3
+texture = ExtResource( 24 )
+patch_margin_left = 30
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MissionPanel/Body/VBoxContainer/Reward"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -20.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 0, 115 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 38 )
+custom_fonts/font = ExtResource( 19 )
+text = "(WIP)    Reward"
+uppercase = true
+
+[node name="Items" type="HBoxContainer" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 60 )
+alignment = 1
+
+[node name="One" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_right = 100.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Two" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Three" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Four" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 312.0
+margin_right = 413.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Five" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 417.0
+margin_right = 517.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Six" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 521.0
+margin_right = 621.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Seven" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 625.0
+margin_right = 725.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Eight" type="TextureButton" parent="Panels/MissionPanel/Body/VBoxContainer/Reward/VBoxContainer/Items"]
+margin_left = 729.0
+margin_right = 830.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 5
+
+[node name="Objective" type="NinePatchRect" parent="Panels/MissionPanel/Body/VBoxContainer"]
+margin_top = 371.0
+margin_right = 860.0
+margin_bottom = 606.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource( 24 )
+patch_margin_left = 20
+patch_margin_top = 80
+patch_margin_right = 120
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/MissionPanel/Body/VBoxContainer/Objective"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -3.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/MissionPanel/Body/VBoxContainer/Objective/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = ExtResource( 19 )
+text = "(WIP)    OBJECTIVE"
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Panels/MissionPanel/Body/VBoxContainer/Objective/VBoxContainer"]
+margin_top = 42.0
+margin_right = 830.0
+margin_bottom = 228.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panels/MissionPanel/Body/VBoxContainer/Objective/VBoxContainer/CenterContainer"]
+margin_top = 26.0
+margin_right = 830.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 830, 85 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus quam, mattis ut convallis ut, condimentum non mi. Vestibulum quis purus ac nisi consectetur ullamcorper a nec sapien. Praesent suscipit ac justo in posuere. "
+valign = 1
+autowrap = true
+
+[node name="FolderPanel" type="VBoxContainer" parent="Panels"]
+margin_right = 1720.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 1720, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/FolderPanel"]
+margin_right = 1720.0
 margin_bottom = 860.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Header" type="NinePatchRect" parent="Panels/FolderPanel"]
-margin_right = 860.0
-margin_bottom = 250.0
-rect_min_size = Vector2( 0, 250 )
+[node name="Folder" type="VBoxContainer" parent="Panels/FolderPanel/HBoxContainer"]
+margin_right = 760.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Header" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer/Folder"]
+margin_right = 760.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 175 )
 texture = ExtResource( 13 )
 patch_margin_left = 20
 patch_margin_right = 20
@@ -654,9 +943,128 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Body" type="NinePatchRect" parent="Panels/FolderPanel"]
-margin_top = 254.0
-margin_right = 860.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Folder/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer"]
+margin_right = 760.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 15 )
+text = "Folder"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChipSorter" type="HBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer"]
+margin_top = 61.0
+margin_right = 760.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+alignment = 2
+
+[node name="Label" type="Label" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_right = 275.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "40/40
+CHIPS"
+align = 1
+valign = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 279.0
+margin_top = 7.0
+margin_right = 283.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Name" type="Button" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 287.0
+margin_right = 485.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+toggle_mode = true
+text = "        Name        "
+flat = true
+
+[node name="VSeparator" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 489.0
+margin_top = 7.0
+margin_right = 493.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Damage" type="Button" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 497.0
+margin_right = 571.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+toggle_mode = true
+text = "Dmg"
+flat = true
+
+[node name="VSeparator3" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 575.0
+margin_top = 7.0
+margin_right = 579.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Element" type="Button" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 583.0
+margin_right = 670.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+toggle_mode = true
+text = "Elmnt"
+flat = true
+
+[node name="VSeparator4" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 674.0
+margin_top = 7.0
+margin_right = 678.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Rank" type="Button" parent="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter"]
+margin_left = 682.0
+margin_right = 760.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+toggle_mode = true
+text = "Rank"
+flat = true
+
+[node name="Body" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer/Folder"]
+margin_top = 179.0
+margin_right = 760.0
 margin_bottom = 860.0
 rect_min_size = Vector2( 0, 250 )
 size_flags_vertical = 3
@@ -669,15 +1077,267 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Folder/Body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer"]
+margin_right = 274.0
+margin_bottom = 681.0
+size_flags_horizontal = 3
+
+[node name="ChipDisplay" parent="Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer/VBoxContainer" instance=ExtResource( 28 )]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer/VBoxContainer"]
+show_behind_parent = true
+margin_top = 380.0
+margin_right = 274.0
+margin_bottom = 681.0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer/VBoxContainer/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, orci a semper suscipit."
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChipList" parent="Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer" instance=ExtResource( 29 )]
+
+[node name="Buttons" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer"]
+margin_left = 764.0
+margin_right = 955.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+texture = ExtResource( 1 )
+patch_margin_left = 10
+patch_margin_top = 20
+patch_margin_right = 10
+patch_margin_bottom = 20
+
+[node name="Inventory" type="VBoxContainer" parent="Panels/FolderPanel/HBoxContainer"]
+margin_left = 959.0
+margin_right = 1720.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Header" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer/Inventory"]
+margin_right = 761.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 175 )
+texture = ExtResource( 13 )
+patch_margin_left = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer"]
+margin_right = 761.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 15 )
+text = "Inventory"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChipSorter" type="HBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer"]
+margin_top = 61.0
+margin_right = 761.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+alignment = 2
+
+[node name="Name" type="Button" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_right = 198.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "        Name        "
+flat = true
+
+[node name="VSeparator" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 202.0
+margin_top = 7.0
+margin_right = 206.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Damage" type="Button" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 210.0
+margin_right = 284.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Dmg"
+flat = true
+
+[node name="VSeparator3" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 288.0
+margin_top = 7.0
+margin_right = 292.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Element" type="Button" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 296.0
+margin_right = 383.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Elmnt"
+flat = true
+
+[node name="VSeparator4" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 387.0
+margin_top = 7.0
+margin_right = 391.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Rank" type="Button" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 395.0
+margin_right = 473.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Rank"
+flat = true
+
+[node name="VSeparator2" type="VSeparator" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 477.0
+margin_top = 7.0
+margin_right = 481.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 4
+custom_styles/separator = ExtResource( 27 )
+
+[node name="Count" type="Label" parent="Panels/FolderPanel/HBoxContainer/Inventory/Header/VBoxContainer/ChipSorter"]
+margin_left = 485.0
+margin_right = 761.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "40/40
+CHIPS"
+align = 1
+valign = 1
+
+[node name="Body" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer/Inventory"]
+margin_top = 179.0
+margin_right = 761.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Inventory/Body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChipList" parent="Panels/FolderPanel/HBoxContainer/Inventory/Body/HBoxContainer" instance=ExtResource( 29 )]
+margin_left = 0.0
+margin_right = 481.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/FolderPanel/HBoxContainer/Inventory/Body/HBoxContainer"]
+margin_left = 485.0
+margin_right = 761.0
+margin_bottom = 681.0
+size_flags_horizontal = 3
+
+[node name="ChipDisplay" parent="Panels/FolderPanel/HBoxContainer/Inventory/Body/HBoxContainer/VBoxContainer" instance=ExtResource( 28 )]
+margin_right = 276.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panels/FolderPanel/HBoxContainer/Inventory/Body/HBoxContainer/VBoxContainer"]
+show_behind_parent = true
+margin_top = 380.0
+margin_right = 276.0
+margin_bottom = 681.0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panels/FolderPanel/HBoxContainer/Inventory/Body/HBoxContainer/VBoxContainer/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, orci a semper suscipit."
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="OptionsPanel" type="VBoxContainer" parent="Panels"]
 visible = false
-margin_right = 860.0
+margin_right = 1720.0
 margin_bottom = 860.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Header" type="NinePatchRect" parent="Panels/OptionsPanel"]
-margin_right = 860.0
+margin_right = 1720.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 0, 250 )
 texture = ExtResource( 14 )
@@ -690,7 +1350,7 @@ __meta__ = {
 
 [node name="Body" type="NinePatchRect" parent="Panels/OptionsPanel"]
 margin_top = 254.0
-margin_right = 860.0
+margin_right = 1720.0
 margin_bottom = 860.0
 rect_min_size = Vector2( 0, 250 )
 size_flags_vertical = 3
@@ -705,13 +1365,13 @@ __meta__ = {
 
 [node name="QuitPanel" type="VBoxContainer" parent="Panels"]
 visible = false
-margin_right = 860.0
+margin_right = 1720.0
 margin_bottom = 860.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Header" type="NinePatchRect" parent="Panels/QuitPanel"]
-margin_right = 860.0
+margin_right = 1720.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 0, 250 )
 texture = ExtResource( 1 )
@@ -737,7 +1397,7 @@ __meta__ = {
 
 [node name="Body" type="NinePatchRect" parent="Panels/QuitPanel"]
 margin_top = 254.0
-margin_right = 860.0
+margin_right = 1720.0
 margin_bottom = 860.0
 rect_min_size = Vector2( 0, 250 )
 size_flags_vertical = 3
@@ -759,14 +1419,14 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Panels/QuitPanel/Body/HBoxContainer"]
-margin_right = 428.0
+margin_right = 858.0
 margin_bottom = 606.0
 size_flags_horizontal = 3
 
 [node name="YES" type="Button" parent="Panels/QuitPanel/Body/HBoxContainer/CenterContainer"]
-margin_left = 89.0
+margin_left = 304.0
 margin_top = 203.0
-margin_right = 339.0
+margin_right = 554.0
 margin_bottom = 403.0
 rect_min_size = Vector2( 250, 200 )
 size_flags_horizontal = 0
@@ -789,15 +1449,15 @@ __meta__ = {
 }
 
 [node name="CenterContainer2" type="CenterContainer" parent="Panels/QuitPanel/Body/HBoxContainer"]
-margin_left = 432.0
-margin_right = 860.0
+margin_left = 862.0
+margin_right = 1720.0
 margin_bottom = 606.0
 size_flags_horizontal = 3
 
 [node name="NO" type="Button" parent="Panels/QuitPanel/Body/HBoxContainer/CenterContainer2"]
-margin_left = 89.0
+margin_left = 304.0
 margin_top = 203.0
-margin_right = 339.0
+margin_right = 554.0
 margin_bottom = 403.0
 rect_min_size = Vector2( 250, 200 )
 size_flags_horizontal = 0
@@ -830,5 +1490,10 @@ anims/open = SubResource( 2 )
 [connection signal="toggled" from="Btns/FolderBtn" to="." method="_on_FolderBtn_toggled"]
 [connection signal="toggled" from="Btns/OptionsBtn" to="." method="_on_OptionsBtn_toggled"]
 [connection signal="pressed" from="Btns/QuitBtn" to="." method="_on_QuitBtn_pressed"]
+[connection signal="toggled" from="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter/Name" to="." method="_on_Name_toggled"]
+[connection signal="toggled" from="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter/Damage" to="." method="_on_Damage_toggled"]
+[connection signal="toggled" from="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter/Element" to="." method="_on_Element_toggled"]
+[connection signal="toggled" from="Panels/FolderPanel/HBoxContainer/Folder/Header/VBoxContainer/ChipSorter/Rank" to="." method="_on_Rank_toggled"]
+[connection signal="chip_item_selected" from="Panels/FolderPanel/HBoxContainer/Folder/Body/HBoxContainer/ChipList" to="." method="_on_ChipList_chip_item_selected"]
 [connection signal="pressed" from="Panels/QuitPanel/Body/HBoxContainer/CenterContainer/YES" to="." method="_on_QuitPanel_YES_pressed"]
 [connection signal="pressed" from="Panels/QuitPanel/Body/HBoxContainer/CenterContainer2/NO" to="." method="_on_QuitPanel_NO_pressed"]

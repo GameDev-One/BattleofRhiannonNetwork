@@ -259,6 +259,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/player/battle/chip/projectile/projectile.gd"
 }, {
+"base": "Button",
+"class": "Scroll_Button",
+"language": "GDScript",
+"path": "res://src/ui/Menu/scroll_button.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -320,6 +325,7 @@ _global_script_class_icons={
 "Player": "",
 "PlayerState": "",
 "Projectile": "",
+"Scroll_Button": "",
 "State": "",
 "StateMachine": ""
 }
@@ -327,7 +333,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Battle of Rhiannon Network"
-run/main_scene="res://src/ui/TitleScreen.tscn"
+run/main_scene="res://main.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"

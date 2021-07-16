@@ -19,18 +19,43 @@ export(Array, Resource) var battlechips = [
 
 
 class BattlechipSorter:
-	static func sort_name(a: BattleChip, b: BattleChip):
+	static func sort_name_asc(a: BattleChip, b: BattleChip):
 		if a.name < b.name:
 			return true
 		return false
 		
-	static func sort_element(a: BattleChip, b: BattleChip):
+	static func sort_name_desc(a: BattleChip, b: BattleChip):
+		if a.name > b.name:
+			return true
+		return false
+		
+	static func sort_element_asc(a: BattleChip, b: BattleChip):
 		if a.element < b.element:
 			return true
 		return false
 		
-	static func sort_rank(a: BattleChip, b: BattleChip):
+	static func sort_element_desc(a: BattleChip, b: BattleChip):
+		if a.element > b.element:
+			return true
+		return false
+		
+	static func sort_rank_asc(a: BattleChip, b: BattleChip):
 		if a.rank < b.rank:
+			return true
+		return false
+		
+	static func sort_rank_desc(a: BattleChip, b: BattleChip):
+		if a.rank > b.rank:
+			return true
+		return false
+		
+	static func sort_dmg_asc(a: BattleChip, b: BattleChip):
+		if a.damage < b.damage:
+			return true
+		return false
+		
+	static func sort_dmg_desc(a: BattleChip, b: BattleChip):
+		if a.damage > b.damage:
 			return true
 		return false
 
@@ -74,13 +99,26 @@ func peek() -> BattleChip:
 	return battlechips.front()
 
 
-func sort_by_name():
-	battlechips.sort_custom(BattlechipSorter, "sort_name")
+func sort_by_name_asc():
+	battlechips.sort_custom(BattlechipSorter, "sort_name_asc")
 
+func sort_by_name_desc():
+	battlechips.sort_custom(BattlechipSorter, "sort_name_desc")
 
-func sort_by_element():
-	battlechips.sort_custom(BattlechipSorter, "sort_element")
+func sort_by_element_asc():
+	battlechips.sort_custom(BattlechipSorter, "sort_element_asc")
 
+func sort_by_element_desc():
+	battlechips.sort_custom(BattlechipSorter, "sort_element_desc")
 
-func sort_by_rank():
-	battlechips.sort_custom(BattlechipSorter, "sort_rank")
+func sort_by_rank_asc():
+	battlechips.sort_custom(BattlechipSorter, "sort_rank_asc")
+
+func sort_by_rank_desc():
+	battlechips.sort_custom(BattlechipSorter, "sort_rank_desc")
+
+func sort_by_dmg_asc():
+	battlechips.sort_custom(BattlechipSorter, "sort_dmg_asc")
+
+func sort_by_dmg_desc():
+	battlechips.sort_custom(BattlechipSorter, "sort_dmg_desc")

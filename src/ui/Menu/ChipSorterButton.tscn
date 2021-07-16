@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/resource/menu/panel_subbody_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/menu/down.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu/up.png" type="Texture" id=3]
+[ext_resource path="res://src/ui/Menu/chip_sorter_button.gd" type="Script" id=4]
+
+[node name="ChipSorterButton" type="Button"]
+margin_left = 287.0
+margin_right = 485.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+toggle_mode = true
+text = "        Name        "
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asc" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.411765, 0.411765, 0.411765, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.411765, 0.411765, 0.411765, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="." to="." method="_on_ChipSorterButton_toggled"]

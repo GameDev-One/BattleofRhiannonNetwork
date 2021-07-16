@@ -18,6 +18,8 @@ onready var ReloadTimer: Timer = $Reload
 
 var hand: Array = [null, null, null, null]
 
+var _chip_deck_resource
+
 
 func _ready():
 	yield(owner, "ready")
@@ -26,7 +28,9 @@ func _ready():
 	ReloadTimer.start()
 	
 	randomize()
-	chip_deck_resource.battlechips.shuffle()
+	
+	_chip_deck_resource = chip_deck_resource.duplicate()
+	_chip_deck_resource.battlechips.shuffle()
 	
 	draw_next_chip()
 
@@ -55,7 +59,7 @@ func is_card_available() -> bool:
 func draw_next_chip() -> void:
 	var empty_space_index = hand.find(null)
 	if empty_space_index > -1:
-		hand[empty_space_index] = chip_deck_resource.pop()
+		hand[empty_space_index] = _chip_deck_resource.pop()
 		player.touch_action_ui[MAX_HAND_SIZE - empty_space_index - 1].restart()
 		update_ui()
 
