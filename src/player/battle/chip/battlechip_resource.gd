@@ -1,6 +1,7 @@
 extends Resource
 class_name BattleChip
 
+
 enum Element{
 	AQUA,
 	ELEC,
@@ -18,3 +19,20 @@ export(String) var rank = ''
 export(PackedScene) var projectile = null
 export(String, MULTILINE) var description = ""
 
+
+func get_element_texture() -> Texture:
+	var t: Texture
+	match element:
+		Element.AQUA:
+			t = preload("res://assets/chip/Elements/aqua.png")
+		Element.ELEC:
+			t = preload("res://assets/chip/Elements/electric.png")
+		Element.FIRE:
+			t = preload("res://assets/chip/Elements/fire.png")
+		Element.WOOD:
+			t = preload("res://assets/chip/Elements/wood.png")
+		Element.NORMAL:
+			t = preload("res://assets/chip/Elements/normal.png")
+		_:
+			assert(false, "Invalid element assignment on chip: " + name)
+	return t

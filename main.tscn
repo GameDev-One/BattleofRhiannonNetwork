@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/controller/joystick/Joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/controller/button/TouchAction.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/ui/Menu/Menu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/chip/Fonts/battlechip_sub_normal_font.tres" type="DynamicFont" id=10]
 [ext_resource path="res://src/player/health_bar.gd" type="Script" id=11]
+[ext_resource path="res://src/level/ZeusOpenAir/ZeusOpenAir.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/nano_extrapolator/NanoExtrapolator.tscn" type="PackedScene" id=13]
 
 [sub_resource type="NavigationMesh" id=1]
@@ -43,7 +44,7 @@ _data = [ Vector2( 0, -0.00454545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93185, 0.724367, -0.869682 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 42.2495, 5.02233, -0.869682 )
 max_health = 50
 chip_reload_time = 10.25
 touch_action_ui_path = NodePath("UI/TouchControls/TouchActions")
@@ -166,6 +167,7 @@ margin_bottom = 850.0
 player_path = NodePath("../..")
 
 [node name="Navigation" type="Navigation" parent="."]
+visible = false
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 1 )
@@ -179,7 +181,7 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="NanoExtrapolator" parent="." instance=ExtResource( 13 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.337, 0.5, 13.663 )
+transform = Transform( -0.999998, 0, -0.00178024, 0, 1, 0, 0.00178024, 0, -0.999998, 43.6105, 3.15748, 83.5336 )
 player_path = NodePath("../Player")
 navigation_path = NodePath("../Navigation")
 
@@ -199,7 +201,7 @@ player_path = NodePath("../Player")
 navigation_path = NodePath("../Navigation")
 
 [node name="Charm" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.78385, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9176, 9.17894, 0 )
 amount = 256
 lifetime = 5.0
 mesh = SubResource( 3 )
@@ -214,6 +216,9 @@ color_ramp = SubResource( 4 )
 hue_variation_curve = SubResource( 5 )
 anim_offset = 1.0
 anim_offset_random = 1.0
+
+[node name="ZeusOpenAir" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.991, 0, 0 )
 
 [editable path="Player/UI/TouchControls/Joystick"]
 [editable path="Player/UI/TouchControls/Joystick2"]

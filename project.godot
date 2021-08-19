@@ -259,6 +259,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/player/battle/chip/projectile/projectile.gd"
 }, {
+"base": "Button",
+"class": "Scroll_Button",
+"language": "GDScript",
+"path": "res://src/ui/Menu/scroll_button.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -320,6 +325,7 @@ _global_script_class_icons={
 "Player": "",
 "PlayerState": "",
 "Projectile": "",
+"Scroll_Button": "",
 "State": "",
 "StateMachine": ""
 }
@@ -358,7 +364,7 @@ script_templates_search_path="res://src/main/script_templates"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Trail/plugin.cfg", "res://addons/export_categories/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Trail/plugin.cfg", "res://addons/export_categories/plugin.cfg", "res://addons/wakatime/plugin.cfg" )
 
 [input]
 
