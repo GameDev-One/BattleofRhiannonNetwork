@@ -1,6 +1,13 @@
 extends Resource
 class_name BattlechipFolder
-
+"""
+# file		battlechip_folder_resource.gd
+# author	Devone Reynolds
+# par		email: gamedevone1@gmail.com
+# date		16 JUL 2021
+# copyright	Copyright (c) 2021 GameDevone
+# brief		Resurces used to interface with a group of battlechips.
+"""
 
 signal battlechips_changed(indexes)
 

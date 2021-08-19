@@ -38,6 +38,11 @@ func process(delta: float) -> void:
 		_input_relative = Vector2.ZERO
 	elif look_direction.length() > 0:
 		update_rotation(look_direction * sensitivity_gamepad * delta)
+	else:
+		var player_state: String = camera_rig.player.state_machine.state.name
+		
+		if player_state != "Idle" and player_state != "Shoot":
+			auto_rotate(camera_rig.player.global_transform.origin)
 
 	var is_moving_towards_camera: bool = (
 		move_direction.x >= -deadzone
@@ -56,7 +61,7 @@ func auto_rotate(move_direction: Vector3) -> void:
 		if offset > PI
 		else camera_rig.player.rotation.y + 2 * PI if offset < -PI else camera_rig.player.rotation.y
 	)
-	camera_rig.rotation.y = lerp(camera_rig.rotation.y, target_angle, 0.015)
+	camera_rig.rotation.y = lerp_angle(camera_rig.rotation.y, target_angle, 0.013)
 
 func camera_rig_rotate(lookAtPoint: Vector3, angle: float):
 	camera_rig.translation.x -= lookAtPoint.x

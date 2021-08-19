@@ -22,6 +22,7 @@ script = ExtResource( 2 )
 
 [node name="ClippedCamera" type="ClippedCamera" parent="."]
 current = true
+far = 50.0
 
 [node name="AimRay" type="RayCast" parent="ClippedCamera"]
 transform = Transform( 1, 0, 0, 0, 0.999847, 0.0174524, 0, -0.0174524, 0.999847, 0, -0.194905, -0.679715 )
@@ -61,7 +62,7 @@ initial_state = NodePath("../../CameraRig/StateMachine/Camera/Default")
 [node name="Camera" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 is_y_inverted = true
-sensitivity_gamepad = Vector2( 7, 4 )
+sensitivity_gamepad = Vector2( 2, 1 )
 
 [node name="Default" type="Node" parent="StateMachine/Camera"]
 script = ExtResource( 8 )

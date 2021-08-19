@@ -3,7 +3,7 @@ extends Node
 
 func goto_scene(path: String, current_scene: Node) -> void:
 	var loader: ResourceInteractiveLoader = ResourceLoader.load_interactive(path)
-	
+		
 	var loading_bar = load("res://src/ui/LoadingBar.tscn").instance()
 	get_tree().get_root().call_deferred('add_child', loading_bar)
 	
